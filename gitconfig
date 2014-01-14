@@ -1,0 +1,70 @@
+[user]
+	name = Ranmocy Sheng
+	email = ranmocy@gmail.com
+[github]
+	user = ranmocy
+	gist-oauth-token = 950e227a5b44eb9cd60a7fa80e52c5900dce9025
+[core]
+	editor = "/usr/local/bin/emacsclient -t -a 'vim'"
+	excludesfile = /Users/ranmocy/.gitexclude
+	safecrlf = true
+	autocrlf = false
+	quotepath = false
+[color]
+	ui = true
+[merge]
+	summary = true
+[alias]
+	a = add
+	s = status -sb
+	d = diff
+	ds = diff --staged
+	dh = diff HEAD
+	b = branch
+	l = log --graph --abbrev-commit --topo-order --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
+	lp = log -p
+	r = remote
+	f = fetch -p
+	i = commit
+	o = checkout
+	im = commit -m
+	iam = commit -am
+    amend = !sh -c 'git commit --amend -C HEAD --date \"`date`\"'
+	undo = reset --soft HEAD^
+	unstage = reset HEAD --
+	yesterday = log --since '1 day ago' --graph --topo-order --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
+	st = stash
+	stp = stash pop
+	stl = stash list
+	st0 = stash pop stash@{0}
+	st1 = stash pop stash@{1}
+	st2 = stash pop stash@{2}
+	st3 = stash pop stash@{3}
+	st4 = stash pop stash@{4}
+	st5 = stash pop stash@{5}
+	v = !stree
+	latest = for-each-ref --sort=-committerdate --format=\"%(committername)@%(refname:short)\t[%(committerdate:short)]\t%(contents)\"
+	switch = !legit switch \"$@\"
+	branches = !legit branches
+	sprout = !legit sprout \"$@\"
+	unpublish = !legit unpublish \"$@\"
+	harvest = !legit harvest \"$@\"
+	sync = !legit sync \"$@\"
+	publish = !legit publish \"$@\"
+	graft = !legit graft \"$@\"
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[credential]
+	helper = osxkeychain
+[push]
+	default = current
+[branch]
+	autosetuprebase = always
+[gui]
+	encoding = utf-8
+[i18n]
+	commitencoding = utf-8
