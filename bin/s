@@ -1,0 +1,14 @@
+#!/bin/bash
+
+case "$OSTYPE" in
+  darwin*)
+    /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n $@
+    ;;
+  linux*)
+    subl -n $@
+    ;;
+  *)
+    echo "unknown: $OSTYPE"
+    ;;
+esac
+

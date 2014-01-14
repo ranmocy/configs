@@ -1,0 +1,23 @@
+#!/bin/bash
+
+BG_COLOR='000000'
+BG_IMAGE="$HOME/locker.png"
+IDLE_BEFORE_LOCKING=10 # in mins
+NOTIFY_BEFORE_LOCKING=10 # in s
+NOTIFICATION_EXPIRE=9000 # in ms
+
+# TMP_BG_IMAGE='/tmp/screenshot.png'
+# LOCKER="notify-send -u normal -t 1000 -- 'LOCKING now'; scrot $TMP_BG_IMAGE && mogrify -resize 1% -resize 10000% $TMP_BG_IMAGE && i3lock -c $BG_COLOR -i $TMP_BG_IMAGE"
+LOCKER="i3lock -c $BG_COLOR -i $BG_IMAGE"
+
+#Auto turn off screen after idle N seconds
+xset dpms 900
+
+nohup \
+/usr/bin/xautolock \
+-time $IDLE_BEFORE_LOCKING \
+-locker "$LOCKER" \
+-notify $NOTIFY_BEFORE_LOCKING \
+-notifier "notify-send -u normal -t $NOTIFICATION_EXPIRE -- 'LOCKING screen in $NOTIFY_BEFORE_LOCKING seconds'" \
+>/dev/null \
+&

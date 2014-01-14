@@ -1,0 +1,93 @@
+[user]
+  name = Ranmocy
+  email = ranmocy@gmail.com
+  signingkey = FC6B5559
+[core]
+  excludesfile = ~/.gitexclude
+  quotePath = false
+  editor = s --wait
+  mergeoptions = --no-edit
+[diff]
+  renames = copies
+  mnemonicprefix = true
+  compactionHeuristic = true
+  tool = default-difftool
+  noprefix = true
+[difftool "default-difftool"]
+  cmd = s --wait --diff $LOCAL $REMOTE
+[color]
+  ui = true
+[alias]
+  test = !git diff origin/master --name-only | grep _spec.rb | xargs zeus rspec
+  a = add
+  aa = add --all
+  b = branch
+  bl = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/heads/*"
+  br = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/remotes/origin/*"
+  bb = !echo "===heads===" && git bl && echo "===remotes===" && git br
+  bclean = !(git checkout staging || git checkout develop || git checkout main || git checkout master) && (git branch --merged | egrep -v '(\\*|master|main|develop|staging)' | xargs git branch -d) && git checkout -
+  bsyncbranches1 = !(git checkout main && git pull && git checkout - || true) && (git checkout staging && git pull && git checkout - || true)
+  bsyncbranches2 = !(git checkout master && git pull && git checkout - || true) && (git checkout develop && git pull && git checkout - || true)
+  bsync = !git f && git bsyncbranches1 && git bsyncbranches2 && git bclean
+  bs = bsync
+  d = diff
+  ds = diff --staged
+  dh = diff HEAD
+  dm = diff master
+  f = fetch -p
+  i = commit
+  im = commit -m
+  iam = commit -am
+  # l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
+  l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --graph --topo-order
+  lp = log -p
+  lme = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --author='Ranmocy'
+  stat-summary = !git-stat-sum \"$@\"
+  o = checkout
+  r = remote
+  rc = rebase --continue
+  s = status -sb
+  u = !git checkout master && git pull && git fetch -p
+  amend = !sh -c 'git commit --amend -C HEAD --date \"`date`\"'
+  unamend = reset --soft HEAD@{1}
+  uncommit = reset --soft HEAD^
+  unstage = reset HEAD --
+  yesterday = log --since '1 day ago' --graph --topo-order --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
+  st = stash
+  stp = stash pop
+  stl = stash list
+  st0 = stash pop stash@{0}
+  st1 = stash pop stash@{1}
+  st2 = stash pop stash@{2}
+  st3 = stash pop stash@{3}
+  st4 = stash pop stash@{4}
+  st5 = stash pop stash@{5}
+  v = !stree
+  latest = for-each-ref --sort=-committerdate --format=\"%(committername)@%(refname:short)\t[%(committerdate:short)]\t%(contents)\"
+[http]
+  postBuffer = 524288000
+	cookiefile = /usr/local/google/home/mocy/.gitcookies
+[push]
+  default = current
+[branch]
+  autosetuprebase = always
+[credential]
+  helper = osxkeychain
+  helper = store
+[help]
+  autocorrect = 1
+[rerere]
+  enabled = true
+[merge]
+  stat = true
+[pull]
+  rebase = true
+[includeIf "gitdir:~/Android/"]
+  path = ~/bin_corp/gitconfig
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main

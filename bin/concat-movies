@@ -1,0 +1,10 @@
+#!/bin/bash
+list_file=concat_list.tmp
+echo '' > $list_file
+for filename in "$@"
+do
+    extension="${filename##*.}"
+    echo "file $filename" >> $list_file
+done
+ffmpeg -f concat -i $list_file -c copy output.$extension
+rm $list_file

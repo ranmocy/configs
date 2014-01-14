@@ -1,0 +1,721 @@
+#!/bin/sh
+# Script for installing optware on DD-WRT
+# Written by frater
+#
+export PATH=/opt/bin:/opt/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin
+SCRIPTVER="Fri Apr 22 17:08:38 CEST 2011"
+
+export SITES='http://ipkg.nslu2-linux.org http://ftp-osl.osuosl.org/pub/nslu2'
+export dom=wd.mirmana.com
+
+os_date="`nvram get os_date`"
+os_year=`date -r /bin/busybox  +%Y`
+os_month=`date -r /bin/busybox +%m`
+os_day=$(( `date -r /bin/busybox  +%e` + 0 ))
+
+SAMBA35=0
+[ `date +%Y -r '/opt/sbin/smbd'` -ge 2011 ] && SAMBA35=1
+
+# HASBINBASH=0
+# [ `nvram get os_date | awk '{print $3}'` -gt 2010 ] && HASBINBASH=1
+
+# If the time is not set then get it at least a bit up to date
+if [ `date +%s` -lt 99999 ] ; then
+  ntpclient pool.ntp.org
+  if [ `date +%s` -lt 99999 ] ; then
+    date -s "${SCRIPTVER}"
+  fi
+fi
+
+KERNEL=`/bin/uname -r`
+k26=0
+/bin/uname -r | grep -q "^2\.6\." && k26=1
+Atheros=0
+
+OLD_RC=1
+NEW_RC=0
+if [ $os_year -gt 2009 ] ; then
+ if [ $os_year -eq 2010 ] ; then
+  [ $os_month -gt 4 ] && NEW_RC=1
+ else
+  NEW_RC=1
+ fi
+fi
+
+[ $os_year -gt 2009 ] && OLD_RC=0
+[ $os_year -eq 2009 ] && [ $os_month == 12 ] && OLD_RC=0
+
+REBOOT_CORRECT=0
+[ $os_year -gt 2009 ] && REBOOT_CORRECT=1
+
+
+echo -e "$0\nWritten on: ${SCRIPTVER}"
+date -u
+echo -e "If you're giving feedback, please post the version as well\n\n"
+
+if grep -iq 'Atheros' /proc/cpuinfo  ; then
+  Atheros=1
+  echo "Atheros is not supported, sorry"
+  exit 1
+fi
+
+if ! grep -i -q "MIPS" /proc/cpuinfo ; then
+  echo "This device has no MIPS processor"
+  exit 1
+fi
+
+if [ ! "$USER" = root ]; then
+  echo -e "You're not root, you're ${USER}..\nI will not have enough permissions to do the things I want to do.\nExiting..."
+  exit 1
+fi
+
+cd /tmp
+
+if ! /bin/mount 2>/dev/null | grep -q " on /opt " ; then
+  echo -e "You need to mount /opt\nExiting..."
+  exit 1
+fi
+
+echo -e "\n\nThis will take a while!\nIf you need to do some shopping....   do it now!  ;-)\n"
+sleep 1
+
+mkdir -p /opt/etc/init.d 2>/dev/null
+if [ ! -d /opt/etc/init.d ] ; then
+  echo -e "I'm unable to create the directory /opt/etc/init.d  Check your config"
+  exit 1
+fi
+
+ipkg=ipkg-opt
+if [ ${Atheros} -ne 0 ] ; then
+  REPOSITORY=http://ipkg.nslu2-linux.org/feeds/optware/openwrt-atheros/cross/unstable
+  ipkg=ipkg
+else
+  flavour=feeds/optware/ddwrt/cross/stable
+  ipkgopt=ipkg-opt_0.99.163-10_mipsel.ipk
+  ERROR_STATE=1
+  rm -f /tmp/ipk
+  for cURL in ${SITES} ; do
+    REPOSITORY=${cURL}/$flavour
+    /usr/bin/wget -O /tmp/ipk ${REPOSITORY}/$ipkgopt >/dev/null
+    if [ -f /tmp/ipk ] ; then
+      ERROR_STATE=0
+      break
+    fi
+  done
+  rm -f /tmp/ipk
+  DOMAIN=`echo ${cURL} | cut -b8- | awk -F/ '{print $1}'`
+fi
+echo "src/gz optware $REPOSITORY" > /tmp/ipkg.conf
+echo "dest /opt/ /" >> /tmp/ipkg.conf 
+
+$ipkg print_installation_architecture >/dev/null 2>&1
+if [ ${?} -eq 0 ]  ; then
+  echo -e "You already installed optware, good show!\nI will execute an update"
+  $ipkg update -f /tmp/ipkg.conf
+else
+  echo -e "Optware is not installed... Let's install it\n"
+
+  if [ $Atheros -ne 0 ] ; then
+    $ipkg -verbose_wget update -f /tmp/ipkg.conf
+    $ipkg -force-reinstall -verbose_wget install uclibc-opt -f /tmp/ipkg.conf
+  else
+    # wget http://www.3iii.dk/linux/optware/optware-install-ddwrt.sh  -O - | tr -d '\r' > /tmp/optware-install.sh
+    # wget http://www.wlan-sat.com/boleo/optware/optware-install-ddwrt.sh  -O - | tr -d '\r' > /tmp/optware-install.sh
+    wget http://${dom}/optware-install-ddwrt2.sh  -O - | tr -d '\r' > /tmp/optware-install.sh
+    sh /tmp/optware-install.sh
+  fi
+
+  $ipkg update -f /tmp/ipkg.conf 2>/dev/null
+  if [ $? -ne 0 ] ; then
+    echo -e "\n######\n\nOptware installation was NOT successfull...\nYour hardware is probably not compatible"
+    cat /proc/cpuinfo
+    exit 1
+  fi
+fi
+
+nvram get rc_startup >/dev/null
+if [ ! $? -eq 0 ] ; then
+  echo "Error getting startup value...  is this really DD-WRT?"
+  exit 1
+fi
+rc_startup=`nvram get rc_startup`
+
+if [ $OLD_RC -ne 0 ] ; then
+
+  echo -en "nvram set rc_startup=\"" >/tmp/chng_startup
+  echo -n "${rc_startup}" |  sed -e 's/[$`"\]/\\&/g'  >> /tmp/chng_startup
+  if ! grep -q "/init.d/optS" /tmp/chng_startup ; then
+    echo -e "\nn=1\nwhile [ ! -d /opt/etc/init.d ] ; do\n  sleep 3\n  [ \\\$n -gt 30 ] && break\n  let n+=1\ndone\n/opt/etc/init.d/optS\n\"" >>/tmp/chng_startup
+    chmod +x /tmp/chng_startup
+    /tmp/chng_startup
+    nvram commit
+  fi
+  rm /tmp/chng_startup
+
+  rc_shutdown=`nvram get rc_shutdown`
+  if ! nvram get rc_shutdown | grep -q "/init.d/optK" ; then
+    echo -en "nvram set rc_shutdown=\"" >/tmp/chng_shutdown
+    echo -e "/opt/etc/init.d/optK\n" >>/tmp/chng_shutdown
+    echo -n "${rc_shutdown}" | sed -e 's/[$`"\]/\\&/g'  >>/tmp/chng_shutdown
+    echo -en "\""  >>/tmp/chng_shutdown
+    chmod +x /tmp/chng_shutdown
+    /tmp/chng_shutdown
+    rm /tmp/chng_shutdown
+    nvram commit
+  fi
+fi
+
+mkdir -p /opt/etc/init.d 2>/dev/null
+mkdir -p /opt/usr/sbin 2>/dev/null
+
+if [ ! -d /opt/etc/init.d ] ; then
+  echo "I was unable to create the directory /opt/etc/init.d, check if it is writable"
+  exit 1
+fi
+
+mkdir -p /opt/var/backups
+mkdir -p /opt/tmp
+
+cd /opt/etc/init.d
+
+isVIRGIN=1
+[ -f /opt/etc/init.d/S35automount ] && isVIRGIN=0
+
+S45DISABLED=1
+[ -f /opt/etc/init.d/S45pixelserv ] && grep -q "DISABLED=0" /opt/etc/init.d/S45pixelserv && S45DISABLED=0
+
+secIP=
+terIP=
+if [ -f /opt/etc/init.d/S80vlighttpd ] ; then
+  secIP=`grep "^secIP=[0-9]" /opt/etc/init.d/S80vlighttpd | awk -F= '{print $2}'`
+  terIP=`grep "^terIP=[0-9]" /opt/etc/init.d/S80vlighttpd | awk -F= '{print $2}'`
+fi
+
+
+wget -qO optK             http://${dom}/optK
+wget -qO optS             http://${dom}/optS
+wget -qO S00optware       http://${dom}/S00optware
+# wget -qO S01modutils      http://${dom}/S01modutils
+wget -qO S01bashAsShell   http://${dom}/S01bashAsShell
+wget -qO S05chngProfile   http://${dom}/S05chngProfile
+wget -qO S10swap          http://${dom}/S10swap
+wget -qO S20wwwdata       http://${dom}/S20wwwdata
+[ $k26 == 0 ] && wget -qO S30usbmount      http://${dom}/S30usbmount
+wget -qO S35automount     http://${dom}/S35automount
+wget -qO S94stophammer    http://${dom}/S94stophammer
+wget -qO S95watchprinter  http://${dom}/S95watchprinter
+wget -qO S95optremount    http://${dom}/S95optremount
+wget -qO S98stophack        http://${dom}/S98stophack
+wget -qO K99optware       http://${dom}/K99optware
+wget -qO S85kaid          http://${dom}/S85kaid
+
+chmod +x S85kaid
+ln -s S85kaid /opt/etc/init.d/K15kaid 2>/dev/null
+
+[ -e /opt/etc/hackers ] || wget -qO /opt/etc/hackers http://${dom}/hackers
+
+if [ $REBOOT_CORRECT -ne 0 ] ; then
+  wget -qO S08reboot          http://${dom}/S08reboot
+fi
+# kill the temporary fix for reboot if DD-WRT supports it natively
+if grep -q "opt/etc" /etc/profile ; then
+  rm -f /opt/etc/init.d/S08reboot 2>/dev/null
+fi
+
+if [ $isVIRGIN = 1 ] ; then
+  wget -qO S60transmission_init  http://${dom}/S60transmission_init
+  chmod +x K* 2>/dev/null
+  chmod +x S*
+fi
+chmod +x optS
+chmod +x optK
+
+# Disable usbmount in k26
+[ $k26 == 0 ] || chmod -x S30usbmount 2>/dev/null
+
+wget -qO S40relocate_syslog    http://${dom}/S40relocate_syslog
+wget -qO S80pound              http://${dom}/S80pound
+wget -qO S45pixelserv          http://${dom}/S45pixelserv
+wget -qO S80vlighttpd          http://${dom}/S80vlighttpd
+wget -qO S90asterisk           http://${dom}/S90asterisk
+wget -qO S90transmission       http://${dom}/S90transmission_as_user
+wget -qO S90nzbget             http://${dom}/S90nzbget
+
+wget -qO /opt/usr/sbin/asterisk_ban       http://${dom}/asterisk_ban
+chmod +x /opt/usr/sbin/asterisk_ban
+
+if [ $NEW_RC -eq 1 ] ; then
+  wget -qO S95birmablock       http://${dom}/S95birmablock
+  wget -qO S95asiablock        http://${dom}/S95asiablock_2010
+  wget -qO S95worldblock       http://${dom}/S95worldblock
+  wget -qO S94fixtables        http://${dom}/S94fixtables
+  chmod +x S94fixtables
+
+  rm /opt/usr/sbin/iptables-save
+  ln -s /usr/sbin/iptables /tmp/iptables-save
+  if /tmp/iptables-save >/dev/null 2>&1 ; then
+    ln -s /usr/sbin/iptables /opt/usr/sbin/iptables-save
+  else
+    wget -O /opt/usr/sbin/iptables-save http://wd.mirmana.com/iptables
+    chmod +x /opt/usr/sbin/iptables-save
+  fi
+  rm /tmp/iptables-save
+elif [ $OLD_RC -eq 0 ] ; then
+  IdeletedFile=0
+  # wget -qO S95asiablock        http://${dom}/S95asiablock_2009
+else
+  wget -qO S95asiablock        http://${dom}/S95asiablock_old
+fi
+
+[ ${S45DISABLED} = 0 ] && sed -i -e "s/^DISABLED=1/DISABLED=0/" /opt/etc/init.d/S45pixelserv
+if [ ! -z "${secIP}" ] ; then
+  /opt/bin/sed -i -e "s/^secIP=$/secIP=${secIP}/" /opt/etc/init.d/S80vlighttpd
+  /opt/bin/sed -i -e "s/^terIP=$/terIP=${terIP}/" /opt/etc/init.d/S80vlighttpd
+fi
+
+sed -i -e 's/^prefix=\/usr/prefix=\/opt/' /opt/etc/init.d/S90asterisk
+
+mkdir -p /opt/etc/asterisk
+wget -qO /opt/etc/asterisk/asterisk.sh  http://${dom}/asterisk.sh.16
+chmod +x /opt/etc/asterisk/asterisk.sh
+
+# Remove all symbolic links
+rm K90swap 2>/dev/null
+rm K70usbmount 2>/dev/null
+rm K65automount 2>/dev/null
+rm K60relocate_syslog 2>/dev/null
+rm K20samba 2>/dev/null
+rm K20pound 2>/dev/null
+rm K10asterisk 2>/dev/null
+rm K10transmission 2>/dev/null
+rm K10nzbget 2>/dev/null
+rm K05asiablock 2>/dev/null
+
+[ $k26 == 0 ] && ln -s S30usbmount     K70usbmount 2>/dev/null
+ln -s S10swap         K90swap 2>/dev/null
+ln -s S40relocate_syslog    K60relocate_syslog 2>/dev/null
+ln -s S35automount    K65automount 2>/dev/null
+ln -s S80samba        K20samba 2>/dev/null
+ln -s S80vlighttpd    K20vlighttpd 2>/dev/null
+ln -s S80lighttpd     K20lighttpd 2>/dev/null
+ln -s S80pound        K20pound 2>/dev/null
+ln -s S90asterisk     K10asterisk 2>/dev/null
+ln -s S90transmission K10transmission 2>/dev/null
+ln -s S90nzbget       K10nzbget 2>/dev/null
+# ln -s S95asiablock    K05asiablock
+
+# The services
+
+$ipkg install xinetd -f /tmp/ipkg.conf 2>/dev/null
+[ $isVIRGIN -eq 1 ] && chmod -x /opt/etc/init.d/S10xinetd
+
+if [ $SAMBA35 -eq 0 ] ; then
+  if [ ! -e /opt/etc/init.d/S*samba ] ; then
+    $ipkg install samba2 -f /tmp/ipkg.conf
+    wget -qO /opt/etc/init.d/S80samba         http://${dom}/S80samba
+  fi
+fi
+wget -qO /opt/etc/init.d/S10xinetd        http://${dom}/S10xinetd
+
+# widen subnet of swat
+sed -i -e 's/192.168.1.0\/24/192.168.0.0\/16/' /opt/etc/xinetd.d/swat 2>/dev/null
+wget -qO /opt/etc/xinetd.d/p910nd        http://${dom}/xinetd_p910nd
+
+# if p910nd exists in standard optware then use that one
+[ -f /usr/sbin/p910nd ] && sed -i -e 's/= .*p910nd/= \/usr\/sbin\/p910nd/' /opt/etc/xinetd.d/p910nd
+
+# unfsd
+
+ipkg-opt install portmap 2>&1 >/dev/null
+ipkg-opt install unfs3 2>&1 >/dev/null
+[ -e /opt/etc/exports ] || wget -qO /opt/etc/exports        http://${dom}/exports
+grep -q ^NAME /opt/etc/init.d/S56unfsd   || wget -O /opt/etc/init.d/S56unfsd http://${dom}/S56unfsd
+grep -q ^NAME /opt/etc/init.d/S55portmap || wget -O /opt/etc/init.d/S55portmap http://${dom}/S55portmap
+[ -h /opt/etc/init.d/K45portmap ] || ln -s S55portmap /opt/etc/init.d/K45portmap
+[ -h /opt/etc/init.d/K44unfsd ]   || ln -s S56unfsd /opt/etc/init.d/K44unfsd
+
+#Only install busybox if it never been installed before
+# as it will replace the proper gnu tools
+# I only want it for its httpd I'm using for the asterisk interface
+[ -e /opt/bin/busybox ] || $ipkg install busybox -f /tmp/ipkg.conf
+$ipkg -force-reinstall -force-overwrite install util-linux-ng -f /tmp/ipkg.conf
+$ipkg -force-reinstall -force-overwrite install inetutils -f /tmp/ipkg.conf
+if [ $k26 = 1 ] ; then
+  $ipkg remove modutils 2>/dev/null
+else
+  $ipkg install modutils -f /tmp/ipkg.conf
+fi
+if [ `ls -1 /opt/bin/ | wc -l` -lt 650 ] ; then
+  $ipkg install libidn -f /tmp/ipkg.conf
+  $ipkg install coreutils -f /tmp/ipkg.conf
+  $ipkg install diffutils -f /tmp/ipkg.conf
+  $ipkg install findutils -f /tmp/ipkg.conf
+  $ipkg install psutils -f /tmp/ipkg.conf
+  $ipkg install psmisc -f /tmp/ipkg.conf
+
+  $ipkg install transmission -f /tmp/ipkg.conf
+  $ipkg install pound -f /tmp/ipkg.conf
+  $ipkg install asterisk14 -f /tmp/ipkg.conf
+  $ipkg install bind -f /tmp/ipkg.conf
+  $ipkg install lighttpd -f /tmp/ipkg.conf
+  $ipkg install openldap-libs -f /tmp/ipkg.conf  # needed for mod_auth
+  $ipkg install sqlite -f /tmp/ipkg.conf         # needed for mod_webdav
+  $ipkg install zip -f /tmp/ipkg.conf
+  $ipkg install php-fcgi -f /tmp/ipkg.conf
+  $ipkg install libjpeg -f /tmp/ipkg.conf
+  $ipkg install libxslt -f /tmp/ipkg.conf
+  $ipkg install libxml2 -f /tmp/ipkg.conf
+  $ipkg install nzbget -f /tmp/ipkg.conf
+fi
+ 
+siprox_virgin=1
+[ -f /opt/etc/init.d/S98siproxd ] && siprox_virgin=0
+$ipkg install siproxd -f /tmp/ipkg.conf
+
+if [ -e /opt/etc/init.d/S98siproxd ] ; then
+  if [ $siprox_virgin -ne 0 ] ; then
+    chmod -x /opt/etc/init.d/S98siproxd
+    sed -i -e 's/\/bin\/sh/\/bin\/sh\nNAME=siproxd/' /opt/etc/init.d/S98siproxd
+  fi
+fi
+
+# Add NAME=named to the config, so it can be used by the script 'service'
+if [ -f /opt/etc/init.d/S09named ] ; then
+  fdate="`date -r /opt/etc/init.d/S09named`"
+  if ! grep -q "^NAME=" /opt/etc/init.d/S09named ; then
+    sed -i -e 's/\/bin\/sh/\/bin\/sh\nNAME=named/' /opt/etc/init.d/S09named
+    touch -d "$fdate" /opt/etc/init.d/S09named
+  fi
+  chmod -x /opt/etc/init.d/S09named
+fi
+
+if [ $SAMBA35 -eq 0 ] ; then
+  [ -f /opt/etc/init.d/S08samba ] && chmod -x /opt/etc/init.d/S08samba
+  if [ $isVIRGIN = 1 ] ; then
+    chmod +x /opt/etc/init.d/S80samba
+    [ -f /opt/etc/samba/smb.conf ] && cp -p /opt/etc/samba/smb.conf /opt/etc/samba/smb.conf.`date +%y-%b.%d...%H.%M -r /opt/etc/samba/smb.conf`
+    wget -O /opt/etc/samba/smb.conf http://${dom}/smb.conf
+  fi
+fi
+
+# pixelserv
+# wget -qO /opt/etc/init.d/S95pixelserv    http://${dom}/S95pixelserv
+[ $Atheros -eq 1 ] && wget -qO /opt/usr/sbin/pixelserv         http://${dom}/pixelserv_AR71xx
+[ $Atheros -eq 0 ] && wget -qO /opt/usr/sbin/pixelserv         http://${dom}/pixelserv
+chmod +x /opt/usr/sbin/pixelserv
+
+wget -qO /opt/usr/sbin/pixelserv.pl      http://${dom}/pixelserv.pl
+chmod +x /opt/usr/sbin/pixelserv.pl
+
+wget -qO /opt/usr/sbin/lastmins      http://${dom}/lastmins
+chmod +x /opt/usr/sbin/lastmins
+
+if [ $isVIRGIN = 1 ] ; then
+  mkdir -p /opt/etc/pixelserv
+  wget -qO /opt/etc/pixelserv/hosts.include http://${dom}/hosts.include
+fi
+
+cd /opt/usr/sbin
+# backupessential
+wget -q -O /opt/usr/sbin/backupessential http://${dom}/backupessential
+wget -q  http://${dom}/vars_to_include
+wget -q  http://${dom}/vars_to_skip
+wget -q  http://${dom}/vars_preferred
+chmod +x /opt/usr/sbin/backupessential
+
+mkdir -p /opt/var/log 2>/dev/null
+touch /opt/var/log/messages
+
+#
+# handy program
+wget -qO /opt/sbin/aggregate           http://${dom}/aggregate
+# Some handy scripts
+wget -qO /opt/usr/sbin/watchprinter    http://${dom}/watchprinter
+wget -qO /opt/usr/sbin/optlog          http://${dom}/optlog
+wget -qO /opt/usr/sbin/service         http://${dom}/service
+# modify the header of these 2 perl-scripts
+wget -qO /opt/usr/sbin/imdb            http://${dom}/imdb
+wget -qO /opt/usr/sbin/sendEmail       http://${dom}/sendEmail
+wget -qO /opt/usr/sbin/logtail         http://${dom}/logtail
+
+sed -i -e 's/\/usr\/bin\/perl/\/opt\/bin\/perl/' /opt/usr/sbin/imdb
+sed -i -e 's/\/usr\/bin\/perl/\/opt\/bin\/perl/' /opt/usr/sbin/sendEmail
+chmod +x /opt/sbin/aggregate
+chmod +x /opt/usr/sbin/watchprinter
+chmod +x /opt/usr/sbin/optlog
+chmod +x /opt/usr/sbin/service
+chmod +x /opt/usr/sbin/logtail
+chmod +x /opt/usr/sbin/imdb
+chmod +x /opt/usr/sbin/sendEmail
+chmod -x /opt/etc/init.d/S80lighttpd
+
+if [ -e /dev/usb ] ; then
+  wget -O /opt/etc/init.d/S95watchprinter http://${dom}/S95watchprinter
+  $ipkg install usbutils -f /tmp/ipkg.conf
+  $ipkg install p910nd -f /tmp/ipkg.conf
+  # Disable the p910nd script....
+  nvram get usb_printer | grep -q 0 || chmod +x /opt/etc/init.d/S95watchprinter 2>/dev/null
+else
+  chmod -x /opt/etc/init.d/S95watchprinter 2>/dev/null
+fi
+chmod -x /opt/etc/init.d/S30usbmount 2>/dev/null
+chmod -x S95p910nd 2>/dev/null
+
+# Supporting scripts for transmission
+wget -qO /opt/usr/sbin/mkdvd          http://${dom}/mkdvd
+wget -qO /opt/usr/sbin/mvmovie        http://${dom}/mvmovie
+wget -qO /opt/usr/sbin/trans_watchdog http://${dom}/trans_watchdog
+
+sed -i -e "s/^# *BASEDIR=\/mnt/BASEDIR=\/mnt/"   /opt/usr/sbin/mkdvd
+sed -i -e "s/^#\!\/bin\/sh/#\!\/opt\/bin\/bash/" /opt/usr/sbin/mkdvd
+sed -i -e "s/^# *BASEDIR=\/mnt/BASEDIR=\/mnt/"   /opt/usr/sbin/mvmovie
+sed -i -e "s/^#\!\/bin\/sh/#\!\/opt\/bin\/bash/" /opt/usr/sbin/mvmovie
+sed -i -e "s/^#\!\/bin\/sh/#\!\/opt\/bin\/bash/" /opt/usr/sbin/trans_watchdog
+sed -i -e 's/=\/shares\/internal\/PUBLIC/=\/mnt\/C/' /opt/usr/sbin/trans_watchdog
+
+chmod +x /opt/usr/sbin/mkdvd
+chmod +x /opt/usr/sbin/mvmovie
+chmod +x /opt/usr/sbin/trans_watchdog
+
+echo -e "\nInstalling optware packages... (will take a while)\n"
+
+# You really should have these packages
+$ipkg -force-reinstall -force-overwrite -f /tmp/ipkg.conf install net-tools
+if [ `ls -1 /opt/bin/ | wc -l` -lt 720 ] ; then
+ $ipkg install lsof -f /tmp/ipkg.conf
+ $ipkg install libcurl -f /tmp/ipkg.conf
+ $ipkg install sudo -f /tmp/ipkg.conf
+ $ipkg install bash -f /tmp/ipkg.conf
+ $ipkg install vim -f /tmp/ipkg.conf
+ $ipkg install grep -f /tmp/ipkg.conf
+ $ipkg install procps -f /tmp/ipkg.conf
+ $ipkg install sed -f /tmp/ipkg.conf
+ $ipkg install bc -f /tmp/ipkg.conf
+ $ipkg install wget -f /tmp/ipkg.conf
+ $ipkg install unzip -f /tmp/ipkg.conf
+ $ipkg install unrar -f /tmp/ipkg.conf
+ $ipkg install gawk -f /tmp/ipkg.conf
+ $ipkg install tar -f /tmp/ipkg.conf
+ $ipkg install gzip -f /tmp/ipkg.conf
+ $ipkg install bzip2 -f /tmp/ipkg.conf
+ $ipkg install openssl -f /tmp/ipkg.conf
+ $ipkg install calc -f /tmp/ipkg.conf
+ $ipkg install par2cmdline -f /tmp/ipkg.conf
+fi
+
+mkdir -p /opt/share/oversight
+/opt/bin/wget -O /opt/share/oversight/oversight.tgz http://${dom}/oversight.tgz
+/opt/bin/tar xvzf /opt/share/oversight/oversight.tgz -C /opt
+
+
+if [ ! -e /opt/etc/nzbget.conf ] ; then
+  mkdir -p /mnt/usenet 2>/dev/null
+  cp -p /opt/oversight/conf/unpak.cfg.example /opt/oversight/conf/unpak.cfg
+  cp /opt/share/doc/nzbget/nzbget.conf.example /opt/etc/nzbget.conf
+  sed -i -e 's/\$MAINDIR=.*/\$MAINDIR=\/mnt\/usenet/' /opt/etc/nzbget.conf
+  sed -i -e 's/ServerIp=.*/ServerIp=0.0.0.0/' /opt/etc/nzbget.conf
+  sed -i -e 's/ParPauseQueue=.*/ParPauseQueue=yes/' /opt/etc/nzbget.conf
+  sed -i -e 's/PostPauseQueue=.*/PostPauseQueue=yes/' /opt/etc/nzbget.conf
+  sed -i -e 's/AllowReProcess=.*/AllowReProcess=yes/' /opt/etc/nzbget.conf
+  sed -i -e 's/PostProcess=.*/PostProcess=\/opt\/oversight\/unpak.sh/' /opt/etc/nzbget.conf
+fi
+
+# This one's for the utility 'host'
+if [ $isVIRGIN = 1 ] ; then
+  $ipkg install bind -f /tmp/ipkg.conf
+  chmod -x /opt/etc/init.d/S09named
+fi
+
+# These are nice to have, too
+$ipkg -force-reinstall -force-overwrite install e2fsprogs -f /tmp/ipkg.conf
+$ipkg -force-reinstall install less -f /tmp/ipkg.conf
+if [ `ls -1 /opt/bin/ | wc -l` -lt 720 ] ; then
+ $ipkg install htop -f /tmp/ipkg.conf
+ $ipkg install ncdu -f /tmp/ipkg.conf
+ $ipkg install whois -f /tmp/ipkg.conf
+ $ipkg install tcpdump -f /tmp/ipkg.conf
+ $ipkg install netcat -f /tmp/ipkg.conf
+ $ipkg install cdrtools -f /tmp/ipkg.conf
+ $ipkg install mc -f /tmp/ipkg.conf
+ $ipkg install httping -f /tmp/ipkg.conf
+ $ipkg install m4 -f /tmp/ipkg.conf
+ $ipkg install make -f /tmp/ipkg.conf
+ $ipkg install vsftpd -f /tmp/ipkg.conf
+fi
+
+grep -q "^secure_chroot_dir" /opt/etc/vsftpd.conf || echo 'secure_chroot_dir=/opt/usr/share/empty' >>/opt/etc/vsftpd.conf
+mkdir -p /opt/share/empty
+xinfile=/opt/etc/xinetd.d/vsftpd
+if [ ! -e $xinfile ] ; then
+  mkdir -p /opt/etc/xinetd.d
+  echo -e "service ftp\n{" >$xinfile
+  echo -e "\tsocket_type\t= stream" >>$xinfile
+  echo -e "\twait\t\t= no" >>$xinfile
+  echo -e "\tuser\t\t= root" >>$xinfile
+  echo -e "#\tonly_from\t= 192.168.0.0/16" >>$xinfile
+  echo -e "\tserver\t\t= /opt/sbin/vsftpd" >>$xinfile
+  echo -e "\tdisable\t\t= Yes" >>$xinfile
+  echo -e "}" >>$xinfile
+fi
+
+
+#if [ ! -e /opt/local/twonkymedia/twonkymedia.sh ] ; then
+
+twonkver=5.0.68
+filever=5.0.68
+support=unsupported
+twonkver=6.0-Beta
+filever=6.0-dev
+support=downloads
+twonkver=5.1.2
+filever=5.1.2
+support=downloads
+twonkver=6.0.30
+filever=6.0.30
+
+if [ -f /opt/local/twonkymedia/twonky.${twonkver}.zip ] ; then
+  echo "Twonky already installed"
+else
+  echo "Install Twonky version: $twonkver"
+  mkdir -p /opt/local/twonkymedia 2>/dev/null
+  if  [ -e /opt/local/twonkymedia ] ; then
+    wget -q -O /opt/local/twonkymedia/twonky.${twonkver}.zip http://www.twonkyforum.com/${support}/${twonkver}/twonkymedia-mipsel-uclibc-0.9.28-${filever}.zip
+    cd /opt/local/twonkymedia
+    if [ -f twonky.${twonkver}.zip ] ; then
+      unzip -o twonky.${twonkver}.zip
+      # chmod +x twonkymedia.sh
+      wget -O /opt/etc/init.d/S95twonky http://${dom}/S95twonky
+      ln -s S95twonky /opt/etc/init.d/K05twonky
+      # chmod +x /opt/etc/init.d/S95twonky
+    fi
+  else
+    echo "Unable to create /opt/local/twonkymedia"
+  fi
+fi
+
+optsize=`df | grep opt | grep -o "[0-9]*%" | tr -cd 0-9`
+if [ -z "${optsize}" ] ; then
+  echo "I could not determine the size of /opt"
+else
+  if [ ${optsize} -gt 85 ] && [ -z "`which perl`" ] ; then
+    echo "You don't have perl, but your /opt is already bigger than 85% (${optsize}%)"
+    echo "I will not install perl"
+  else
+    # colordiff will install perl
+    $ipkg install ipcalc -f /tmp/ipkg.conf
+    $ipkg install colordiff -f /tmp/ipkg.conf
+    $ipkg install perl-libwww -f /tmp/ipkg.conf
+  fi
+fi
+
+echo -e "\n\nTesting Optware's ifconfig:\n"
+/opt/bin/ifconfig >/dev/null 2>&1
+if [ $? -ne 0 ] ; then
+  echo -e "\n:-(\nOptware's ifconfig in net-tools is still broken in DD-WRT's K26 builds.\nI will remove it so the standard utility will be used!\n\n"
+  rm -f /opt/bin/ifconfig
+fi
+
+KEEPBASH=1
+if [ $os_year -lt 2009 ] ; then
+  KEEPBASH=0
+elif [ $os_year -eq 2009 ] ; then
+  [ $os_month -lt 10 ] && KEEPBASH=0
+  if echo $os_month -eq 9 ] ; then
+    [ $os_day -lt 5 ] && KEEPBASH=0
+  fi
+fi
+
+if [ -e /opt/etc/sudoers ] ; then
+  # Don't get fooled by the bracket
+  # In the sudoers file you need 2 brackets to make a comment
+  grep -q '^#includedir /opt/etc/sudoers.d' /opt/etc/sudoers || echo '#includedir /opt/etc/sudoers.d' >>/opt/etc/sudoers
+  mkdir -p /opt/etc/sudoers.d 2>/dev/null
+  chmod 440 /opt/etc/sudoers.d/*
+  chmod 440 /opt/etc/sudoers
+  chown root:root /opt/etc/sudoers
+  chown root:root /opt/etc/sudoers.d
+  chown root:root /opt/etc/sudoers.d/*
+fi
+
+wget -qO /opt/usr/sbin/check_rbl            http://${dom}/check_rbl
+[ -e /bin/bash ] || sed -i -e 's/\/bin\/bash/\/opt\/bin\/bash/' /opt/usr/sbin/check_rbl
+sed -i -e 's/=\/etc/=\/opt\/etc/'           /opt/usr/sbin/check_rbl
+sed -i -e 's/^export PATH=.*/# &/'          /opt/usr/sbin/check_rbl
+chmod +x /opt/usr/sbin/check_rbl
+
+#if [ ! -e /opt/usr/sbin/zabbix_agentd ] ; then
+  wget -O /tmp/zabbix.tgz http://${dom}/zabbix.tgz && /opt/bin/tar xvzf /tmp/zabbix.tgz -C/
+  rm /tmp/zabbix.tgz 2>/dev/null
+#fi
+
+if [ $KEEPBASH -eq 0 ] ; then
+  echo -e "\nI disable the shell replacement because your firmware is too old. ${os_date}\n"
+  chmod -x /opt/etc/init.d/S01bashAsShell
+fi
+if [ $k26 == 1 ] ; then
+  wget -O /opt/etc/init.d/S01fixparts http://${dom}/S01fixparts
+  chmod +x /opt/etc/init.d/S01fixparts
+fi
+
+mkdir -p /opt/lib/modules/$KERNEL
+if [ $k26 == 1 ] ; then
+  ipkg-opt install http://${dom}/kmod-usbsound_2.6.24.111_mipsel.ipk
+  wget -qO - http://${dom}/soundmodules.tgz | tar xzf - -C /opt/lib/modules/$KERNEL
+  wget -qO /opt/etc/init.d/S45soundmodules http://${dom}/S45soundmodules
+fi
+
+if [ ! -e /usr/sbin/ntfs-3g ] ; then
+  if [ $k26 == 1 ] ; then
+    $ipkg install ntfs-3g -f /tmp/ipkg.conf
+    $ipkg install ntfsprogs -f /tmp/ipkg.conf
+    wget -qO - http://${dom}/ntfs-3g.tgz | tar xzf - -C /
+    wget -qO - http://${dom}/fuse.tgz    | tar xzf - -C /
+
+    wget -O /opt/lib/modules/$KERNEL/fuse.ko http://${dom}/fuse.ko.ddwrt 
+    chmod +x /opt/lib/modules/$KERNEL/fuse.ko
+  else
+    $ipkg install ntfs-3g -f /tmp/ipkg.conf
+    $ipkg install ntfsprogs -f /tmp/ipkg.conf
+    mkdir -p /opt/lib/modules/$KERNEL
+    wget -O /opt/lib/modules/$KERNEL/fuse.o http://${dom}/fuse.o
+    chmod +x /opt/lib/modules/$KERNEL/fuse.o
+  fi
+fi
+
+# removing optware's insmod
+rm /opt/sbin/insmod 2>/dev/null
+
+if [ $k26 -ne 0 ] ; then
+  # Install alternate iptables
+  /usr/sbin/iptables -N recent_test
+  if /usr/sbin/iptables -A recent_test -m recent --set --name BRUTEFORCE --rsource ; then
+    if [ -x /opt/usr/sbin/iptables ] ; then
+      echo "Congratulations..... You now have a firmware that supports the recent module in iptables.. I will rename the optware one !!!"
+      wget -O /dev/null http://wd.mirmana.com/iptables.obsolete
+      chmod -x /opt/usr/sbin/iptables
+      mv /opt/usr/sbin/iptables /opt/usr/sbin/iptables.obsolete
+    fi
+  else
+    if [ -x /opt/usr/sbin/iptables ] ; then
+      echo "You already have an upgraded iptables!"
+    else
+      wget -O /opt/usr/sbin/iptables http://wd.mirmana.com/iptables
+      chmod +x /opt/usr/sbin/iptables
+    fi
+  fi
+  /usr/sbin/iptables -X recent_test
+fi
+
+echo -e "\nOptware and basic packages are installed.\n"
+
+
+if [ $isVIRGIN = 1 ] ; then
+  echo -e "\nI installed bind to get the handy utility 'host', but I don't think you want to run your WDWB as a DNS-server"
+  echo -e "\nI will delete the executable flag of /opt/etc/init.d/S09named.\n"
+  echo -e "\nJust make it executable again if you DO need it.\n"
+  chmod -x /opt/etc/init.d/S09named
+fi
+
+echo -e "Script finished!!\nYou can now fully use optware if you login again...\nI advice a reboot!\n"
+echo -e "Do check if /opt will be mounted otherwise optware will not loaded!"
+echo -e "\n\nhttps://mail.mirmana.com/OTRW\n\n"

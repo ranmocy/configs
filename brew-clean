@@ -1,0 +1,49 @@
+#!/usr/bin/env ruby
+
+WHITELIST = [
+  'aws-sam-cli',
+  'awscli',
+  # 'curl',
+  # 'coreutils',
+  # 'git-extras',
+  # 'htop-osx',
+  'openjdk',
+  # 'libyaml', # deps for rvm/ruby
+  'mongodb-community',
+  'node',
+  # 'phantomjs', # for rCaltrain JS test
+  'postgresql@14',
+  'python',
+  # 'terminal-notifier',
+  # 'tmux',
+  'wget',
+]
+
+loop {
+  to_remove = `brew leaves`
+    .split("\n")
+    .map { |long_name|
+      long_name.split('/').last
+    }.delete_if { |name|
+      WHITELIST.include?(name)
+    }
+
+  if to_remove.empty?
+    puts "All cleaned up"
+    exit 0
+  end
+
+  puts "Confirm to remove:"
+  puts to_remove
+  puts
+  print 'yes|y:'
+  unless ['yes', 'y'].include?(gets.chomp)
+    puts 'abort'
+    exit 1
+  end
+
+  to_remove
+    .each { |name|
+      puts `brew uninstall #{name}`
+    }
+}

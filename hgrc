@@ -1,0 +1,18 @@
+[alias]
+head = revert -r p4head
+a = amend -A
+ae = !$HG a && $HG e
+aeu = !$HG a && $HG e && $HG u
+e = evolve
+ea = evolve --any
+ec = evolve --continue
+r = rebase
+rc = rebase --continue
+s = sync
+sa = sync --all
+u = upload .
+ua = upload --all --will-update-only
+he = histedit
+hc = histedit --continue
+[google]
+changes.autoresolve=true

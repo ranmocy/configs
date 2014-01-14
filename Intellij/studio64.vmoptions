@@ -1,0 +1,42 @@
+#
+# *DO NOT* modify this file directly. If there is a value that you would like to override,
+# please add it to your user specific configuration file.
+#
+# See http://tools.android.com/tech-docs/configuration
+#
+-XX:MaxPermSize=350m
+-XX:ReservedCodeCacheSize=240m
+-XX:+UseConcMarkSweepGC
+-XX:SoftRefLRUPolicyMSPerMB=50
+-ea
+-XX:-OmitStackTraceInFastThrow
+-Djna.nosys=true
+-Djna.boot.library.path=
+
+-Djna.debug_load=true
+-Djna.debug_load.jna=true
+-Dsun.io.useCanonCaches=false
+-Djava.net.preferIPv4Stack=true
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:-OmitStackTraceInFastThrow
+-Dawt.useSystemAAFontSettings=lcd
+
+-Denable.metrics.reports=true
+-Dcaches.indexerThreadsCount=24
+-Didea.max.image.filesize=0
+-Xms1g
+-Xmx5g
+-Dstudio.projectview=true
+-Dandroid.adb.path=/usr/bin/adb
+-Dandroid.sdk.custom.url=file:///google/data/ro/teams/android-sdk-g3-releng/android_sdk/aswb.xml
+
+# custom
+-Xms2048m
+-Xmx16G
+-Dawt.useSystemAAFontSettings=on
+-Dswing.aatext=true
+-Dsun.java2d.xrender=true
+
+-Dide.index.image.max.size=0
+-Djdk.util.zip.ensureTrailingSlash=false
+-Dnele.mock.data=false

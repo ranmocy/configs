@@ -1,0 +1,22 @@
+[submodule "zshrc.d"]
+	path = zshrc.d
+	url = https://github.com/ranmocy/zsh_config.git
+[submodule "sublime_text_3_config"]
+	path = sublime_text_3_config
+	url = https://github.com/ranmocy/sublime_text_3_config.git
+[submodule "awesome_config"]
+	path = awesome_config
+	url = https://github.com/ranmocy/awesome_config.git
+[submodule "Karabiner"]
+	path = Library/Application Support/Karabiner
+	url = https://github.com/ranmocy/Karabiner.git
+[submodule "fish_config"]
+	path = fish_config
+	url = https://github.com/ranmocy/fish_config.git
+[submodule "emacs_config"]
+	path = emacs_config
+	url = https://github.com/ranmocy/emacs_config.git
+	# url = https://github.com/bbatsov/prelude.git
+[submodule "texmf"]
+	path = Library/texmf
+	url = https://github.com/ranmocy/texmf.git
