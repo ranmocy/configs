@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "Deleting files as '._*'..."
+find ~/ -name '._*' -exec ls {} \; -exec rm {} \;
+echo "Fixing files with perm 777..."
+find ~/ -type f -perm 777 -exec ls {} \; -exec chmod o-w {} \;
+echo "Fixing dirs with perm 777..." 
+find ~/ -type d -perm 777 -exec ls {} \; -exec chmod o-w {} \;
+echo "Done."
+

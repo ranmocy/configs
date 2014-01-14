@@ -1,0 +1,32 @@
+#!/bin/sh
+PTFILE=`echo ~/Downloads/\[PT\].*.torrent`
+HFILE=`echo ~/Downloads/[^\[PT\]]*.torrent`
+
+case $# in
+    1)
+        if [ $1 = "all" ]; then
+            for file_name in $PTFILE; do
+                scp $file_name root@route.local:~/Torrents/PT/
+                rm $file_name
+            done
+            echo "Finish PT torrents."
+
+            for file_name in $HFILE; do
+                scp $file_name root@route.local:~/Torrents/H/
+                rm $file_name
+            done
+            echo "Finish H torrents."
+        fi
+        ;;
+    2)
+        if [ -n $1 ]; then
+            scp $1 root@route.local:~/Torrents/$2
+        fi
+        ;;
+    *)
+        echo "Usage:"
+        echo "sendtorrent test.torrent PT"
+        echo "sendtorrent all #send all torrents under ~/Downloads"
+        exit 1
+        ;;
+esac

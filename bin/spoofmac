@@ -1,0 +1,2 @@
+#!/bin/sh
+sudo ifconfig en0 ether 9c:20:7b:7f:34:f7
