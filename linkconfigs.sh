@@ -26,4 +26,4 @@ ln -sf ~/.zshrc.d/zshrc.zsh ~/.zshrc
 
 ln -snf $oh_my_library_home/Application\ Support/BetterTouchTool/ ~/Library/Application\ Support/
 ln -snf $oh_my_library_home/Application\ Support/KeyRemap4MacBook/ ~/Library/Application\ Support/
-ln -snf $oh_my_library_home/Application\ Support/Prison\ Architect/ ~/Library/Application\ Support/
+
