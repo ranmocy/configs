@@ -23,6 +23,8 @@ ln -sf $oh_my_configs_home/vimrc ~/.vimrc
 
 ln -snf $oh_my_configs_home/zshrc.d ~/.zshrc.d
 ln -sf ~/.zshrc.d/zshrc.zsh ~/.zshrc
+mkdir -p ~/.config/
+ln -snf $oh_my_configs_home/fish ~/.config/fish
 
 ln -snf $oh_my_library_home/Application\ Support/BetterTouchTool/ ~/Library/Application\ Support/
 ln -snf $oh_my_library_home/Application\ Support/KeyRemap4MacBook/ ~/Library/Application\ Support/

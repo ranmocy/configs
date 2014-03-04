@@ -265,6 +265,8 @@
 	<false/>
 	<key>HideActivityIndicator</key>
 	<false/>
+	<key>HideMenuBarInFullscreen</key>
+	<true/>
 	<key>HideScrollbar</key>
 	<false/>
 	<key>HideTab</key>
@@ -303,21 +305,10 @@
 	<string></string>
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
-	<key>NSToolbar Configuration Terminal Toolbar</key>
-	<dict>
-		<key>TB Display Mode</key>
-		<integer>1</integer>
-		<key>TB Icon Size Mode</key>
-		<integer>1</integer>
-		<key>TB Is Shown</key>
-		<integer>0</integer>
-		<key>TB Size Mode</key>
-		<integer>1</integer>
-	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>362 196 924 485 0 0 1920 1058 </string>
+	<string>384 298 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>983 70 937 988 0 0 1920 1058 </string>
+	<string>720 74 720 804 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -396,11 +387,11 @@
 			<key>Ansi 14 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.99939620494842529</real>
+				<real>0.87058824300765991</real>
 				<key>Green Component</key>
-				<real>0.8515094518661499</real>
+				<real>0.76862746477127075</real>
 				<key>Red Component</key>
-				<real>0.74959999322891235</real>
+				<real>0.69019609689712524</real>
 			</dict>
 			<key>Ansi 15 Color</key>
 			<dict>
@@ -468,11 +459,11 @@
 			<key>Ansi 8 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.35466876626014709</real>
+				<real>0.17561104893684387</real>
 				<key>Green Component</key>
-				<real>0.35466876626014709</real>
+				<real>0.17561104893684387</real>
 				<key>Red Component</key>
-				<real>0.44197186827659607</real>
+				<real>0.21883837878704071</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -524,7 +515,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>116</integer>
+			<integer>88</integer>
 			<key>Command</key>
 			<string>/usr/local/bin/fish</string>
 			<key>Cursor Color</key>
@@ -887,7 +878,7 @@
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
-			<integer>2</integer>
+			<integer>0</integer>
 			<key>Right Option Key Sends</key>
 			<integer>2</integer>
 			<key>Rows</key>
@@ -3478,11 +3469,11 @@
 			<key>Ansi 14 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.99939620494842529</real>
+				<real>0.87058824300765991</real>
 				<key>Green Component</key>
-				<real>0.8515094518661499</real>
+				<real>0.76862746477127075</real>
 				<key>Red Component</key>
-				<real>0.74959999322891235</real>
+				<real>0.69019609689712524</real>
 			</dict>
 			<key>Ansi 15 Color</key>
 			<dict>
@@ -3550,11 +3541,11 @@
 			<key>Ansi 8 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.35466876626014709</real>
+				<real>0.17561104893684387</real>
 				<key>Green Component</key>
-				<real>0.35466876626014709</real>
+				<real>0.17561104893684387</real>
 				<key>Red Component</key>
-				<real>0.44197186827659607</real>
+				<real>0.21883837878704071</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -3640,7 +3631,7 @@
 			<key>Disable Smcup Rmcup</key>
 			<false/>
 			<key>Disable Window Resizing</key>
-			<false/>
+			<true/>
 			<key>Flashing Bell</key>
 			<false/>
 			<key>Foreground Color</key>
@@ -3653,7 +3644,7 @@
 				<real>0.93333333730697632</real>
 			</dict>
 			<key>Guid</key>
-			<string>E790725D-FEE1-45EA-9C3D-D98EBD70DE12</string>
+			<string>3FEE8139-F3EE-44CD-A55D-FC951974AD2A</string>
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
@@ -3969,7 +3960,7 @@
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
-			<integer>2</integer>
+			<integer>0</integer>
 			<key>Right Option Key Sends</key>
 			<integer>2</integer>
 			<key>Rows</key>
@@ -4173,6 +4164,8 @@
 			<string>/Users/ranmocy</string>
 		</dict>
 	</array>
+	<key>NoSyncNeverRemindPrefsChangesCopy</key>
+	<true/>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -4237,10 +4230,8 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-02-25T19:17:49Z</date>
+	<date>2014-02-26T18:16:33Z</date>
 	<key>SavePasteHistory</key>
-	<false/>
-	<key>Show Toolbelt</key>
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
@@ -4262,12 +4253,6 @@
 	<integer>10</integer>
 	<key>ToolbarVisible</key>
 	<false/>
-	<key>ToolbeltTools</key>
-	<array>
-		<string>Profiles</string>
-		<string>Jobs</string>
-		<string>Paste History</string>
-	</array>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
 	<key>URLHandlersByGuid</key>
@@ -10040,7 +10025,7 @@
 				<key>Desired Rows</key>
 				<integer>80</integer>
 				<key>Height</key>
-				<real>988</real>
+				<real>826</real>
 				<key>Hide After Opening</key>
 				<false/>
 				<key>Screen</key>
@@ -10136,11 +10121,11 @@
 											<key>Ansi 14 Color</key>
 											<dict>
 												<key>Blue Component</key>
-												<real>0.99939620494842529</real>
+												<real>0.87058824300765991</real>
 												<key>Green Component</key>
-												<real>0.8515094518661499</real>
+												<real>0.76862746477127075</real>
 												<key>Red Component</key>
-												<real>0.74959999322891235</real>
+												<real>0.69019609689712524</real>
 											</dict>
 											<key>Ansi 15 Color</key>
 											<dict>
@@ -10208,11 +10193,11 @@
 											<key>Ansi 8 Color</key>
 											<dict>
 												<key>Blue Component</key>
-												<real>0.35466876626014709</real>
+												<real>0.17561104893684387</real>
 												<key>Green Component</key>
-												<real>0.35466876626014709</real>
+												<real>0.17561104893684387</real>
 												<key>Red Component</key>
-												<real>0.44197186827659607</real>
+												<real>0.21883837878704071</real>
 											</dict>
 											<key>Ansi 9 Color</key>
 											<dict>
@@ -10831,9 +10816,9 @@
 											<string>/Users/ranmocy</string>
 										</dict>
 										<key>Columns</key>
-										<integer>116</integer>
+										<integer>88</integer>
 										<key>Rows</key>
-										<integer>50</integer>
+										<integer>42</integer>
 										<key>Working Directory</key>
 										<string>/Users/ranmocy</string>
 									</dict>
@@ -10842,9 +10827,9 @@
 									<key>frame</key>
 									<dict>
 										<key>height</key>
-										<real>965</real>
+										<real>803</real>
 										<key>width</key>
-										<real>959</real>
+										<real>718</real>
 										<key>x</key>
 										<real>0.0</real>
 										<key>y</key>
@@ -10857,9 +10842,9 @@
 							<key>frame</key>
 							<dict>
 								<key>height</key>
-								<real>965</real>
+								<real>803</real>
 								<key>width</key>
-								<real>959</real>
+								<real>718</real>
 								<key>x</key>
 								<real>0.0</real>
 								<key>y</key>
@@ -10871,15 +10856,15 @@
 					</dict>
 				</array>
 				<key>TerminalGuid</key>
-				<string>pty-3F9C2D2D-1FBB-4E2D-B36C-21F8244EF034</string>
+				<string>pty-76F3DDB1-A965-483F-A376-FDF9BD4089FD</string>
 				<key>Width</key>
-				<real>960</real>
+				<real>720</real>
 				<key>Window Type</key>
 				<integer>0</integer>
 				<key>X Origin</key>
-				<real>960</real>
+				<real>720</real>
 				<key>Y Origin</key>
-				<real>70</real>
+				<real>52</real>
 			</dict>
 		</array>
 	</dict>
@@ -10894,6 +10879,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20130624</string>
+	<string>1.0.0.20140112</string>
 </dict>
 </plist>
