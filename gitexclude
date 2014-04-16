@@ -10,6 +10,8 @@
 *.pyc
 *.aux
 **/auto/*.el
+*.fdb_latexmk
+*.synctex.gz
 
 .rvmrc
 .ruby-version

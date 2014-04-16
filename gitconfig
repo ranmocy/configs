@@ -5,7 +5,6 @@
 	user = ranmocy
 	gist-oauth-token = 950e227a5b44eb9cd60a7fa80e52c5900dce9025
 [core]
-	editor = "/usr/local/bin/emacsclient -t -a 'vim'"
 	excludesfile = /Users/ranmocy/.gitexclude
 	safecrlf = true
 	autocrlf = false
