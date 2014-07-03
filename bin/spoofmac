@@ -1,2 +1,7 @@
 #!/bin/sh
-sudo ifconfig en0 ether 9c:20:7b:7f:34:f7
+# TV Wifi
+# sudo ifconfig en0 ether 9c:20:7b:7f:34:f7
+# TV Ethernet
+# sudo ifconfig en0 ether 9c:20:7b:7f:34:f8
+# Kindle
+sudo ifconfig en0 ether f0:4f:7c:13:3d:c7

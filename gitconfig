@@ -5,7 +5,7 @@
 	user = ranmocy
 	gist-oauth-token = 950e227a5b44eb9cd60a7fa80e52c5900dce9025
 [core]
-	excludesfile = /Users/ranmocy/.gitexclude
+	excludesfile = ~/.gitexclude
 	safecrlf = true
 	autocrlf = false
 	quotepath = false
@@ -53,7 +53,7 @@
 	graft = !legit graft \"$@\"
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

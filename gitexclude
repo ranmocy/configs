@@ -8,6 +8,7 @@
 *~
 *.tmp
 *.pyc
+*.class
 *.aux
 **/auto/*.el
 *.fdb_latexmk
