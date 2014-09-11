@@ -10,6 +10,8 @@
 *.pyc
 *.class
 *.aux
+*.log
+*.out
 **/auto/*.el
 *.fdb_latexmk
 *.synctex.gz

@@ -1,34 +1,36 @@
 [user]
 	name = Ranmocy Sheng
 	email = ranmocy@gmail.com
-[github]
-	user = ranmocy
-	gist-oauth-token = 950e227a5b44eb9cd60a7fa80e52c5900dce9025
 [core]
-	excludesfile = ~/.gitexclude
-	safecrlf = true
-	autocrlf = false
-	quotepath = false
+	excludesfile = /Users/ranmocy/.gitexclude
+[diff]
+	renames = true
 [color]
 	ui = true
-[merge]
-	summary = true
 [alias]
+	test = !git diff origin/master --name-only | grep _spec.rb | xargs zeus rspec
 	a = add
-	s = status -sb
+	b = branch
+	bl = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/heads/wsheng*"
+	br = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/remotes/origin/wsheng*"
+	bb = !echo "===heads===" && git bl && echo "===remotes===" && git br
 	d = diff
 	ds = diff --staged
 	dh = diff HEAD
-	b = branch
-	l = log --graph --abbrev-commit --topo-order --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
-	lp = log -p
-	r = remote
+	dm = diff master
 	f = fetch -p
 	i = commit
-	o = checkout
 	im = commit -m
 	iam = commit -am
-    amend = !sh -c 'git commit --amend -C HEAD --date \"`date`\"'
+	l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
+	ll = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --graph --topo-order
+	lp = log -p
+    lme = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --author='Wanzhang Sheng'
+	o = checkout
+	r = remote
+	s = status -sb
+	u = !git checkout master && git pull && git fetch -p
+	amend = !sh -c 'git commit --amend -C HEAD --date \"`date`\"'
 	undo = reset --soft HEAD^
 	unstage = reset HEAD --
 	yesterday = log --since '1 day ago' --graph --topo-order --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
@@ -43,27 +45,13 @@
 	st5 = stash pop stash@{5}
 	v = !stree
 	latest = for-each-ref --sort=-committerdate --format=\"%(committername)@%(refname:short)\t[%(committerdate:short)]\t%(contents)\"
-	switch = !legit switch \"$@\"
-	branches = !legit branches
-	sprout = !legit sprout \"$@\"
-	unpublish = !legit unpublish \"$@\"
-	harvest = !legit harvest \"$@\"
-	sync = !legit sync \"$@\"
-	publish = !legit publish \"$@\"
-	graft = !legit graft \"$@\"
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[credential]
-	helper = osxkeychain
+[http]
+	postBuffer = 524288000
 [push]
-	default = current
-[branch]
-	autosetuprebase = always
-[gui]
-	encoding = utf-8
-[i18n]
-	commitencoding = utf-8
+	default = simple
