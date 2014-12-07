@@ -10,6 +10,7 @@
 *.pyc
 *.class
 *.aux
+*.fls
 *.log
 *.out
 **/auto/*.el

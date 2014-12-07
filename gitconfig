@@ -22,10 +22,10 @@
 	i = commit
 	im = commit -m
 	iam = commit -am
-	l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
-	ll = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --graph --topo-order
+	# l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
+	l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --graph --topo-order
 	lp = log -p
-    lme = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --author='Wanzhang Sheng'
+	lme = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --author='Wanzhang Sheng'
 	o = checkout
 	r = remote
 	s = status -sb
@@ -47,7 +47,7 @@
 	latest = for-each-ref --sort=-committerdate --format=\"%(committername)@%(refname:short)\t[%(committerdate:short)]\t%(contents)\"
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -55,3 +55,5 @@
 	postBuffer = 524288000
 [push]
 	default = simple
+[branch]
+	autosetuprebase = always
