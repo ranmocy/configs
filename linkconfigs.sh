@@ -27,5 +27,13 @@ mkdir -p ~/.config/
 ln -snf $oh_my_configs_home/fish ~/.config/fish
 
 ln -snf $oh_my_library_home/Application\ Support/BetterTouchTool/ ~/Library/Application\ Support/
-ln -snf $oh_my_library_home/Application\ Support/KeyRemap4MacBook/ ~/Library/Application\ Support/
+ln -snf $oh_my_library_home/Application\ Support/Karabiner/ ~/Library/Application\ Support/
 
+# Sublime Text 3
+mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/
+ln -snf $oh_my_configs_home/Sublime\ Text\ 3/Installed\ Packages/ ~/Library/Application\ Support/Sublime\ Text\ 3/
+ln -snf $oh_my_configs_home/Sublime\ Text\ 3/Packages/ ~/Library/Application\ Support/Sublime\ Text\ 3/
+
+# RVM
+gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+curl -sSL https://get.rvm.io | bash -s stable

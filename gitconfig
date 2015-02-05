@@ -57,3 +57,7 @@
 	default = simple
 [branch]
 	autosetuprebase = always
+[credential]
+	helper = osxkeychain
+[help]
+	autocorrect = 1

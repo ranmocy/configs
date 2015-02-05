@@ -3,6 +3,8 @@
 
 *.sublime-project
 *.sublime-workspace
+.idea/
+*.iml
 
 *#
 *~
@@ -12,13 +14,15 @@
 *.aux
 *.fls
 *.log
+*.in
 *.out
+*.err
 **/auto/*.el
 *.fdb_latexmk
 *.synctex.gz
 
+.chktexrc
 .rvmrc
 .ruby-version
 .rbenv-gemsets
 .irb-history
-

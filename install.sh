@@ -44,8 +44,8 @@ confirm () {
 ## Install Section ##
 # Homebrew
 install_homebrew() {
-  ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
-  brew install ack autoconf automake coreutils git mobile-shell tmux youtube-dl zsh
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew install ag coreutils git youtube-dl zsh
   # If you have administrator privileges, you must fix an Apple miss
   # configuration in Mac OS X 10.7 Lion by renaming /etc/zshenv to
   # /etc/zprofile, or Zsh will have the wrong PATH when executed
