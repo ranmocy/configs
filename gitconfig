@@ -4,7 +4,8 @@
 [core]
 	excludesfile = /Users/ranmocy/.gitexclude
 [diff]
-	renames = true
+	renames = copies
+	mnemonicprefix = true
 [color]
 	ui = true
 [alias]
@@ -54,10 +55,14 @@
 [http]
 	postBuffer = 524288000
 [push]
-	default = simple
+	default = current
 [branch]
 	autosetuprebase = always
 [credential]
 	helper = osxkeychain
 [help]
 	autocorrect = 1
+[rerere]
+	enabled = true
+[merge]
+	stat = true

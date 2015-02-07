@@ -63,8 +63,8 @@ install_rvm() {
 		echo "${red}You already have ~/.rvm.${reset}"
 		confirm "Remove it?"
 	fi && rm -rf ~/.rvm && curl -L https://get.rvm.io | bash -s stable &&\
-  source ~/.rvm/scripts/rvm &&\
-  sed -i -e 's/ftp\.ruby-lang\.org\/pub\/ruby/ruby\.taobao\.org\/mirrors\/ruby/g' ~/.rvm/config/db
+  source ~/.rvm/scripts/rvm
+  # && sed -i -e 's/ftp\.ruby-lang\.org\/pub\/ruby/ruby\.taobao\.org\/mirrors\/ruby/g' ~/.rvm/config/db
 
   ln -sfv $oh_my_configs_home/gemrc ~/.gemrc
   ln -sfv $oh_my_configs_home/irbrc ~/.irbrc

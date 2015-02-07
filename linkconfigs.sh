@@ -37,3 +37,6 @@ ln -snf $oh_my_configs_home/Sublime\ Text\ 3/Packages/ ~/Library/Application\ Su
 # RVM
 gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable
+
+# Codespace
+ln -snf ~/Dropbox/Codespace ~/
