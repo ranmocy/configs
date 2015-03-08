@@ -10,7 +10,8 @@
 	ui = true
 [alias]
 	test = !git diff origin/master --name-only | grep _spec.rb | xargs zeus rspec
-	a = add
+	# a = !git add % && git s # replaced by a shell script
+	aa = add --all
 	b = branch
 	bl = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/heads/wsheng*"
 	br = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/remotes/origin/wsheng*"
