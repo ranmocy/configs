@@ -57,7 +57,7 @@ link "$CONFIGS/zshrc.d" "$HOME/.zshrc.d"
 link "$HOME/.zshrc.d/zshrc.zsh" "$HOME/.zshrc"
 finish "zsh"
 
-link "$CONFIGS/fish" "$HOME/.config/fish"
+link "$CONFIGS/fish_config/" "$HOME/.config/fish"
 finish "fish"
 
 link "$CONFIGS/emacs.d" "$HOME/.emacs.d"
