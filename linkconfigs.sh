@@ -1,42 +1,107 @@
-#!/bin/sh
+#!/bin/bash
 
-# path of config
-sync_path=~/Dropbox/Configs
-oh_my_configs_home=~/.oh-my-configs
-oh_my_packages_home=~/Dropbox/Packages
-oh_my_library_home=~/Dropbox/Library
+# Colors
+black='\033[0;30m'
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[0;33m'
+blue='\033[0;34m'
+magenta='\033[0;35m'
+cyan='\033[0;36m'
+white='\033[0;37m'
+reset='\033[0m'
 
-ln -snf $sync_path $oh_my_configs_home
+# Env
+CONFIGS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PLATFORM=`uname`
+function link() {
+  local source=$1
+  local target=$2
+  local parent="$( dirname $target )"
+  # check if parent exists
+  if [ ! -e $parent ]; then
+    echo "$parent does not exist, mkdir_p"
+    mkdir -p $parent
+  fi
+  # check not a symbolic link and it's a directory
+  if [ ! -L $target ] && [ -d $target ]; then
+    read -r -p "$target is a directory. Remove_rf? [y/N] " response
+    response=${response,,}    # tolower
+    if [[ $response =~ ^(yes|y)$ ]]; then
+      rm -rf "$target"
+    fi
+  fi
+  echo "Linking $source to $target..."
+  ln -sfn "$source" "$target"
+}
+function select_platform() {
+  local result=$1 # default
+  if [[ $PLATFORM == 'Linux' ]]; then
+    result=$1
+  elif [[ $PLATFORM == 'Darwin' ]]; then
+    result=$2
+  fi
+  echo $result
+}
+function confirm () {
+  # call with a prompt string or use a default
+  read -r -p "${1:-Are you sure?}[y/n/all] " response
+  case $response in
+    [yY][eE][sS]|[yY])
+      true
+      ;;
+    all)
+      export do_all=true
+      true
+      ;;
+    *)
+      $do_all || false
+      ;;
+  esac
+}
 
-ln -sf $oh_my_configs_home/ackrc ~/.ackrc
-ln -sf $oh_my_configs_home/bashrc ~/.bashrc
-ln -sf $oh_my_configs_home/bin ~/bin
-ln -sf $oh_my_configs_home/emacs.d ~/.emacs.d
-ln -sf $oh_my_configs_home/gemrc ~/.gemrc
-ln -sf $oh_my_configs_home/gitconfig ~/.gitconfig
-ln -sf $oh_my_configs_home/gitexclude ~/.gitexclude
-ln -sf $oh_my_configs_home/htoprc ~/.htoprc
-ln -sf $oh_my_configs_home/irbrc ~/.irbrc
-ln -sf $oh_my_configs_home/screenrc ~/.screenrc
-ln -sf $oh_my_configs_home/tmux.conf ~/.tmux.conf
-ln -sf $oh_my_configs_home/vimrc ~/.vimrc
 
-ln -snf $oh_my_configs_home/zshrc.d ~/.zshrc.d
-ln -sf ~/.zshrc.d/zshrc.zsh ~/.zshrc
-mkdir -p ~/.config/
-ln -snf $oh_my_configs_home/fish ~/.config/fish
+# Init
+git submodule update --init --recursive
 
-ln -snf $oh_my_library_home/Application\ Support/BetterTouchTool/ ~/Library/Application\ Support/
-ln -snf $oh_my_library_home/Application\ Support/Karabiner/ ~/Library/Application\ Support/
+# Git
+link "$CONFIGS/gitconfig" "$HOME/.gitconfig"
+link "$CONFIGS/gitexclude" "$HOME/.gitexclude"
+echo "Finish setup Git."
 
-# Sublime Text 3
-mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/
-ln -snf $oh_my_configs_home/Sublime\ Text\ 3/Installed\ Packages/ ~/Library/Application\ Support/Sublime\ Text\ 3/
-ln -snf $oh_my_configs_home/Sublime\ Text\ 3/Packages/ ~/Library/Application\ Support/Sublime\ Text\ 3/
+# zshrc
+link "$CONFIGS/zshrc.d" "$HOME/.zshrc.d"
+link "$HOME/.zshrc.d/zshrc.zsh" "$HOME/.zshrc"
+echo "Finish setup zsh."
 
-# RVM
-gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
-curl -sSL https://get.rvm.io | bash -s stable
+# fish
+link "$CONFIGS/fish" "$HOME/.config/fish"
+echo "Finish setup fish."
 
-# Codespace
-ln -snf ~/Dropbox/Codespace ~/
+# SublimeText
+link \
+"$CONFIGS/sublime_text_3_config" \
+"$(select_platform \
+   "$HOME/.config/sublime-text-3/Packages/User" \
+   "$HOME/Library/Application Support/Sublime Text 3/Packages/User")"
+echo "Finish setup Sublime Text."
+
+# Mac
+if [[ $PLATFORM == 'Darwin' ]]; then
+    link "$CONFIGS/Application\ Support/BetterTouchTool/" "$HOME/Library/Application\ Support/"
+    link "$CONFIGS/Application\ Support/Karabiner/" "$HOME/Library/Application\ Support/"
+fi
+
+# Misc
+link "$CONFIGS/bin"        "$HOME/bin"
+link "$CONFIGS/ackrc"      "$HOME/.ackrc"
+link "$CONFIGS/bashrc"     "$HOME/.bashrc"
+link "$CONFIGS/emacs.d"    "$HOME/.emacs.d"
+link "$CONFIGS/gemrc"      "$HOME/.gemrc"
+link "$CONFIGS/gitconfig"  "$HOME/.gitconfig"
+link "$CONFIGS/gitexclude" "$HOME/.gitexclude"
+link "$CONFIGS/htoprc"     "$HOME/.htoprc"
+link "$CONFIGS/irbrc"      "$HOME/.irbrc"
+link "$CONFIGS/screenrc"   "$HOME/.screenrc"
+link "$CONFIGS/tmux.conf"  "$HOME/.tmux.conf"
+link "$CONFIGS/vimrc"      "$HOME/.vimrc"

@@ -1,0 +1,6 @@
+[submodule "zshrc.d"]
+	path = zshrc.d
+	url = https://github.com/ranmocy/zsh_config.git
+[submodule "sublime_text_3_config"]
+	path = sublime_text_3_config
+	url = https://github.com/ranmocy/sublime_text_3_config.git

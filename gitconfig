@@ -10,7 +10,7 @@
 	ui = true
 [alias]
 	test = !git diff origin/master --name-only | grep _spec.rb | xargs zeus rspec
-	# a = !git add % && git s # replaced by a shell script
+	a = add
 	aa = add --all
 	b = branch
 	bl = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/heads/wsheng*"
@@ -60,7 +60,7 @@
 [branch]
 	autosetuprebase = always
 [credential]
-	helper = osxkeychain
+	helper = store
 [help]
 	autocorrect = 1
 [rerere]
