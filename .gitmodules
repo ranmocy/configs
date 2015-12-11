@@ -7,3 +7,6 @@
 [submodule "awesome_config"]
 	path = awesome_config
 	url = https://github.com/ranmocy/awesome_config.git
+[submodule "Karabiner"]
+	path = Karabiner
+	url = https://github.com/ranmocy/Karabiner.git

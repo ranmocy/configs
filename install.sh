@@ -67,19 +67,19 @@ link "$CONFIGS/gemrc" "$HOME/.gemrc"
 link "$CONFIGS/irbrc" "$HOME/.irbrc"
 finish "Ruby"
 
-link "$CONFIGS/ackrc"      "$HOME/.ackrc"
+link "$CONFIGS/ackrc" "$HOME/.ackrc"
 finish "Ack"
 
-link "$CONFIGS/htoprc"     "$HOME/.htoprc"
+link "$CONFIGS/htoprc" "$HOME/.htoprc"
 finish "htop"
 
-link "$CONFIGS/screenrc"   "$HOME/.screenrc"
+link "$CONFIGS/screenrc" "$HOME/.screenrc"
 finish "Screen"
 
-link "$CONFIGS/tmux.conf"  "$HOME/.tmux.conf"
+link "$CONFIGS/tmux.conf" "$HOME/.tmux.conf"
 finish "Tmux"
 
-link "$CONFIGS/vimrc"      "$HOME/.vimrc"
+link "$CONFIGS/vimrc" "$HOME/.vimrc"
 finish "VIM"
 
 # Linux
