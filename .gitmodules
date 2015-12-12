@@ -13,3 +13,7 @@
 [submodule "fish_config"]
 	path = fish_config
 	url = https://github.com/ranmocy/fish_config.git
+[submodule "emacs_config"]
+	path = emacs_config
+	url = https://github.com/ranmocy/emacs_config.git
+	url = https://github.com:bbatsov/prelude.git
