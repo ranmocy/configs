@@ -27,6 +27,14 @@ function link() {
   local source=$1
   local target=$2
   local parent="$( dirname "$target" )"
+  if [[ $source = */ ]]; then
+    warn 'Your source tailing "/"! May hurt linking process!'
+    exit 1
+  fi
+  if [[ $target = */ ]]; then
+    warn 'Your target tailing "/"! May hurt linking process!'
+    exit 1
+  fi
   # check if parent exists
   if [ ! -e "$parent" ]; then
     warn "$parent does not exist, mkdir_p"
@@ -47,7 +55,7 @@ function link() {
 
 
 git submodule update --init --recursive
-link "$CONFIGS/bin/" "$HOME/bin/"
+link "$CONFIGS/bin" "$HOME/bin"
 finish "Init"
 
 link "$CONFIGS/gitconfig" "$HOME/.gitconfig"
@@ -57,14 +65,14 @@ finish "Git"
 link "$CONFIGS/bashrc" "$HOME/.bashrc"
 finish "Bash"
 
-link "$CONFIGS/zshrc.d/" "$HOME/.zshrc.d/"
+link "$CONFIGS/zshrc.d" "$HOME/.zshrc.d"
 link "$HOME/.zshrc.d/zshrc.zsh" "$HOME/.zshrc"
 finish "zsh"
 
-link "$CONFIGS/fish_config/" "$HOME/.config/fish/"
+link "$CONFIGS/fish_config" "$HOME/.config/fish"
 finish "fish"
 
-link "$CONFIGS/emacs.d/" "$HOME/.emacs.d/"
+link "$CONFIGS/emacs.d" "$HOME/.emacs.d"
 finish "Emacs"
 
 link "$CONFIGS/gemrc" "$HOME/.gemrc"
@@ -88,10 +96,10 @@ finish "VIM"
 
 # Linux
 if [[ $PLATFORM == 'Linux' ]]; then
-    link "$CONFIGS/sublime_text_3_config/" "$HOME/.config/sublime-text-3/Packages/User/"
+    link "$CONFIGS/sublime_text_3_config" "$HOME/.config/sublime-text-3/Packages/User"
     finish "Sublime Text"
 
-    link "$CONFIGS/awesome_config/" "$HOME/.config/awesome/"
+    link "$CONFIGS/awesome_config" "$HOME/.config/awesome"
     finish "Awesome 3"
 
     # link "$CONFIGS/Xdefaults" "$HOME/.Xdefaults"
@@ -102,9 +110,9 @@ fi
 
 # Mac
 if [[ $PLATFORM == 'Darwin' ]]; then
-    link "$CONFIGS/sublime_text_3_config/" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/"
+    link "$CONFIGS/sublime_text_3_config" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
     finish "Sublime Text"
 
-    link "$CONFIGS/Karabiner/" "$HOME/Library/Application Support/Karabiner/"
+    link "$CONFIGS/Karabiner" "$HOME/Library/Application Support/Karabiner"
     finish "Karabiner"
 fi
