@@ -1,4 +1,0 @@
-#!/usr/bin/env ruby
-
-`git add #{ARGV.join(' ')}`
-exec "git s"
