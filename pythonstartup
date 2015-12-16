@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+
+# python startup file
+import readline
+import rlcompleter
+import atexit
+import os
+
+try:
+    import readline
+except ImportError:
+    pass
+else:
+    try:
+        import rlcompleter
+        readline.set_completer(rlcompleter.Completer().complete)
+    except ImportError:
+        pass
+    # tab completion
+    readline.parse_and_bind("tab: complete")
+
+    # history file
+    histfile = os.path.join(os.environ['HOME'], '.pythonhistory')
+    try:
+        readline.read_history_file(histfile)
+    except IOError:
+        pass
+    atexit.register(readline.write_history_file, histfile)
+    del histfile
+
+del os, readline, rlcompleter

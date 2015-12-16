@@ -79,6 +79,9 @@ link "$CONFIGS/gemrc" "$HOME/.gemrc"
 link "$CONFIGS/irbrc" "$HOME/.irbrc"
 finish "Ruby"
 
+link "$CONFIGS/pythonstartup" "$HOME/.pythonstartup"
+finish "Python"
+
 link "$CONFIGS/ackrc" "$HOME/.ackrc"
 finish "Ack"
 
