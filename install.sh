@@ -72,7 +72,7 @@ finish "zsh"
 link "$CONFIGS/fish_config" "$HOME/.config/fish"
 finish "fish"
 
-link "$CONFIGS/emacs.d" "$HOME/.emacs.d"
+link "$CONFIGS/emacs_config" "$HOME/.emacs.d"
 finish "Emacs"
 
 link "$CONFIGS/gemrc" "$HOME/.gemrc"
