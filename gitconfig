@@ -1,6 +1,7 @@
 [user]
 	name = Ranmocy Sheng
 	email = ranmocy@gmail.com
+	signingkey = FC6B5559
 [core]
 	excludesfile = /Users/ranmocy/.gitexclude
 	pager = diff-so-fancy | less --tabs=1,5 -R
