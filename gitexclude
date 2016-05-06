@@ -14,8 +14,6 @@
 *.aux
 *.fls
 *.log
-*.in
-*.out
 *.err
 **/auto/*.el
 *.fdb_latexmk
