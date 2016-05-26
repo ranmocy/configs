@@ -1,121 +1,37 @@
 !--------------------Colors--------------------
 ! colour scheme
-*background:#1a1a1a
-*foreground:#fff
-*highlightcolor:#444
-*color0:#000000
-*color1:#ff6565
-*color2:#93d44f
-*color3:#eab93d
-*color4:#204a87
-*color5:#ce5c00
-*color6:#89b6e2
-*color7:#cccccc
-*color8:#555753
-*color9:#ff8d8d
-*color10:#c8e7a8
-*color11:#ffc123
-*color12:#3465a4
-*color13:#f57900
-*color14:#46a4ff
-*color15:#ffffff
-
-! tangoesque scheme
-*background: #111111
-*foreground: #babdb6
-! black (not tango) + darkgrey
-*color0:  #000000
-*color8:  #555753
-! darkred + red
-*color1:  #ff6565
-*color9:  #ff8d8d
-! darkgreen + green
-*color2:  #93d44f
-*color10: #c8e7a8
-! darkyellow + yellow
-*color3:  #eab93d
-*color11: #ffc123
-! darkblue + blue
-*color4:  #204a87
-*color12: #3465a4
-! darkmangenta + mangenta
-*color5:  #ce5c00
-*color13: #f57900
-!darkcyan + cyan (both not tango)
-*color6:  #89b6e2
-*color14: #46a4ff
-! lightgrey + white
-*color7:  #cccccc
-*color15: #ffffff
-
-
-!----------xft----------
-! xft resources
-xft.antialias:true
-xft.dpi:133
-xft.hinting:true
-! hintslight | hintsmedium | hintsfull
-Xft.hintstyle:hintlight
-! rgba subpixel hinting (for lcds)
-Xft.rgba:rgb
+*foreground: #dddddd
+*background: #282828
+*color0: #000000
+*color1: #cd5c5c
+*color2: #50e42b
+*color3: #ffb400
+*color4: #00aafe
+*color5: #e75544
+*color6: #b0c4de
+*color7: #ecedf0
+*color8: #382d2d
+*color9: #cc5533
+*color10: #c4f530
+*color11: #ffee88
+*color12: #6495ed
+*color13: #ef907e
+*color14: #b0c4de
+*color15: #ffead8
 
 
 !----------urxvt----------
-! urxvt.background: rgba:1111/1111/1111/dddd
-urxvt*foreground: #f2f2f2
-urxvt*background: #101010
-urxvt*color0: #101010
-urxvt*color1: #f13a21
-urxvt*color2: #93f91d
-urxvt*color3: #ffd00a
-urxvt*color4: #004f9e
-urxvt*color5: #ec0048
-urxvt*color6: #2aa7e7
-urxvt*color7: #f2f2f2
-urxvt*color8: #1d202f
-urxvt*color9: #ff361e
-urxvt*color10: #ffc005
-urxvt*color11: #93ff00
-urxvt*color12: #0071ff
-urxvt*color13: #ef0051
-urxvt*color14: #4bb8fd
-urxvt*color15: #a020f0
-
-urxvt*transparent:true
-urxvt*cursorcolor:#83c048
-urxvt*highlightcolor:#83c048
-urxvt*shading:50
-urxvt*fading:50
+urxvt*font:xft:Monospace:size=16:antialias=true
+urxvt*boldfont:xft:Monospace:bold:size=16:antialias=true
 
 urxvt*scrollBar:false
 urxvt*scrollBar_right:true
 urxvt*savelines:32767
 
-urxvt.inputmethod:ibus
-urxvt.preeditType:OverTheSpot
 
-! urxvt*font:xft:Bitstream\ Vera\ Sans\ Mono:style=roman:pixelsize=13
-! urxvt*font:xft:Dejavu Sans Mono:bold:pixelsize=16
-urxvt*font:xft:Inconsolata:pixelsize=16
-
-! urxvt*font:xft:Inconsolata:size=12
-! urxvt*font:xft:WenQuanYi Micro Hei:size=12
-! urxvt*font:xft:terminus:size=12
-! urxvt*boldfont:xft:WenQuanYi Micro Hei:bold:size=12
-! urxvt*font:xft:terminus
-! urxvt*boldfont:xft:terminus:bold:dpi=96
-! urxvt*font:xft:DejaVu Sans Mono:size=12
-
-
-! xterm config ---------------------------------------------------------------
-xterm*termname: xterm
-xterm*background: #000000
-xterm*foreground: #a8a8a8
-! xft font name style
-! xterm*faceName:DejaVu Sans Mono
-! xterm*faceSize:12
-xterm*facename:liberation mono
-xterm*facesize:9
+!----------xterm----------
+xterm*facename:Monospace
+xterm*facesize:16
 ! enable 256 color
 xterm*termname:xterm-color
 xterm*cursorblink:false
@@ -127,38 +43,3 @@ xterm*altsendsescape:true
 ! matches selection for urls and emails when double-click
 xterm*charclass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:38
 xterm*trimselection: true
-
-
-! xscreensaver ---------------------------------------------------------------
-!font settings
-xscreensaver.dialog.headingfont:        -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.dialog.bodyfont:           -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.dialog.labelfont:          -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.dialog.unamefont:          -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.dialog.buttonfont:         -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.dialog.datefont:           -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.passwd.passwdfont:         -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
-!general dialog box (affects main hostname, username, password text)
-xscreensaver.dialog.foreground:         #ffffff
-xscreensaver.dialog.background:         #111111
-xscreensaver.dialog.topshadowcolor:     #111111
-xscreensaver.dialog.bottomshadowcolor:  #111111
-xscreensaver.dialog.button.foreground:  #666666
-xscreensaver.dialog.button.background:  #ffffff
-!username/password input box and date text colour
-xscreensaver.dialog.text.foreground:    #666666
-xscreensaver.dialog.text.background:    #ffffff
-xscreensaver.dialog.internalborderwidth:24
-xscreensaver.dialog.borderwidth:        20
-xscreensaver.dialog.shadowthickness:    2
-!timeout bar (background is actually determined by dialog.text.background)
-xscreensaver.passwd.thermometer.foreground:  #ff0000
-xscreensaver.passwd.thermometer.background:  #000000
-xscreensaver.passwd.thermometer.width:       8
-!datestamp format--see the strftime(3) manual page for details
-xscreensaver.dateformat:    %i:%m%p %a %b %d, %y
-
-
-!----------xcursor----------
-! sets xcursor theme (installed under /usr/share/icons/ or ~/.icons/)
-xcursor.theme:vanilla-dmz-aa
