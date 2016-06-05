@@ -52,11 +52,15 @@ function link() {
   echo "Linking $source to $target..."
   ln -sfn "$source" "$target"
 }
+function link_default() {
+  local path=$1
+  link "$CONFIGS/$1" "$HOME/$1"
+}
 
 
 git submodule update --init --recursive
-link "$CONFIGS/bin" "$HOME/bin"
-finish "Init"
+link_default "bin"
+finish "bin"
 
 link "$CONFIGS/gitconfig" "$HOME/.gitconfig"
 link "$CONFIGS/gitexclude" "$HOME/.gitexclude"
@@ -116,6 +120,23 @@ if [[ $PLATFORM == 'Darwin' ]]; then
     link "$CONFIGS/sublime_text_3_config" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
     finish "Sublime Text"
 
-    link "$CONFIGS/Karabiner" "$HOME/Library/Application Support/Karabiner"
+    link_default "Library/Application Support/Karabiner"
     finish "Karabiner"
+
+    link_default "Library/Developer/Xcode/UserData/FontAndColorThemes"
+    link_default "Library/Developer/Xcode/UserData/KeyBindings"
+    finish "Xcode"
+
+    link_default "Library/KeyBindings/DefaultKeyBinding.dict"
+    finish "DefaultKeyBinding"
+
+    link_default "Library/Preferences/com.googlecode.iterm2.plist"
+    link_default "Library/Preferences/com.hegenberg.BetterTouchTool.plist"
+    link_default "Library/Preferences/org.pqrs.Karabiner-AXNotifier.plist"
+    link_default "Library/Preferences/org.pqrs.Karabiner.plist"
+    link_default "Library/Preferences/org.pqrs.Seil.plist"
+    finish "Preferences"
+
+    link_default "Library/texmf"
+    finish "texmf"
 fi
