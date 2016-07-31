@@ -12,7 +12,8 @@ white=`tput setaf 7`
 reset=`tput sgr0`
 
 # Env
-CONFIGS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CONFIGS="$HOME/.oh-my-configs"
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PLATFORM=`uname`
 function success() {
   echo "${green}$1${reset}"
@@ -57,6 +58,9 @@ function link_default() {
   link "$CONFIGS/$1" "$HOME/$1"
 }
 
+
+link "$SCRIPT_DIR" "$CONFIGS"
+finish "Configs"
 
 git submodule update --init --recursive
 link_default "bin"
