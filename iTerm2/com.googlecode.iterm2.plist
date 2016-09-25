@@ -441,11 +441,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>626 428 574 183 0 0 2560 1417 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>59 250 606 456 0 0 1280 777 </string>
+	<string>271 729 606 456 0 0 2560 1417 </string>
+	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
+	<string>974 932 616 174 0 0 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>332 288 620 392 0 0 1280 777 </string>
+	<string>972 768 620 392 0 0 2560 1417 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>269 122 796 473 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>131 0 980 777 0 0 1280 777 </string>
+	<string>1280 0 1277 1417 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -4119,8 +4123,10 @@
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
+	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>7E3399A7-C4B2-4541-B33D-A25E72709219</string>
+	<string>B31A7CEB-A3F9-4BF4-A7AF-16E8092FE23A</string>
 	<key>NoSyncLastTipTime</key>
 	<real>479441522.48512799</real>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
@@ -4187,7 +4193,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/mocy/.oh-my-configs/iTerm2</string>
+	<string>/Users/ranmocy/.oh-my-configs/iTerm2</string>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -4203,14 +4209,16 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=86</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=65</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-07-21T20:00:13Z</date>
+	<date>2016-09-25T04:02:27Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
+	<false/>
+	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>ShowPaneTitles</key>
 	<true/>
@@ -15739,6 +15747,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.4</string>
+	<string>3.0.9</string>
 </dict>
 </plist>
