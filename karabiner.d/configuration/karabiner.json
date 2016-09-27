@@ -4,9 +4,10 @@
             "name": "Default profile",
             "selected": true,
             "simple_modifications": {
-                // left_control[Hold] => Hyper
-                // left_control[Press] => Escape
-                // char[Hold] => Hyper + char
+                "char[Hold]" : "Hyper + char",
+                "caps_lock[Press]" : "escape",
+
+                "left_control" : "hyper",
                 "fn": "caps_lock",
                 "caps_lock": "left_control"
             }
