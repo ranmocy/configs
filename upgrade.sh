@@ -12,9 +12,10 @@ git pull
 git submodule foreach --recursive 'git checkout master && git pull origin master'
 
 # update zshrc
-if [[ -d zshrc.d ]]; then
+ZSHRCD=$CONFIGS"zshrc.d"
+if [[ -d $ZSHRCD ]]; then
     echo "Updating zshrc deps..."
-    cd zshrc.d
+    cd $ZSHRCD
     for d in 'oh-my-zsh' 'z' 'zsh-syntax-highlighting'; do
         cd $d
         git checkout master && git pull origin master
