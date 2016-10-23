@@ -1,0 +1,49 @@
+#!/usr/bin/env ruby
+
+WHITELIST = [
+  "boost",
+  "ffmpeg",
+  "gcc",
+  'git',
+  'git-extras',
+  'htop-osx',
+  'libyaml',
+  'node',
+  'octave',
+  'python',
+  'qt',
+  'terminal-notifier',
+  'the_silver_searcher',
+  'tmux',
+  'watchman',
+  'zsh',
+]
+
+loop {
+  to_remove = `brew leaves`
+    .split("\n")
+    .map { |long_name|
+      long_name.split('/').last
+    }.delete_if { |name|
+      WHITELIST.include?(name)
+    }
+
+  if to_remove.empty?
+    puts "All cleaned up"
+    exit 0
+  end
+
+  puts "Confirm to remove:"
+  puts to_remove
+  puts
+  print 'yes|y:'
+  unless ['yes', 'y'].include?(gets.chomp)
+    puts 'abort'
+    exit 1
+  end
+
+  to_remove
+    .each { |name|
+      puts `brew uninstall #{name}`
+    }
+}
