@@ -144,3 +144,8 @@ if [[ $PLATFORM == 'Darwin' ]]; then
     link_default "Library/texmf"
     finish "texmf"
 fi
+
+# Ignore local changes
+# This is an binary file and it's updated frequently. But I never change the config.
+# So ignore local changes.
+git update-index --assume-unchanged Library/Preferences/com.hegenberg.BetterTouchTool.plist
