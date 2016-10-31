@@ -1,22 +1,13 @@
 #!/usr/bin/env ruby
 
 WHITELIST = [
-  "boost",
-  "ffmpeg",
-  "gcc",
-  'git',
   'git-extras',
   'htop-osx',
-  'libyaml',
   'node',
   'octave',
-  'python',
-  'qt',
   'terminal-notifier',
   'the_silver_searcher',
   'tmux',
-  'watchman',
-  'zsh',
 ]
 
 loop {
