@@ -127,6 +127,12 @@ if [[ $PLATFORM == 'Darwin' ]]; then
     link_default "Library/Application Support/Karabiner"
     finish "Karabiner"
 
+    link "$CONFIGS/karabiner.d/configuration" "$HOME/.karabiner.d/configuration"
+    finish "Karabiner-Element"
+
+    link "$CONFIGS/hammerspoon" "$HOME/.hammerspoon"
+    finish "Hammerspoon"
+
     link_default "Library/Developer/Xcode/UserData/FontAndColorThemes"
     link_default "Library/Developer/Xcode/UserData/KeyBindings"
     finish "Xcode"

@@ -20,7 +20,7 @@
             "selected": true,
             "simple_modifications": {
                 "caps_lock": "left_control",
-                "left_control": "hyper"
+                "left_control": "f18"
             }
         }
     ]
