@@ -76,3 +76,5 @@
 	stat = true
 [interactive]
 	diffFilter = diff-highlight
+[pull]
+	rebase = true
