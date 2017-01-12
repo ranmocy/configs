@@ -4,7 +4,6 @@
 	signingkey = FC6B5559
 [core]
 	excludesfile = /Users/ranmocy/.gitexclude
-	# pager = diff-so-fancy | less --tabs=1,5 -R
 [diff]
 	renames = copies
 	mnemonicprefix = true
@@ -54,12 +53,6 @@
 	st5 = stash pop stash@{5}
 	v = !stree
 	latest = for-each-ref --sort=-committerdate --format=\"%(committername)@%(refname:short)\t[%(committerdate:short)]\t%(contents)\"
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [http]
 	postBuffer = 524288000
 [push]
@@ -68,7 +61,6 @@
 	autosetuprebase = always
 [credential]
 	helper = osxkeychain
-	helper = store
 [help]
 	autocorrect = 1
 [rerere]
