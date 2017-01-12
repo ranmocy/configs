@@ -124,10 +124,7 @@ if [[ $PLATFORM == 'Darwin' ]]; then
     link "$CONFIGS/sublime_text_3_config" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
     finish "Sublime Text"
 
-    link_default "Library/Application Support/Karabiner"
-    finish "Karabiner"
-
-    link "$CONFIGS/karabiner.d/configuration" "$HOME/.karabiner.d/configuration"
+    link "$CONFIGS/karabiner" "$HOME/.config/karabiner"
     finish "Karabiner-Element"
 
     link "$CONFIGS/hammerspoon" "$HOME/.hammerspoon"
@@ -142,9 +139,6 @@ if [[ $PLATFORM == 'Darwin' ]]; then
 
     link_default "Library/Preferences/com.googlecode.iterm2.plist"
     link_default "Library/Preferences/com.hegenberg.BetterTouchTool.plist"
-    link_default "Library/Preferences/org.pqrs.Karabiner-AXNotifier.plist"
-    link_default "Library/Preferences/org.pqrs.Karabiner.plist"
-    link_default "Library/Preferences/org.pqrs.Seil.plist"
     finish "Preferences"
 
     link_default "Library/texmf"
