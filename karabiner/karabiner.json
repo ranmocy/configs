@@ -30,7 +30,13 @@
             "name": "Default profile",
             "selected": true,
             "simple_modifications": {
-                "left_shift": "f18"
+                "caps_lock": "left_control"
+            },
+            "standalone_keys": {
+                "caps_lock": "escape"
+            },
+            "one_to_many_mappings": {
+                "left_control": ["left_control", "left_option", "left_command"]
             },
             "virtual_hid_keyboard": {
                 "keyboard_type": "ansi"
