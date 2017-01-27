@@ -7,12 +7,10 @@ fi
 
 # User specific aliases and functions
 
+export PATH=$HOME/bin_corp:$HOME/bin:$PATH
+
 # If not running interactively, don't do anything!
 [[ $- != *i* ]] && return
-
-if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
-    tmux attach || tmux || zsh
-fi
 
 alias ls='ls -G'
 alias l='ls -l'
@@ -21,6 +19,10 @@ alias ll='ls -al'
 alias g='git'
 alias t='tmux'
 alias ta='tmux attach'
+
+if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
+    (prodcertstatus || prodaccess) && (tmux attach || tmux || zsh)
+fi
 
 # Custom bash prompt via kirsle.net/wizards/ps1.html
 export PS1="\[$(tput bold)\]\[$(tput setaf 8)\][\[$(tput setaf 4)\]\u\[$(tput setaf 8)\]@\[$(tput setaf 2)\]\h:\[$(tput setaf 3)\]\W\[$(tput setaf 8)\]]\[$(tput setaf 6)\]\(～￣▽￣)～ \[$(tput sgr0)\]"
