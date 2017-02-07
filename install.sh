@@ -139,6 +139,7 @@ if [[ $PLATFORM == 'Darwin' ]]; then
 
     link_default "Library/Preferences/com.googlecode.iterm2.plist"
     link_default "Library/Preferences/com.hegenberg.BetterTouchTool.plist"
+    link_default "Library/Preferences/WebStorm2016.3/keymaps"
     finish "Preferences"
 
     link_default "Library/texmf"
