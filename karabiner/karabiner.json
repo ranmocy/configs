@@ -1,4 +1,9 @@
 {
+    "global": {
+        "check_for_updates_on_startup": false,
+        "show_in_menu_bar": false,
+        "show_profile_name_in_menu_bar": false
+    },
     "profiles": [
         {
             "devices": [
@@ -28,6 +33,13 @@
                 "f9": "fastforward"
             },
             "name": "Default profile",
+            "one_to_many_mappings": {
+                "left_control": [
+                    "left_control",
+                    "left_option",
+                    "left_command"
+                ]
+            },
             "selected": true,
             "simple_modifications": {
                 "caps_lock": "left_control"
@@ -35,11 +47,10 @@
             "standalone_keys": {
                 "caps_lock": "escape"
             },
-            "one_to_many_mappings": {
-                "left_control": ["left_control", "left_option", "left_command"]
-            },
             "virtual_hid_keyboard": {
-                "keyboard_type": "ansi"
+                "caps_lock_delay_milliseconds": 0,
+                "keyboard_type": "ansi",
+                "standalone_keys_delay_milliseconds": 0
             }
         }
     ]
