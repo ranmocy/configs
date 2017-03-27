@@ -21,11 +21,10 @@ alias t='tmux'
 alias ta='tmux attach'
 
 if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
-    (prodcertstatus || prodaccess) && (tmux attach || tmux || zsh)
+    tmux attach || tmux || zsh
 fi
 
 # Custom bash prompt via kirsle.net/wizards/ps1.html
 export PS1="\[$(tput bold)\]\[$(tput setaf 8)\][\[$(tput setaf 4)\]\u\[$(tput setaf 8)\]@\[$(tput setaf 2)\]\h:\[$(tput setaf 3)\]\W\[$(tput setaf 8)\]]\[$(tput setaf 6)\]\(～￣▽￣)～ \[$(tput sgr0)\]"
 
 [[ "$PS1" ]] && hash fortune >/dev/null 2>&1 && fortune
-
