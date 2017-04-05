@@ -16,7 +16,7 @@
 [submodule "emacs_config"]
 	path = emacs_config
 	url = https://github.com/ranmocy/emacs_config.git
-	url = https://github.com/bbatsov/prelude.git
+	# url = https://github.com/bbatsov/prelude.git
 [submodule "texmf"]
 	path = Library/texmf
 	url = https://github.com/ranmocy/texmf.git

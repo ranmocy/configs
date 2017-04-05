@@ -113,10 +113,11 @@ if [[ $PLATFORM == 'Linux' ]]; then
     link "$CONFIGS/awesome_config" "$HOME/.config/awesome"
     finish "Awesome 3"
 
-    # link "$CONFIGS/Xdefaults" "$HOME/.Xdefaults"
-    # link "$CONFIGS/xinitrc" "$HOME/.xinitrc"
+    link "$CONFIGS/Xdefaults" "$HOME/.Xdefaults"
+    link "$CONFIGS/xinitrc" "$HOME/.xinitrc"
+    link "$CONFIGS/xprofile" "$HOME/.xprofile"
     # link "$CONFIGS/xmodmap" "$HOME/.xmodmap"
-    # finish "X"
+    finish "X"
 fi
 
 # Mac
