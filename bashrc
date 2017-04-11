@@ -7,7 +7,7 @@ fi
 
 # User specific aliases and functions
 
-export PATH=$HOME/bin_corp:$HOME/bin:$PATH
+export PATH=$HOME/Android/Sdk/platform-tools:$HOME/bin_corp:$HOME/bin:$PATH
 
 # If not running interactively, don't do anything!
 [[ $- != *i* ]] && return
@@ -20,6 +20,10 @@ alias g='git'
 alias t='tmux'
 alias ta='tmux attach'
 
+if [ -x "$HOME/bin_corp/kmap" ]; then
+    $HOME/bin_corp/kmap
+fi
+
 if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
     tmux attach || tmux || zsh
 fi
@@ -28,3 +32,6 @@ fi
 export PS1="\[$(tput bold)\]\[$(tput setaf 8)\][\[$(tput setaf 4)\]\u\[$(tput setaf 8)\]@\[$(tput setaf 2)\]\h:\[$(tput setaf 3)\]\W\[$(tput setaf 8)\]]\[$(tput setaf 6)\]\(～￣▽￣)～ \[$(tput sgr0)\]"
 
 [[ "$PS1" ]] && hash fortune >/dev/null 2>&1 && fortune
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

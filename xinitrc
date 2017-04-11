@@ -2,8 +2,9 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
-# xrandr --output eDP1 --auto --output DP1 --auto --left-of eDP1 &
+# xrandr --output DP-1 --auto --output DVI-I-1 --auto --rotate left --left-of DP-1 &
 
+# locker &
 # xmodmap .xmodmap &
 
 # exec awesome
