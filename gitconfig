@@ -3,7 +3,7 @@
 	email = ranmocy@gmail.com
 	signingkey = FC6B5559
 [core]
-	excludesfile = /Users/ranmocy/.gitexclude
+	excludesfile = ~/.gitexclude
 [diff]
 	renames = copies
 	mnemonicprefix = true
