@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Colors
 black=`tput setaf 0`
 red=`tput setaf 1`
@@ -12,8 +14,7 @@ white=`tput setaf 7`
 reset=`tput sgr0`
 
 # Env
-CONFIGS="$HOME/.oh-my-configs"
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CONFIGS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PLATFORM=`uname`
 function success() {
   echo "${green}$1${reset}"
@@ -29,11 +30,11 @@ function link() {
   local target=$2
   local parent="$( dirname "$target" )"
   if [[ $source = */ ]]; then
-    warn 'Your source tailing "/"! May hurt linking process!'
+    warn 'Your source has tailing "/"! May hurt linking process!'
     exit 1
   fi
   if [[ $target = */ ]]; then
-    warn 'Your target tailing "/"! May hurt linking process!'
+    warn 'Your target has tailing "/"! May hurt linking process!'
     exit 1
   fi
   # check if parent exists
@@ -58,9 +59,6 @@ function link_default() {
   link "$CONFIGS/$1" "$HOME/$1"
 }
 
-
-link "$SCRIPT_DIR" "$CONFIGS"
-finish "Configs"
 
 git submodule update --init --recursive
 link_default "bin"
@@ -140,7 +138,8 @@ if [[ $PLATFORM == 'Darwin' ]]; then
 
     link_default "Library/Preferences/com.googlecode.iterm2.plist"
     link_default "Library/Preferences/com.hegenberg.BetterTouchTool.plist"
-    link_default "Library/Preferences/WebStorm2016.3/keymaps"
+    webstorm_target=`find ~/Library/Preferences -name 'WebStorm*' | tail -1`
+    link "Library/Preferences/WebStorm/keymaps" "$webstorm_target/keymaps"
     finish "Preferences"
 
     link_default "Library/texmf"
