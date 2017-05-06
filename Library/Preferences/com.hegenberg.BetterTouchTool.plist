@@ -1788,14 +1788,34 @@
 		</dict>
 		<key>2017-5-5</key>
 		<dict>
+			<key>0::0</key>
+			<integer>2</integer>
+			<key>0::2</key>
+			<integer>6</integer>
 			<key>0::4</key>
+			<integer>3</integer>
+			<key>1::128::19::::</key>
+			<integer>3</integer>
+			<key>1::129::20::::</key>
+			<integer>1</integer>
+			<key>9::(null)::152::⇧⌥⌃L::</key>
 			<integer>1</integer>
 			<key>9::(null)::177::⌥⌃C</key>
 			<integer>1</integer>
+			<key>9::(null)::177::⌥⌃C::</key>
+			<integer>1</integer>
 			<key>9::(null)::177::⌥⌃F</key>
 			<integer>1</integer>
+			<key>9::(null)::177::⌥⌃T::</key>
+			<integer>2</integer>
+			<key>9::(null)::19::⌥⌃J::</key>
+			<integer>3</integer>
 			<key>9::(null)::20::⌥⌃K</key>
 			<integer>1</integer>
+			<key>9::(null)::20::⌥⌃K::</key>
+			<integer>1</integer>
+			<key>9::(null)::21::⌥⌃'::</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>NSColorPanelMode</key>
@@ -2097,7 +2117,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-05-05T10:26:39Z</date>
+	<date>2017-05-06T08:39:58Z</date>
 	<key>alreadyAskedForInitialWindowSnappingSettings</key>
 	<true/>
 	<key>bringMovingWindowToFront</key>
