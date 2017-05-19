@@ -1,0 +1,22 @@
+<keymap version="1" name="Ranmocy macOS" parent="Mac OS X 10.5+">
+  <action id="CompareTwoFiles" />
+  <action id="Diff.ShowDiff" />
+  <action id="Diff.ShowSettingsPopup" />
+  <action id="EditorDuplicate">
+    <keyboard-shortcut first-keystroke="shift meta d" />
+  </action>
+  <action id="EditorSelectLine">
+    <keyboard-shortcut first-keystroke="meta l" />
+  </action>
+  <action id="EditorSelectWord">
+    <keyboard-shortcut first-keystroke="meta d" />
+  </action>
+  <action id="FileChooser.GotoDesktop" />
+  <action id="GotoLine" />
+  <action id="ReopenClosedTab">
+    <keyboard-shortcut first-keystroke="alt w" />
+  </action>
+  <action id="SendEOF" />
+  <action id="ShelvedChanges.Diff" />
+  <action id="Vcs.Log.FocusTextFilter" />
+</keymap>

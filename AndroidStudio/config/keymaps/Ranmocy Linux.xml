@@ -1,4 +1,4 @@
-<keymap version="1" name="Ranmocy" parent="$default">
+<keymap version="1" name="Ranmocy Linux" parent="$default">
   <action id="ActivateAndroidMonitorToolWindow">
     <keyboard-shortcut first-keystroke="alt 6" />
   </action>
