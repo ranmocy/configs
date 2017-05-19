@@ -153,7 +153,7 @@ fi
 # Ignore local changes
 # This is an binary file and it's updated frequently. But I never change the config.
 # So ignore local changes.
-# git update-index --assume-unchanged Library/Preferences/com.hegenberg.BetterTouchTool.plist
+git update-index --assume-unchanged Library/Preferences/com.googlecode.iterm2.plist
 
 # Convert from binary to plain text
 # plutil -convert xml1 Library/Preferences/com.googlecode.iterm2.plist
