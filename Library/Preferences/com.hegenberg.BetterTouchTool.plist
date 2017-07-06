@@ -5,7 +5,7 @@
 	<key>4DE5EF47D24FB203DFEBFB0C4C57987630C65B60</key>
 	<true/>
 	<key>BTRCurrentIP</key>
-	<string>192.168.1.100</string>
+	<string>172.19.57.206</string>
 	<key>BTRCurrentPort</key>
 	<string>49640</string>
 	<key>BTRLastPort</key>
@@ -15,19 +15,25 @@
 	<key>BTTConvertedDevices</key>
 	<true/>
 	<key>BTTDidRegisterForUpdateStats</key>
-	<string>2.11</string>
+	<string>2.266</string>
 	<key>BTTFixedTapSequenceMigrationIssue</key>
 	<true/>
 	<key>BTTHashes</key>
 	<string>9D7E11B98A91A3CFC7B601D056E05F5FB430EC7E::84B1AB4B40CAFB6B58D8B89DEC6C6804A97C785D::B38F6CD317E3E2DAEFD1CEF64801D9A91C425D9C::::</string>
 	<key>BTTIdentifierX</key>
-	<string>7509f78b6bbfe69f77c932c38f6aeaff</string>
+	<string>a0612a0d85875652c1d9cc594eb76426</string>
 	<key>BTTLastClamshellState</key>
 	<false/>
 	<key>BTTMigratedToSQLLite</key>
 	<true/>
 	<key>BTTNumberOfStarts</key>
-	<integer>857</integer>
+	<integer>858</integer>
+	<key>BTTRemapFiveFingerClickWithThumb</key>
+	<true/>
+	<key>BTTRemapFourFingerClickWithThumb</key>
+	<true/>
+	<key>BTTRemapThreeFingerClickWithThumb</key>
+	<true/>
 	<key>BTTRemoteDeviceDictionary</key>
 	<dict/>
 	<key>BTTRemoteEnabled</key>
@@ -39,7 +45,7 @@
 	<key>BTTSelectedKeyboardTabIndex</key>
 	<integer>0</integer>
 	<key>BTTStartTime</key>
-	<date>2017-05-30T14:00:03Z</date>
+	<date>2017-07-06T01:10:17Z</date>
 	<key>BTTTouchBarChecked</key>
 	<true/>
 	<key>BTTUpdatedToBTRCapable</key>
@@ -2162,6 +2168,8 @@
 			<integer>3</integer>
 		</dict>
 	</dict>
+	<key>BTTWasDisabledBeforeSleep</key>
+	<false/>
 	<key>NSColorPanelMode</key>
 	<string>6</string>
 	<key>NSNavLastRootDirectory</key>
@@ -2461,7 +2469,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-05-30T14:00:04Z</date>
+	<date>2017-07-06T01:10:18Z</date>
 	<key>alreadyAskedForInitialWindowSnappingSettings</key>
 	<true/>
 	<key>bringMovingWindowToFront</key>
@@ -2475,7 +2483,7 @@
 	<key>cornerSnapViaGesture</key>
 	<true/>
 	<key>dValues</key>
-	<string>80</string>
+	<string></string>
 	<key>didRestartAfterEventTapFault</key>
 	<integer>-1</integer>
 	<key>dragMaxLeft</key>
@@ -2632,7 +2640,7 @@
 	<key>v054DefaultsChanged</key>
 	<true/>
 	<key>version</key>
-	<string>2.11</string>
+	<string>2.266</string>
 	<key>w7DragResize</key>
 	<true/>
 	<key>warningString</key>

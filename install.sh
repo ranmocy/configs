@@ -156,5 +156,5 @@ fi
 git update-index --assume-unchanged Library/Preferences/com.googlecode.iterm2.plist
 
 # Convert from binary to plain text
-# plutil -convert xml1 Library/Preferences/com.googlecode.iterm2.plist
-# plutil -convert xml1 Library/Preferences/com.hegenberg.BetterTouchTool.plist
+plutil -convert xml1 Library/Preferences/com.googlecode.iterm2.plist
+plutil -convert xml1 Library/Preferences/com.hegenberg.BetterTouchTool.plist
