@@ -123,6 +123,9 @@ if [[ $PLATFORM == 'Darwin' ]]; then
     link "$CONFIGS/sublime_text_3_config" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
     finish "Sublime Text"
 
+    link_default "Library/Application Support/BetterTouchTool/bttdata2"
+    finish "BetterTouchTool"
+
     link "$CONFIGS/karabiner" "$HOME/.config/karabiner"
     finish "Karabiner-Element"
 
