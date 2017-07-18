@@ -5,7 +5,7 @@
 	<key>4DE5EF47D24FB203DFEBFB0C4C57987630C65B60</key>
 	<true/>
 	<key>BTRCurrentIP</key>
-	<string>172.19.57.206</string>
+	<string>192.168.1.100</string>
 	<key>BTRCurrentPort</key>
 	<string>49640</string>
 	<key>BTRLastPort</key>
@@ -21,13 +21,13 @@
 	<key>BTTHashes</key>
 	<string>9D7E11B98A91A3CFC7B601D056E05F5FB430EC7E::84B1AB4B40CAFB6B58D8B89DEC6C6804A97C785D::B38F6CD317E3E2DAEFD1CEF64801D9A91C425D9C::::</string>
 	<key>BTTIdentifierX</key>
-	<string>a0612a0d85875652c1d9cc594eb76426</string>
+	<string>7509f78b6bbfe69f77c932c38f6aeaff</string>
 	<key>BTTLastClamshellState</key>
 	<false/>
 	<key>BTTMigratedToSQLLite</key>
 	<true/>
 	<key>BTTNumberOfStarts</key>
-	<integer>858</integer>
+	<integer>946</integer>
 	<key>BTTRemapFiveFingerClickWithThumb</key>
 	<true/>
 	<key>BTTRemapFourFingerClickWithThumb</key>
@@ -45,7 +45,7 @@
 	<key>BTTSelectedKeyboardTabIndex</key>
 	<integer>0</integer>
 	<key>BTTStartTime</key>
-	<date>2017-07-06T01:10:17Z</date>
+	<date>2017-07-18T01:44:32Z</date>
 	<key>BTTTouchBarChecked</key>
 	<true/>
 	<key>BTTUpdatedToBTRCapable</key>
@@ -2167,6 +2167,171 @@
 			<key>9::(null)::21::⌥⌃'::</key>
 			<integer>3</integer>
 		</dict>
+		<key>2017-7-10</key>
+		<dict>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-7-11</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>1</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-7-12</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>1</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>1</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>1</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-7-13</key>
+		<dict>
+			<key>0::0</key>
+			<integer>2</integer>
+			<key>0::2</key>
+			<integer>4</integer>
+			<key>0::4</key>
+			<integer>9</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>4</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>7</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>2</integer>
+		</dict>
+		<key>2017-7-14</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>3</integer>
+			<key>0::4</key>
+			<integer>4</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>2</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>3</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>4</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-7-15</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>3</integer>
+			<key>0::4</key>
+			<integer>7</integer>
+			<key>9::(null)::113::⌘⌥⌃H::</key>
+			<integer>1</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>1</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>3</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>7</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-7-16</key>
+		<dict>
+			<key>0::0</key>
+			<integer>3</integer>
+			<key>0::2</key>
+			<integer>2</integer>
+			<key>0::4</key>
+			<integer>6</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>1</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>2</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>6</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>3</integer>
+		</dict>
+		<key>2017-7-17</key>
+		<dict/>
+		<key>2017-7-24</key>
+		<dict/>
+		<key>2017-7-29</key>
+		<dict/>
+		<key>2017-7-6</key>
+		<dict>
+			<key>0::2</key>
+			<integer>11</integer>
+			<key>0::4</key>
+			<integer>7</integer>
+			<key>9::(null)::123::⌘⌥⌃⌫::</key>
+			<integer>4</integer>
+			<key>9::(null)::152::⇧⌥⌃L::</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌘⌥⌃T::</key>
+			<integer>9</integer>
+			<key>9::(null)::177::⌥⌃C::</key>
+			<integer>8</integer>
+			<key>9::(null)::177::⌥⌃E::</key>
+			<integer>17</integer>
+			<key>9::(null)::177::⌥⌃T::</key>
+			<integer>13</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>8</integer>
+			<key>9::(null)::19::⌥⌃J::</key>
+			<integer>3</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>5</integer>
+			<key>9::(null)::20::⌥⌃K::</key>
+			<integer>2</integer>
+		</dict>
+		<key>2017-7-7</key>
+		<dict>
+			<key>0::2</key>
+			<integer>6</integer>
+			<key>0::4</key>
+			<integer>7</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>6</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>7</integer>
+		</dict>
+		<key>2017-7-8</key>
+		<dict>
+			<key>0::2</key>
+			<integer>4</integer>
+			<key>0::4</key>
+			<integer>5</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>4</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>5</integer>
+		</dict>
+		<key>2017-7-9</key>
+		<dict>
+			<key>0::2</key>
+			<integer>2</integer>
+			<key>0::4</key>
+			<integer>2</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>2</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>BTTWasDisabledBeforeSleep</key>
 	<false/>
@@ -2469,7 +2634,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-06T01:10:18Z</date>
+	<date>2017-07-25T05:55:46Z</date>
 	<key>alreadyAskedForInitialWindowSnappingSettings</key>
 	<true/>
 	<key>bringMovingWindowToFront</key>
@@ -2483,7 +2648,7 @@
 	<key>cornerSnapViaGesture</key>
 	<true/>
 	<key>dValues</key>
-	<string></string>
+	<string>80</string>
 	<key>didRestartAfterEventTapFault</key>
 	<integer>-1</integer>
 	<key>dragMaxLeft</key>
