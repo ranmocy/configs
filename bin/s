@@ -2,10 +2,10 @@
 
 case "$OSTYPE" in
   darwin*)
-    /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $@
+    /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n $@
     ;;
   linux*)
-    subl $@
+    subl -n $@
     ;;
   *)
     echo "unknown: $OSTYPE"
