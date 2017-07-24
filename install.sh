@@ -147,6 +147,13 @@ if [[ $PLATFORM == 'Darwin' ]]; then
     else
       echo "No webstorm found!"
     fi
+    studio_target=`find $HOME/Library/Preferences -name 'AndroidStudio*' | tail -1`
+    if [[ !  -z  $studio_target  ]]; then
+      link "$CONFIGS/AndroidStudio/config/colors" "$studio_target/colors"
+      link "$CONFIGS/AndroidStudio/config/keymaps" "$studio_target/keymaps"
+    else
+      echo "No AndroidStudio found!"
+    fi
     finish "Preferences"
 
     link_default "Library/texmf"
