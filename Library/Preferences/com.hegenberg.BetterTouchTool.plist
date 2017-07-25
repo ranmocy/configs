@@ -15,7 +15,7 @@
 	<key>BTTConvertedDevices</key>
 	<true/>
 	<key>BTTDidRegisterForUpdateStats</key>
-	<string>2.266</string>
+	<string>2.270</string>
 	<key>BTTFixedTapSequenceMigrationIssue</key>
 	<true/>
 	<key>BTTHashes</key>
@@ -27,7 +27,7 @@
 	<key>BTTMigratedToSQLLite</key>
 	<true/>
 	<key>BTTNumberOfStarts</key>
-	<integer>946</integer>
+	<integer>976</integer>
 	<key>BTTRemapFiveFingerClickWithThumb</key>
 	<true/>
 	<key>BTTRemapFourFingerClickWithThumb</key>
@@ -45,7 +45,7 @@
 	<key>BTTSelectedKeyboardTabIndex</key>
 	<integer>0</integer>
 	<key>BTTStartTime</key>
-	<date>2017-07-18T01:44:32Z</date>
+	<date>2017-07-25T05:10:11Z</date>
 	<key>BTTTouchBarChecked</key>
 	<true/>
 	<key>BTTUpdatedToBTRCapable</key>
@@ -2268,8 +2268,83 @@
 		</dict>
 		<key>2017-7-17</key>
 		<dict/>
-		<key>2017-7-24</key>
+		<key>2017-7-18</key>
 		<dict/>
+		<key>2017-7-19</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>2</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>1</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>2</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-7-21</key>
+		<dict>
+			<key>0::0</key>
+			<integer>3</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>5</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>2</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>1</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>5</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>3</integer>
+		</dict>
+		<key>2017-7-22</key>
+		<dict>
+			<key>0::4</key>
+			<integer>1</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>1</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-7-23</key>
+		<dict>
+			<key>0::0</key>
+			<integer>12</integer>
+			<key>0::2</key>
+			<integer>14</integer>
+			<key>0::4</key>
+			<integer>23</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>1</integer>
+			<key>9::(null)::123::⌘⌥⌃⌫::</key>
+			<integer>2</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>14</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>23</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>12</integer>
+		</dict>
+		<key>2017-7-24</key>
+		<dict>
+			<key>0::0</key>
+			<integer>5</integer>
+			<key>0::2</key>
+			<integer>6</integer>
+			<key>0::4</key>
+			<integer>3</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>6</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>3</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>5</integer>
+		</dict>
 		<key>2017-7-29</key>
 		<dict/>
 		<key>2017-7-6</key>
@@ -2634,7 +2709,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-25T05:55:46Z</date>
+	<date>2017-07-25T02:54:56Z</date>
 	<key>alreadyAskedForInitialWindowSnappingSettings</key>
 	<true/>
 	<key>bringMovingWindowToFront</key>
@@ -2805,7 +2880,7 @@
 	<key>v054DefaultsChanged</key>
 	<true/>
 	<key>version</key>
-	<string>2.266</string>
+	<string>2.270</string>
 	<key>w7DragResize</key>
 	<true/>
 	<key>warningString</key>
