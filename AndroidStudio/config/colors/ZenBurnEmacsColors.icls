@@ -1,4 +1,5 @@
 <scheme name="ZenBurnEmacsColors" version="142" parent_scheme="Default">
+  <option name="FONT_SCALE" value="1.0" />
   <option name="LINE_SPACING" value="1.2" />
   <font>
     <option name="EDITOR_FONT_NAME" value="Source Code Pro" />
@@ -389,6 +390,12 @@
     </option>
     <option name="DEFAULT_NUMBER">
       <value />
+    </option>
+    <option name="DEFAULT_STATIC_FIELD">
+      <value>
+        <option name="FOREGROUND" value="d9b2f4" />
+        <option name="FONT_TYPE" value="2" />
+      </value>
     </option>
     <option name="DEFAULT_STRING">
       <value>
