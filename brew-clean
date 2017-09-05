@@ -1,12 +1,15 @@
 #!/usr/bin/env ruby
 
 WHITELIST = [
+  'curl',
+  'coreutils',
   'git-extras',
   'htop-osx',
+  'libyaml', # deps for rvm/ruby
   'node',
-  'octave',
+  'phantomjs', # for rCaltrain JS test
+  'python',
   'terminal-notifier',
-  'the_silver_searcher',
   'tmux',
 ]
 
