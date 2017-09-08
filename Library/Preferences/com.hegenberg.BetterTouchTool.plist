@@ -15,7 +15,7 @@
 	<key>BTTConvertedDevices</key>
 	<true/>
 	<key>BTTDidRegisterForUpdateStats</key>
-	<string>2.292</string>
+	<string>2.297</string>
 	<key>BTTFixedTapSequenceMigrationIssue</key>
 	<true/>
 	<key>BTTHashes</key>
@@ -27,7 +27,7 @@
 	<key>BTTMigratedToSQLLite</key>
 	<true/>
 	<key>BTTNumberOfStarts</key>
-	<integer>1058</integer>
+	<integer>1065</integer>
 	<key>BTTRemapFiveFingerClickWithThumb</key>
 	<true/>
 	<key>BTTRemapFourFingerClickWithThumb</key>
@@ -45,7 +45,7 @@
 	<key>BTTSelectedKeyboardTabIndex</key>
 	<integer>0</integer>
 	<key>BTTStartTime</key>
-	<date>2017-08-26T13:45:22Z</date>
+	<date>2017-09-08T05:10:09Z</date>
 	<key>BTTTouchBarChecked</key>
 	<true/>
 	<key>BTTUpdatedToBTRCapable</key>
@@ -2696,8 +2696,48 @@
 		</dict>
 		<key>2017-8-25</key>
 		<dict/>
+		<key>2017-8-26</key>
+		<dict>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-8-27</key>
+		<dict>
+			<key>0::0</key>
+			<integer>2</integer>
+			<key>0::2</key>
+			<integer>4</integer>
+			<key>0::4</key>
+			<integer>3</integer>
+			<key>1::128::19::::</key>
+			<integer>1</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>3</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>3</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>2</integer>
+		</dict>
+		<key>2017-8-28</key>
+		<dict>
+			<key>0::4</key>
+			<integer>2</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>2</integer>
+		</dict>
+		<key>2017-8-29</key>
+		<dict/>
 		<key>2017-8-3</key>
 		<dict/>
+		<key>2017-8-30</key>
+		<dict>
+			<key>0::4</key>
+			<integer>1</integer>
+			<key>1::129::20::::</key>
+			<integer>1</integer>
+		</dict>
 		<key>2017-8-5</key>
 		<dict/>
 		<key>2017-8-6</key>
@@ -2724,6 +2764,57 @@
 			<integer>4</integer>
 			<key>9::(null)::21::⌘⌥⌃'::</key>
 			<integer>2</integer>
+		</dict>
+		<key>2017-9-1</key>
+		<dict/>
+		<key>2017-9-2</key>
+		<dict/>
+		<key>2017-9-3</key>
+		<dict/>
+		<key>2017-9-4</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>2</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>1</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>2</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-9-5</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>3</integer>
+			<key>0::4</key>
+			<integer>3</integer>
+			<key>1::129::20::::</key>
+			<integer>1</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>2</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>5</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>2</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-9-6</key>
+		<dict/>
+		<key>2017-9-7</key>
+		<dict>
+			<key>0::4</key>
+			<integer>1</integer>
+			<key>1::129::20::::</key>
+			<integer>1</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>BTTWasDisabledBeforeSleep</key>
@@ -3027,7 +3118,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-08-26T07:42:18Z</date>
+	<date>2017-09-07T12:14:32Z</date>
 	<key>alreadyAskedForInitialWindowSnappingSettings</key>
 	<true/>
 	<key>bringMovingWindowToFront</key>
@@ -3171,18 +3262,11 @@
 	</array>
 	<key>savedWindowInformation</key>
 	<data>
-	YnBsaXN0MDDUAQIDBAUGMjNYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKkHCA4kJSYnKC5VJG51bGzSCQoLDVpOUy5vYmplY3RzViRjbGFzc6EMgAKACNsP
-	ChAREhMUFRYXGBkaGxwbHh8gGyIjV29sZFNpemVfEBFzbmFwcGVkQnlUaXRsZWJhcltv
-	bGRQb3NpdGlvbl8QE3NuYXBwZWRWaWFTeW50aERyYWdfEBBsYXN0U25hcFBvc2l0aW9u
-	XxAPcmVzaXplZFBvc2l0aW9uXxAUc25hcHBlZFZpYU5vcm1hbERyYWdbZHJhZ1NuYXBw
-	ZWRXbmV3U2l6ZVx3aW5kb3dOdW1iZXKAA4AHCIAGCBACgAUJCIAEERG0XHsxMjU3LCAx
-	NDE3fVx7MTI1NywgMTQxN31YezQ2LCAyM31aezEzMDMsIDIzfdIpKissWiRjbGFzc25h
-	bWVYJGNsYXNzZXNZQVBJV2luZG93oistWE5TT2JqZWN00ikqLzBeTlNNdXRhYmxlQXJy
-	YXmjLzEtV05TQXJyYXlfEA9OU0tleWVkQXJjaGl2ZXLRNDVUcm9vdIABAAgAEQAaACMA
-	LQAyADcAQQBHAEwAVwBeAGAAYgBkAHsAgwCXAKMAuQDMAN4A9QEBAQkBFgEYARoBGwEd
-	AR4BIAEiASMBJAEmASkBNgFDAUwBVwFcAWcBcAF6AX0BhgGLAZoBngGmAbgBuwHAAAAA
-	AAAAAgEAAAAAAAAANgAAAAAAAAAAAAAAAAAAAcI=
+	YnBsaXN0MDDUAQIDBAUGFBVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKMHCA1VJG51bGzSCQoLDFpOUy5vYmplY3RzViRjbGFzc6CAAtIODxARWiRjbGFz
+	c25hbWVYJGNsYXNzZXNeTlNNdXRhYmxlQXJyYXmjEBITV05TQXJyYXlYTlNPYmplY3Rf
+	EA9OU0tleWVkQXJjaGl2ZXLRFhdUcm9vdIABCBEaIy0yNztBRlFYWVtga3SDh4+Yqq2y
+	AAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=
 	</data>
 	<key>showPrefsAtNextLaunch</key>
 	<false/>
@@ -3205,7 +3289,7 @@
 	<key>v054DefaultsChanged</key>
 	<true/>
 	<key>version</key>
-	<string>2.292</string>
+	<string>2.297</string>
 	<key>w7DragResize</key>
 	<true/>
 	<key>warningString</key>
