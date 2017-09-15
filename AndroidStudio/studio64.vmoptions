@@ -29,3 +29,10 @@
 -Dstudio.projectview=true
 -Dandroid.adb.path=/usr/bin/adb
 -Dandroid.sdk.custom.url=file:///google/data/ro/teams/android-sdk-g3-releng/android_sdk/aswb.xml
+
+# custom
+-Xms2048m
+-Xmx16G
+-Dawt.useSystemAAFontSettings=on
+-Dswing.aatext=true
+-Dsun.java2d.xrender=true
