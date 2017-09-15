@@ -11,6 +11,12 @@
      * make common symbols and non-english letters.
      */
 
+    /* Home and End */
+    "\UF729"  = moveToBeginningOfLine:;             /* home */
+    "\UF72B"  = moveToEndOfLine:;                   /* end */
+    "$\UF729" = moveToBeginningOfLineAndModifySelection:; // shift-home
+    "$\UF72B" = moveToEndOfLineAndModifySelection:; // shift-end
+
     /* Ctrl shortcuts */
     "^l"        = "centerSelectionInVisibleArea:";  /* C-l          Recenter */
     "^/"        = "undo:";                          /* C-/          Undo */
