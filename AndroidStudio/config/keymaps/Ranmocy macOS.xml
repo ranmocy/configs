@@ -16,6 +16,10 @@
   </action>
   <action id="FileChooser.GotoDesktop" />
   <action id="GotoLine" />
+  <action id="ReformatCode">
+    <keyboard-shortcut first-keystroke="meta alt l" />
+    <keyboard-shortcut first-keystroke="ctrl meta l" />
+  </action>
   <action id="ReopenClosedTab">
     <keyboard-shortcut first-keystroke="alt w" />
   </action>
