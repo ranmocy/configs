@@ -357,9 +357,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>332 288 620 392 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>840 353 1018 447 0 0 2560 1417 </string>
+	<string>840 371 937 464 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>322 0 980 1417 0 0 2560 1417 </string>
+	<string>1303 0 1255 1417 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -4179,10 +4179,18 @@
 				<integer>88</integer>
 				<key>Desired Rows</key>
 				<integer>80</integer>
+				<key>Has Toolbelt</key>
+				<false/>
 				<key>Height</key>
-				<real>826</real>
+				<real>1417</real>
 				<key>Hide After Opening</key>
 				<false/>
+				<key>Hiding Toolbelt Should Resize Window</key>
+				<true/>
+				<key>Is Hotkey Window</key>
+				<false/>
+				<key>Saved Window Type</key>
+				<integer>0</integer>
 				<key>Screen</key>
 				<integer>0</integer>
 				<key>Selected Tab Index</key>
@@ -4196,7 +4204,7 @@
 							<array>
 								<dict>
 									<key>Is Active</key>
-									<true/>
+									<integer>1</integer>
 									<key>Session</key>
 									<dict>
 										<key>Bookmark</key>
@@ -4216,7 +4224,7 @@
 											<key>AWDS Window Option</key>
 											<string>No</string>
 											<key>Allow Title Reporting</key>
-											<false/>
+											<true/>
 											<key>Ambiguous Double Width</key>
 											<false/>
 											<key>Ansi 0 Color</key>
@@ -4406,7 +4414,7 @@
 											<key>Columns</key>
 											<integer>88</integer>
 											<key>Command</key>
-											<string>/usr/local/bin/fish</string>
+											<string>zsh</string>
 											<key>Cursor Color</key>
 											<dict>
 												<key>Blue Component</key>
@@ -4476,278 +4484,194 @@
 													<key>Text</key>
 													<string>0x1f</string>
 												</dict>
-												<key>0x32-0x40000</key>
-												<dict>
-													<key>Action</key>
-													<integer>11</integer>
-													<key>Text</key>
-													<string>0x00</string>
-												</dict>
-												<key>0x33-0x40000</key>
-												<dict>
-													<key>Action</key>
-													<integer>11</integer>
-													<key>Text</key>
-													<string>0x1b</string>
-												</dict>
-												<key>0x34-0x40000</key>
-												<dict>
-													<key>Action</key>
-													<integer>11</integer>
-													<key>Text</key>
-													<string>0x1c</string>
-												</dict>
-												<key>0x35-0x40000</key>
-												<dict>
-													<key>Action</key>
-													<integer>11</integer>
-													<key>Text</key>
-													<string>0x1d</string>
-												</dict>
-												<key>0x36-0x40000</key>
+												<key>0x5e-0x60000</key>
 												<dict>
 													<key>Action</key>
 													<integer>11</integer>
 													<key>Text</key>
 													<string>0x1e</string>
 												</dict>
-												<key>0x37-0x40000</key>
+												<key>0x7f-0x80000</key>
 												<dict>
 													<key>Action</key>
 													<integer>11</integer>
 													<key>Text</key>
-													<string>0x1f</string>
-												</dict>
-												<key>0x38-0x40000</key>
-												<dict>
-													<key>Action</key>
-													<integer>11</integer>
-													<key>Text</key>
-													<string>0x7f</string>
+													<string>0x1b 0x08</string>
 												</dict>
 												<key>0xf700-0x220000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[1;2A</string>
+													<string>[A</string>
 												</dict>
 												<key>0xf700-0x240000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[1;5A</string>
+													<string>[A</string>
 												</dict>
 												<key>0xf700-0x260000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[1;6A</string>
+													<string>[A</string>
 												</dict>
 												<key>0xf700-0x280000</key>
 												<dict>
 													<key>Action</key>
-													<integer>11</integer>
+													<integer>10</integer>
 													<key>Text</key>
-													<string>0x1b 0x1b 0x5b 0x41</string>
+													<string>[A</string>
 												</dict>
 												<key>0xf701-0x220000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[1;2B</string>
+													<string>[B</string>
 												</dict>
 												<key>0xf701-0x240000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[1;5B</string>
+													<string>[B</string>
 												</dict>
 												<key>0xf701-0x260000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[1;6B</string>
+													<string>[B</string>
 												</dict>
 												<key>0xf701-0x280000</key>
 												<dict>
 													<key>Action</key>
-													<integer>11</integer>
+													<integer>10</integer>
 													<key>Text</key>
-													<string>0x1b 0x1b 0x5b 0x42</string>
+													<string>[B</string>
 												</dict>
 												<key>0xf702-0x220000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[1;2D</string>
+													<string>[D</string>
 												</dict>
 												<key>0xf702-0x240000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[1;5D</string>
+													<string>[5D</string>
 												</dict>
 												<key>0xf702-0x260000</key>
-												<dict>
-													<key>Action</key>
-													<integer>10</integer>
-													<key>Text</key>
-													<string>[1;6D</string>
-												</dict>
-												<key>0xf702-0x280000</key>
 												<dict>
 													<key>Action</key>
 													<integer>11</integer>
 													<key>Text</key>
 													<string>0x1b 0x1b 0x5b 0x44</string>
 												</dict>
+												<key>0xf702-0x280000</key>
+												<dict>
+													<key>Action</key>
+													<integer>10</integer>
+													<key>Text</key>
+													<string>b</string>
+												</dict>
 												<key>0xf703-0x220000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[1;2C</string>
+													<string>[C</string>
 												</dict>
 												<key>0xf703-0x240000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[1;5C</string>
+													<string>[5C</string>
 												</dict>
 												<key>0xf703-0x260000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[1;6C</string>
+													<string>[C</string>
 												</dict>
 												<key>0xf703-0x280000</key>
 												<dict>
 													<key>Action</key>
-													<integer>11</integer>
-													<key>Text</key>
-													<string>0x1b 0x1b 0x5b 0x43</string>
-												</dict>
-												<key>0xf704-0x20000</key>
-												<dict>
-													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[1;2P</string>
-												</dict>
-												<key>0xf705-0x20000</key>
-												<dict>
-													<key>Action</key>
-													<integer>10</integer>
-													<key>Text</key>
-													<string>[1;2Q</string>
-												</dict>
-												<key>0xf706-0x20000</key>
-												<dict>
-													<key>Action</key>
-													<integer>10</integer>
-													<key>Text</key>
-													<string>[1;2R</string>
-												</dict>
-												<key>0xf707-0x20000</key>
-												<dict>
-													<key>Action</key>
-													<integer>10</integer>
-													<key>Text</key>
-													<string>[1;2S</string>
+													<string>f</string>
 												</dict>
 												<key>0xf708-0x20000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[15;2~</string>
+													<string>[25~</string>
 												</dict>
 												<key>0xf709-0x20000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[17;2~</string>
+													<string>[26~</string>
 												</dict>
 												<key>0xf70a-0x20000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[18;2~</string>
+													<string>[28~</string>
 												</dict>
 												<key>0xf70b-0x20000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[19;2~</string>
+													<string>[29~</string>
 												</dict>
-												<key>0xf70c-0x20000</key>
+												<key>0xf728-0x80000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[20;2~</string>
-												</dict>
-												<key>0xf70d-0x20000</key>
-												<dict>
-													<key>Action</key>
-													<integer>10</integer>
-													<key>Text</key>
-													<string>[21;2~</string>
-												</dict>
-												<key>0xf70e-0x20000</key>
-												<dict>
-													<key>Action</key>
-													<integer>10</integer>
-													<key>Text</key>
-													<string>[23;2~</string>
-												</dict>
-												<key>0xf70f-0x20000</key>
-												<dict>
-													<key>Action</key>
-													<integer>10</integer>
-													<key>Text</key>
-													<string>[24;2~</string>
+													<string>d</string>
 												</dict>
 												<key>0xf729-0x20000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[1;2H</string>
+													<string>[H</string>
 												</dict>
 												<key>0xf729-0x40000</key>
 												<dict>
 													<key>Action</key>
-													<integer>10</integer>
+													<integer>5</integer>
 													<key>Text</key>
-													<string>[1;5H</string>
+													<string></string>
 												</dict>
 												<key>0xf72b-0x20000</key>
 												<dict>
 													<key>Action</key>
 													<integer>10</integer>
 													<key>Text</key>
-													<string>[1;2F</string>
+													<string>[F</string>
 												</dict>
 												<key>0xf72b-0x40000</key>
 												<dict>
 													<key>Action</key>
-													<integer>10</integer>
+													<integer>4</integer>
 													<key>Text</key>
-													<string>[1;5F</string>
+													<string></string>
 												</dict>
 											</dict>
 											<key>Log Directory</key>
@@ -4759,11 +4683,11 @@
 											<key>Name</key>
 											<string>Default</string>
 											<key>Non Ascii Font</key>
-											<string>Monaco 14</string>
+											<string>Menlo-Regular 18</string>
 											<key>Non-ASCII Anti Aliased</key>
 											<true/>
 											<key>Normal Font</key>
-											<string>Monaco 14</string>
+											<string>Menlo-Regular 18</string>
 											<key>Option Key Sends</key>
 											<integer>2</integer>
 											<key>Prompt Before Closing 2</key>
@@ -4932,7 +4856,7 @@
 													<key>parameter</key>
 													<integer>2</integer>
 													<key>regex</key>
-													<string>\bERROR\b</string>
+													<string>Error|error|ERROR</string>
 												</dict>
 												<dict>
 													<key>action</key>
@@ -4940,7 +4864,7 @@
 													<key>parameter</key>
 													<integer>1</integer>
 													<key>regex</key>
-													<string>Warning</string>
+													<string>warn|Warn|WARN</string>
 												</dict>
 												<dict>
 													<key>action</key>
@@ -4948,7 +4872,31 @@
 													<key>parameter</key>
 													<integer>1007</integer>
 													<key>regex</key>
-													<string>INFO</string>
+													<string>\bINFO\b</string>
+												</dict>
+												<dict>
+													<key>action</key>
+													<string>HighlightTrigger</string>
+													<key>parameter</key>
+													<integer>1006</integer>
+													<key>regex</key>
+													<string>\bpass\b</string>
+												</dict>
+												<dict>
+													<key>action</key>
+													<string>HighlightTrigger</string>
+													<key>parameter</key>
+													<integer>1005</integer>
+													<key>regex</key>
+													<string>\bFAIL\b</string>
+												</dict>
+												<dict>
+													<key>action</key>
+													<string>HighlightTrigger</string>
+													<key>parameter</key>
+													<integer>7</integer>
+													<key>regex</key>
+													<string>DEBUG</string>
 												</dict>
 											</array>
 											<key>Unlimited Scrollback</key>
@@ -4970,10 +4918,66 @@
 											<key>Working Directory</key>
 											<string>/Users/ranmocy</string>
 										</dict>
+										<key>Bookmark Name</key>
+										<string>Default</string>
 										<key>Columns</key>
-										<integer>88</integer>
+										<integer>113</integer>
+										<key>Commands</key>
+										<array/>
+										<key>Directories</key>
+										<array>
+											<string>/Users/ranmocy</string>
+											<string>/Users/ranmocy</string>
+											<string>/Users/ranmocy</string>
+											<string>/Users/ranmocy</string>
+											<string>/Users/ranmocy</string>
+											<string>/Users/ranmocy</string>
+											<string>/Users/ranmocy</string>
+											<string>/Users/ranmocy</string>
+											<string>/Users/ranmocy</string>
+											<string>/Users/ranmocy</string>
+											<string>/Users/ranmocy</string>
+											<string>/Users/ranmocy</string>
+											<string>/Users/ranmocy</string>
+											<string>/Users/ranmocy</string>
+											<string>/Users/ranmocy</string>
+											<string>/Users/ranmocy</string>
+											<string>/Users/ranmocy</string>
+										</array>
+										<key>Environment</key>
+										<dict>
+											<key>PWD</key>
+											<string>/Users/ranmocy</string>
+										</dict>
+										<key>Hosts</key>
+										<array/>
+										<key>Is UTF-8</key>
+										<true/>
+										<key>Program</key>
+										<dict>
+											<key>Command</key>
+											<string>zsh</string>
+											<key>Type</key>
+											<string>Command</string>
+										</dict>
 										<key>Rows</key>
-										<integer>42</integer>
+										<integer>65</integer>
+										<key>Server PID</key>
+										<integer>3843</integer>
+										<key>Session Default Name</key>
+										<string>Default</string>
+										<key>Session GUID</key>
+										<string>F4F1AF51-AD65-44AD-90C6-C46CF48FCD4F</string>
+										<key>Session Name</key>
+										<string>ranmocy@Our-iMac:~ | ttys000</string>
+										<key>Session Window Title</key>
+										<string>ranmocy@Our-iMac:~ | ttys000</string>
+										<key>Shell Integration Ever Used</key>
+										<false/>
+										<key>Substitutions</key>
+										<dict/>
+										<key>TTY</key>
+										<string>/dev/ttys000</string>
 										<key>Working Directory</key>
 										<string>/Users/ranmocy</string>
 									</dict>
@@ -4982,9 +4986,9 @@
 									<key>frame</key>
 									<dict>
 										<key>height</key>
-										<real>803</real>
+										<real>1372</real>
 										<key>width</key>
-										<real>718</real>
+										<real>1253</real>
 										<key>x</key>
 										<real>0.0</real>
 										<key>y</key>
@@ -4997,9 +5001,9 @@
 							<key>frame</key>
 							<dict>
 								<key>height</key>
-								<real>803</real>
+								<real>1372</real>
 								<key>width</key>
-								<real>718</real>
+								<real>1253</real>
 								<key>x</key>
 								<real>0.0</real>
 								<key>y</key>
@@ -5011,15 +5015,15 @@
 					</dict>
 				</array>
 				<key>TerminalGuid</key>
-				<string>pty-76F3DDB1-A965-483F-A376-FDF9BD4089FD</string>
+				<string>pty-78B6B132-D077-488A-AA2E-5F07D07E42D9</string>
 				<key>Width</key>
-				<real>720</real>
+				<real>1255</real>
 				<key>Window Type</key>
 				<integer>0</integer>
 				<key>X Origin</key>
-				<real>720</real>
+				<real>1303</real>
 				<key>Y Origin</key>
-				<real>52</real>
+				<real>0.0</real>
 			</dict>
 		</array>
 	</dict>
