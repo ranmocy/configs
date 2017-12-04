@@ -15,7 +15,7 @@
 	<key>BTTConvertedDevices</key>
 	<true/>
 	<key>BTTDidRegisterForUpdateStats</key>
-	<string>2.310</string>
+	<string>2.313</string>
 	<key>BTTFixedTapSequenceMigrationIssue</key>
 	<true/>
 	<key>BTTHashes</key>
@@ -27,7 +27,7 @@
 	<key>BTTMigratedToSQLLite</key>
 	<true/>
 	<key>BTTNumberOfStarts</key>
-	<integer>1212</integer>
+	<integer>1306</integer>
 	<key>BTTRemapFiveFingerClickWithThumb</key>
 	<true/>
 	<key>BTTRemapFourFingerClickWithThumb</key>
@@ -45,7 +45,7 @@
 	<key>BTTSelectedKeyboardTabIndex</key>
 	<integer>0</integer>
 	<key>BTTStartTime</key>
-	<date>2017-10-30T12:49:47Z</date>
+	<date>2017-12-03T14:58:48Z</date>
 	<key>BTTTouchBarChecked</key>
 	<true/>
 	<key>BTTUpdatedToBTRCapable</key>
@@ -666,6 +666,23 @@
 			<key>1::129::20::::</key>
 			<integer>1</integer>
 		</dict>
+		<key>2017-10-31</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>2</integer>
+			<key>0::4</key>
+			<integer>2</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>6</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>2</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>1</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>1</integer>
+		</dict>
 		<key>2017-10-4</key>
 		<dict/>
 		<key>2017-10-5</key>
@@ -689,6 +706,299 @@
 			<integer>11</integer>
 			<key>9::(null)::20::⌘⌥⌃K::</key>
 			<integer>2</integer>
+		</dict>
+		<key>2017-11-1</key>
+		<dict>
+			<key>0::4</key>
+			<integer>2</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>2</integer>
+		</dict>
+		<key>2017-11-10</key>
+		<dict/>
+		<key>2017-11-11</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>2</integer>
+			<key>1::131::21::::</key>
+			<integer>1</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌘⌥⌃C::</key>
+			<integer>4</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>2</integer>
+		</dict>
+		<key>2017-11-13</key>
+		<dict/>
+		<key>2017-11-14</key>
+		<dict>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>4</integer>
+		</dict>
+		<key>2017-11-15</key>
+		<dict/>
+		<key>2017-11-16</key>
+		<dict>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-11-17</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>1</integer>
+			<key>9::(null)::151::⌘⇧⌥⌃H::</key>
+			<integer>1</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-11-18</key>
+		<dict/>
+		<key>2017-11-19</key>
+		<dict>
+			<key>0::0</key>
+			<integer>3</integer>
+			<key>0::2</key>
+			<integer>5</integer>
+			<key>0::4</key>
+			<integer>3</integer>
+			<key>1::128::19::::</key>
+			<integer>3</integer>
+			<key>1::131::21::::</key>
+			<integer>3</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>1</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>2</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>3</integer>
+		</dict>
+		<key>2017-11-2</key>
+		<dict/>
+		<key>2017-11-20</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>1</integer>
+			<key>1::128::19::::</key>
+			<integer>1</integer>
+			<key>1::129::20::::</key>
+			<integer>1</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>2</integer>
+			<key>9::(null)::177::⌘⌥⌃C::</key>
+			<integer>1</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>1</integer>
+			<key>9::(null)::84::⌘⌥⌃;::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-11-21</key>
+		<dict>
+			<key>0::4</key>
+			<integer>3</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>3</integer>
+		</dict>
+		<key>2017-11-22</key>
+		<dict>
+			<key>9::(null)::177::⌘⌥⌃C::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-11-23</key>
+		<dict/>
+		<key>2017-11-24</key>
+		<dict>
+			<key>0::0</key>
+			<integer>2</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>4</integer>
+			<key>1::129::20::::</key>
+			<integer>1</integer>
+			<key>1::131::21::::</key>
+			<integer>2</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>1</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>3</integer>
+		</dict>
+		<key>2017-11-25</key>
+		<dict/>
+		<key>2017-11-26</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>2</integer>
+			<key>1::129::20::::</key>
+			<integer>2</integer>
+			<key>1::131::21::::</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌘⌥⌃C::</key>
+			<integer>2</integer>
+		</dict>
+		<key>2017-11-27</key>
+		<dict>
+			<key>0::0</key>
+			<integer>5</integer>
+			<key>0::2</key>
+			<integer>4</integer>
+			<key>0::4</key>
+			<integer>2</integer>
+			<key>1::128::19::::</key>
+			<integer>1</integer>
+			<key>1::131::21::::</key>
+			<integer>2</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>3</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>2</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>3</integer>
+		</dict>
+		<key>2017-11-28</key>
+		<dict>
+			<key>0::0</key>
+			<integer>2</integer>
+			<key>0::2</key>
+			<integer>2</integer>
+			<key>0::4</key>
+			<integer>2</integer>
+			<key>1::131::21::::</key>
+			<integer>1</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌘⌥⌃C::</key>
+			<integer>3</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>2</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>2</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-11-29</key>
+		<dict/>
+		<key>2017-11-3</key>
+		<dict>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>2</integer>
+			<key>9::(null)::151::⌘⇧⌥⌃H::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-11-30</key>
+		<dict>
+			<key>9::(null)::177::⌘⌥⌃C::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-11-4</key>
+		<dict/>
+		<key>2017-11-5</key>
+		<dict>
+			<key>0::4</key>
+			<integer>2</integer>
+			<key>9::(null)::113::⌘⌥⌃H::</key>
+			<integer>1</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>2</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-11-6</key>
+		<dict>
+			<key>0::0</key>
+			<integer>4</integer>
+			<key>0::2</key>
+			<integer>7</integer>
+			<key>0::4</key>
+			<integer>9</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>1</integer>
+			<key>9::(null)::123::⌘⌥⌃⌫::</key>
+			<integer>2</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>7</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>9</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>3</integer>
+		</dict>
+		<key>2017-11-7</key>
+		<dict>
+			<key>0::0</key>
+			<integer>3</integer>
+			<key>0::2</key>
+			<integer>5</integer>
+			<key>0::4</key>
+			<integer>5</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>2</integer>
+			<key>9::(null)::177::⌘⌥⌃C::</key>
+			<integer>13</integer>
+			<key>9::(null)::177::⌥⌃C::</key>
+			<integer>3</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>4</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>4</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>3</integer>
+			<key>9::(null)::84::⌘⌥⌃;::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-11-8</key>
+		<dict>
+			<key>0::2</key>
+			<integer>3</integer>
+			<key>0::4</key>
+			<integer>6</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>1</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>3</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>5</integer>
+		</dict>
+		<key>2017-11-9</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>2</integer>
+			<key>1::131::21::::</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌘⌥⌃C::</key>
+			<integer>1</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>1</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>2</integer>
+		</dict>
+		<key>2017-12-1</key>
+		<dict/>
+		<key>2017-12-2</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>1</integer>
+			<key>1::131::21::::</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌘⌥⌃C::</key>
+			<integer>1</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>1</integer>
 		</dict>
 		<key>2017-2-1</key>
 		<dict>
@@ -3509,7 +3819,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-30T08:19:11Z</date>
+	<date>2017-12-03T14:22:01Z</date>
 	<key>alreadyAskedForInitialWindowSnappingSettings</key>
 	<true/>
 	<key>bringMovingWindowToFront</key>
@@ -3539,7 +3849,7 @@
 	<key>lastSelectedMouseTab</key>
 	<integer>7</integer>
 	<key>lastSelectedTab</key>
-	<integer>3</integer>
+	<integer>2</integer>
 	<key>launchOnStartup</key>
 	<true/>
 	<key>magicTrackpadPrefs</key>
@@ -3655,11 +3965,18 @@
 	</array>
 	<key>savedWindowInformation</key>
 	<data>
-	YnBsaXN0MDDUAQIDBAUGFBVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA1VJG51bGzSCQoLDFpOUy5vYmplY3RzViRjbGFzc6CAAtIODxARWiRjbGFz
-	c25hbWVYJGNsYXNzZXNeTlNNdXRhYmxlQXJyYXmjEBITV05TQXJyYXlYTlNPYmplY3Rf
-	EA9OU0tleWVkQXJjaGl2ZXLRFhdUcm9vdIABCBEaIy0yNztBRlFYWVtga3SDh4+Yqq2y
-	AAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=
+	YnBsaXN0MDDUAQIDBAUGMjNYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKkHCA4kJSYnKC5VJG51bGzSCQoLDVpOUy5vYmplY3RzViRjbGFzc6EMgAKACNsP
+	ChAREhMUFRYXGBkaGxwbHh8gGyIjV29sZFNpemVfEBFzbmFwcGVkQnlUaXRsZWJhcltv
+	bGRQb3NpdGlvbl8QE3NuYXBwZWRWaWFTeW50aERyYWdfEBBsYXN0U25hcFBvc2l0aW9u
+	XxAPcmVzaXplZFBvc2l0aW9uXxAUc25hcHBlZFZpYU5vcm1hbERyYWdbZHJhZ1NuYXBw
+	ZWRXbmV3U2l6ZVx3aW5kb3dOdW1iZXKAA4AHCIAGCBAAgAUJCIAEESUdXHsxMjU3LCAx
+	NDE3fVx7MjUxNCwgMTQxN31YezQ2LCAyM31YezQ2LCAyM33SKSorLFokY2xhc3NuYW1l
+	WCRjbGFzc2VzWUFQSVdpbmRvd6IrLVhOU09iamVjdNIpKi8wXk5TTXV0YWJsZUFycmF5
+	oy8xLVdOU0FycmF5XxAPTlNLZXllZEFyY2hpdmVy0TQ1VHJvb3SAAQAIABEAGgAjAC0A
+	MgA3AEEARwBMAFcAXgBgAGIAZAB7AIMAlwCjALkAzADeAPUBAQEJARYBGAEaARsBHQEe
+	ASABIgEjASQBJgEpATYBQwFMAVUBWgFlAW4BeAF7AYQBiQGYAZwBpAG2AbkBvgAAAAAA
+	AAIBAAAAAAAAADYAAAAAAAAAAAAAAAAAAAHA
 	</data>
 	<key>showPrefsAtNextLaunch</key>
 	<false/>
@@ -3682,7 +3999,7 @@
 	<key>v054DefaultsChanged</key>
 	<true/>
 	<key>version</key>
-	<string>2.310</string>
+	<string>2.313</string>
 	<key>w7DragResize</key>
 	<true/>
 	<key>warningString</key>
