@@ -11,27 +11,37 @@
 	<key>BTRLastPort</key>
 	<integer>49640</integer>
 	<key>BTTAdjustedForceTouchValues</key>
-	<true/>
+	<false/>
 	<key>BTTBSTInstalled</key>
 	<false/>
 	<key>BTTConvertedDevices</key>
 	<true/>
 	<key>BTTDidRegisterForUpdateStats</key>
-	<string>2.313</string>
+	<string>2.318</string>
 	<key>BTTFixedTapSequenceMigrationIssue</key>
 	<true/>
+	<key>BTTForceForceClickPressure</key>
+	<integer>700</integer>
+	<key>BTTForceForceClickPressure2F</key>
+	<integer>700</integer>
+	<key>BTTForceForceClickPressure3F</key>
+	<integer>700</integer>
+	<key>BTTForceForceClickPressure4F</key>
+	<integer>650</integer>
+	<key>BTTForceForceClickPressure5F</key>
+	<integer>600</integer>
 	<key>BTTForceNormalClickPressure</key>
-	<integer>112</integer>
+	<integer>150</integer>
 	<key>BTTForceNormalClickPressure2F</key>
-	<integer>112</integer>
+	<integer>140</integer>
 	<key>BTTForceNormalClickPressure3F</key>
-	<integer>115</integer>
+	<integer>150</integer>
 	<key>BTTForceNormalClickPressure4F</key>
-	<integer>130</integer>
+	<integer>175</integer>
 	<key>BTTForceNormalClickPressure5F</key>
-	<integer>130</integer>
+	<integer>200</integer>
 	<key>BTTHashes</key>
-	<string>9D7E11B98A91A3CFC7B601D056E05F5FB430EC7E::84B1AB4B40CAFB6B58D8B89DEC6C6804A97C785D::B38F6CD317E3E2DAEFD1CEF64801D9A91C425D9C::::</string>
+	<string>C422AA08A78995C085B515CA4C57D3DF9919D2D3::9D7E11B98A91A3CFC7B601D056E05F5FB430EC7E::84B1AB4B40CAFB6B58D8B89DEC6C6804A97C785D::B38F6CD317E3E2DAEFD1CEF64801D9A91C425D9C::::</string>
 	<key>BTTIdentifierX</key>
 	<string>7509f78b6bbfe69f77c932c38f6aeaff</string>
 	<key>BTTLastClamshellState</key>
@@ -39,7 +49,7 @@
 	<key>BTTMigratedToSQLLite</key>
 	<true/>
 	<key>BTTNumberOfStarts</key>
-	<integer>1343</integer>
+	<integer>1476</integer>
 	<key>BTTRemapFiveFingerClickWithThumb</key>
 	<true/>
 	<key>BTTRemapFourFingerClickWithThumb</key>
@@ -57,7 +67,7 @@
 	<key>BTTSelectedKeyboardTabIndex</key>
 	<integer>0</integer>
 	<key>BTTStartTime</key>
-	<date>2017-12-17T04:34:57Z</date>
+	<date>2018-01-16T13:57:53Z</date>
 	<key>BTTTouchBarChecked</key>
 	<true/>
 	<key>BTTUpdatedToBTRCapable</key>
@@ -1068,6 +1078,10 @@
 			<key>9::(null)::20::⌘⌥⌃K::</key>
 			<integer>1</integer>
 		</dict>
+		<key>2017-12-18</key>
+		<dict/>
+		<key>2017-12-19</key>
+		<dict/>
 		<key>2017-12-2</key>
 		<dict>
 			<key>0::0</key>
@@ -1079,6 +1093,38 @@
 			<key>9::(null)::177::⌘⌥⌃C::</key>
 			<integer>1</integer>
 			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2017-12-20</key>
+		<dict>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>2</integer>
+			<key>9::(null)::113::⌘⌥⌃H::</key>
+			<integer>1</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>2</integer>
+			<key>9::(null)::177::⌘⌥⌃C::</key>
+			<integer>9</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>1</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>2</integer>
+		</dict>
+		<key>2017-12-21</key>
+		<dict/>
+		<key>2017-12-22</key>
+		<dict/>
+		<key>2017-12-23</key>
+		<dict/>
+		<key>2017-12-24</key>
+		<dict/>
+		<key>2017-12-26</key>
+		<dict/>
+		<key>2017-12-27</key>
+		<dict>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
 			<integer>1</integer>
 		</dict>
 		<key>2017-12-3</key>
@@ -1106,6 +1152,8 @@
 			<key>9::(null)::21::⌘⌥⌃'::</key>
 			<integer>3</integer>
 		</dict>
+		<key>2017-12-30</key>
+		<dict/>
 		<key>2017-12-4</key>
 		<dict>
 			<key>0::0</key>
@@ -3663,6 +3711,92 @@
 			<key>9::(null)::20::⌘⌥⌃K::</key>
 			<integer>5</integer>
 		</dict>
+		<key>2018-1-1</key>
+		<dict/>
+		<key>2018-1-10</key>
+		<dict/>
+		<key>2018-1-11</key>
+		<dict/>
+		<key>2018-1-12</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>2</integer>
+			<key>1::128::19::::</key>
+			<integer>1</integer>
+			<key>1::129::20::::</key>
+			<integer>1</integer>
+			<key>1::131::21::::</key>
+			<integer>1</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2018-1-14</key>
+		<dict/>
+		<key>2018-1-15</key>
+		<dict/>
+		<key>2018-1-2</key>
+		<dict>
+			<key>0::2</key>
+			<integer>5</integer>
+			<key>0::4</key>
+			<integer>6</integer>
+			<key>1::128::19::::</key>
+			<integer>2</integer>
+			<key>1::129::20::::</key>
+			<integer>3</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>3</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>3</integer>
+		</dict>
+		<key>2018-1-3</key>
+		<dict/>
+		<key>2018-1-5</key>
+		<dict/>
+		<key>2018-1-6</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>12</integer>
+			<key>0::4</key>
+			<integer>5</integer>
+			<key>1::128::19::::</key>
+			<integer>1</integer>
+			<key>1::131::21::::</key>
+			<integer>1</integer>
+			<key>9::(null)::113::⌘⌥⌃H::</key>
+			<integer>3</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>2</integer>
+			<key>9::(null)::152::⌘⇧⌥⌃L::</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌘⌥⌃C::</key>
+			<integer>12</integer>
+			<key>9::(null)::19::⌘⌥⌃J::</key>
+			<integer>11</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>5</integer>
+		</dict>
+		<key>2018-1-7</key>
+		<dict>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>1</integer>
+			<key>1::128::19::::</key>
+			<integer>1</integer>
+			<key>1::129::20::::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2018-1-8</key>
+		<dict/>
+		<key>2018-1-9</key>
+		<dict/>
 	</dict>
 	<key>BTTWasDisabledBeforeSleep</key>
 	<false/>
@@ -3968,11 +4102,11 @@
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>https://updates.bettertouchtool.net/highsierra.xml</string>
+	<string>https://updates.bettertouchtool.net/highsierra_new.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-17T05:29:15Z</date>
+	<date>2018-01-16T13:57:56Z</date>
 	<key>alreadyAskedForInitialWindowSnappingSettings</key>
 	<true/>
 	<key>bringMovingWindowToFront</key>
@@ -4145,7 +4279,7 @@
 	<key>v054DefaultsChanged</key>
 	<true/>
 	<key>version</key>
-	<string>2.313</string>
+	<string>2.318</string>
 	<key>w7DragResize</key>
 	<true/>
 	<key>warningString</key>

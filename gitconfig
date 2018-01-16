@@ -4,6 +4,7 @@
 	signingkey = FC6B5559
 [core]
 	excludesfile = ~/.gitexclude
+	quotePath = false
 [diff]
 	renames = copies
 	mnemonicprefix = true
