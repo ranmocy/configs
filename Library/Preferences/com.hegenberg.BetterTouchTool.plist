@@ -12,12 +12,18 @@
 	<integer>49640</integer>
 	<key>BTTAdjustedForceTouchValues</key>
 	<false/>
+	<key>BTTAllowDowngrades</key>
+	<false/>
 	<key>BTTBSTInstalled</key>
 	<false/>
 	<key>BTTConvertedDevices</key>
 	<true/>
+	<key>BTTDSVGO</key>
+	<true/>
 	<key>BTTDidRegisterForUpdateStats</key>
-	<string>2.332</string>
+	<string>2.426</string>
+	<key>BTTDontShowPaidUpgrades</key>
+	<true/>
 	<key>BTTFixedTapSequenceMigrationIssue</key>
 	<true/>
 	<key>BTTForceForceClickPressure</key>
@@ -40,16 +46,20 @@
 	<integer>175</integer>
 	<key>BTTForceNormalClickPressure5F</key>
 	<integer>200</integer>
+	<key>BTTForcedHidden</key>
+	<false/>
 	<key>BTTHashes</key>
 	<string>C422AA08A78995C085B515CA4C57D3DF9919D2D3::9D7E11B98A91A3CFC7B601D056E05F5FB430EC7E::84B1AB4B40CAFB6B58D8B89DEC6C6804A97C785D::B38F6CD317E3E2DAEFD1CEF64801D9A91C425D9C::::</string>
 	<key>BTTIdentifierX</key>
 	<string>7509f78b6bbfe69f77c932c38f6aeaff</string>
 	<key>BTTLastClamshellState</key>
 	<false/>
+	<key>BTTLicenseUpgradeStarted</key>
+	<true/>
 	<key>BTTMigratedToSQLLite</key>
 	<true/>
 	<key>BTTNumberOfStarts</key>
-	<integer>1797</integer>
+	<integer>1924</integer>
 	<key>BTTRemapFiveFingerClickWithThumb</key>
 	<true/>
 	<key>BTTRemapFourFingerClickWithThumb</key>
@@ -64,11 +74,19 @@
 	<true/>
 	<key>BTTRemoteUUID</key>
 	<string>53BC4B9C-7482-4C55-B803-9D18E62B09CA</string>
+	<key>BTTSecureInputWarningShown</key>
+	<integer>1</integer>
 	<key>BTTSelectedKeyboardTabIndex</key>
 	<integer>0</integer>
 	<key>BTTStartTime</key>
-	<date>2018-03-04T14:04:04Z</date>
+	<date>2018-05-12T12:21:28Z</date>
 	<key>BTTTouchBarChecked</key>
+	<true/>
+	<key>BTTTouchBarVisible</key>
+	<false/>
+	<key>BTTTrialDate</key>
+	<integer>13</integer>
+	<key>BTTUpdateRecovery</key>
 	<true/>
 	<key>BTTUpdatedToBTRCapable</key>
 	<true/>
@@ -3999,6 +4017,126 @@
 		<dict/>
 		<key>2018-3-1</key>
 		<dict/>
+		<key>2018-3-11</key>
+		<dict>
+			<key>0::0</key>
+			<integer>2</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>3</integer>
+			<key>1::128::19::::</key>
+			<integer>1</integer>
+			<key>1::129::20::::</key>
+			<integer>2</integer>
+			<key>1::131::21::::</key>
+			<integer>1</integer>
+			<key>9::(null)::114::⌘⌥⌃L::</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌘⌥⌃C::</key>
+			<integer>2</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>1</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2018-3-12</key>
+		<dict>
+			<key>0::0</key>
+			<integer>4</integer>
+			<key>0::2</key>
+			<integer>7</integer>
+			<key>0::4</key>
+			<integer>2</integer>
+			<key>1::128::19::::</key>
+			<integer>5</integer>
+			<key>1::131::21::::</key>
+			<integer>1</integer>
+			<key>9::(null)::113::⌃⌥⌘ H::</key>
+			<integer>1</integer>
+			<key>9::(null)::114::⌃⌥⌘ L::</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌃⌥⌘ C::</key>
+			<integer>2</integer>
+			<key>9::(null)::19::⌃⌥⌘ J::</key>
+			<integer>2</integer>
+			<key>9::(null)::20::⌘⌥⌃K::</key>
+			<integer>2</integer>
+			<key>9::(null)::21::⌘⌥⌃'::</key>
+			<integer>3</integer>
+		</dict>
+		<key>2018-3-13</key>
+		<dict/>
+		<key>2018-3-14</key>
+		<dict/>
+		<key>2018-3-15</key>
+		<dict/>
+		<key>2018-3-16</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>2</integer>
+			<key>9::(null)::19::⌃⌥⌘ J::</key>
+			<integer>1</integer>
+			<key>9::(null)::20::⌃⌥⌘ K::</key>
+			<integer>1</integer>
+			<key>9::(null)::21::⌃⌥⌘ '::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2018-3-17</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>2</integer>
+			<key>0::4</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌃⌥⌘ C::</key>
+			<integer>1</integer>
+			<key>9::(null)::19::⌃⌥⌘ J::</key>
+			<integer>2</integer>
+			<key>9::(null)::20::⌃⌥⌘ K::</key>
+			<integer>1</integer>
+			<key>9::(null)::21::⌃⌥⌘ '::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2018-3-18</key>
+		<dict>
+			<key>0::0</key>
+			<integer>2</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>4</integer>
+			<key>9::(null)::114::⌃⌥⌘ L::</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌃⌥⌘ C::</key>
+			<integer>1</integer>
+			<key>9::(null)::19::⌃⌥⌘ J::</key>
+			<integer>1</integer>
+			<key>9::(null)::20::⌃⌥⌘ K::</key>
+			<integer>4</integer>
+			<key>9::(null)::21::⌃⌥⌘ '::</key>
+			<integer>2</integer>
+		</dict>
+		<key>2018-3-19</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>2</integer>
+			<key>0::4</key>
+			<integer>1</integer>
+			<key>9::(null)::19::⌃⌥⌘ J::</key>
+			<integer>2</integer>
+			<key>9::(null)::20::⌃⌥⌘ K::</key>
+			<integer>1</integer>
+			<key>9::(null)::21::⌃⌥⌘ '::</key>
+			<integer>1</integer>
+		</dict>
 		<key>2018-3-2</key>
 		<dict>
 			<key>0::0</key>
@@ -4014,8 +4152,284 @@
 			<key>9::(null)::20::⌘⌥⌃K::</key>
 			<integer>2</integer>
 		</dict>
+		<key>2018-3-20</key>
+		<dict/>
+		<key>2018-3-21</key>
+		<dict>
+			<key>9::(null)::114::⌃⌥⌘ L::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2018-3-22</key>
+		<dict>
+			<key>9::(null)::113::⌃⌥⌘ H::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2018-3-24</key>
+		<dict>
+			<key>0::0</key>
+			<integer>3</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>1</integer>
+			<key>9::(null)::19::⌃⌥⌘ J::</key>
+			<integer>1</integer>
+			<key>9::(null)::20::⌃⌥⌘ K::</key>
+			<integer>1</integer>
+			<key>9::(null)::21::⌃⌥⌘ '::</key>
+			<integer>2</integer>
+		</dict>
+		<key>2018-3-25</key>
+		<dict>
+			<key>0::2</key>
+			<integer>2</integer>
+			<key>0::4</key>
+			<integer>1</integer>
+			<key>1::128::19::::</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌃⌥⌘ C::</key>
+			<integer>2</integer>
+			<key>9::(null)::19::⌃⌥⌘ J::</key>
+			<integer>1</integer>
+			<key>9::(null)::20::⌃⌥⌘ K::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2018-3-26</key>
+		<dict/>
+		<key>2018-3-27</key>
+		<dict/>
+		<key>2018-3-28</key>
+		<dict/>
+		<key>2018-3-29</key>
+		<dict>
+			<key>0::0</key>
+			<integer>2</integer>
+			<key>9::(null)::114::⌃⌥⌘ L::</key>
+			<integer>1</integer>
+			<key>9::(null)::21::⌃⌥⌘ '::</key>
+			<integer>2</integer>
+		</dict>
+		<key>2018-3-30</key>
+		<dict/>
+		<key>2018-3-31</key>
+		<dict/>
+		<key>2018-3-4</key>
+		<dict/>
+		<key>2018-3-5</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+		</dict>
+		<key>2018-3-6</key>
+		<dict/>
+		<key>2018-3-7</key>
+		<dict/>
+		<key>2018-3-8</key>
+		<dict/>
+		<key>2018-4-1</key>
+		<dict/>
+		<key>2018-4-10</key>
+		<dict/>
+		<key>2018-4-11</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>1</integer>
+			<key>1::128::19::::</key>
+			<integer>1</integer>
+			<key>1::129::20::::</key>
+			<integer>1</integer>
+			<key>1::131::21::::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2018-4-12</key>
+		<dict/>
+		<key>2018-4-13</key>
+		<dict/>
+		<key>2018-4-14</key>
+		<dict/>
+		<key>2018-4-15</key>
+		<dict/>
+		<key>2018-4-16</key>
+		<dict/>
+		<key>2018-4-17</key>
+		<dict/>
+		<key>2018-4-18</key>
+		<dict/>
+		<key>2018-4-19</key>
+		<dict/>
+		<key>2018-4-2</key>
+		<dict/>
+		<key>2018-4-20</key>
+		<dict/>
+		<key>2018-4-21</key>
+		<dict>
+			<key>0::0</key>
+			<integer>2</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌃⌥⌘ C::</key>
+			<integer>2</integer>
+			<key>9::(null)::19::⌃⌥⌘ J::</key>
+			<integer>1</integer>
+			<key>9::(null)::21::⌃⌥⌘ '::</key>
+			<integer>2</integer>
+		</dict>
+		<key>2018-4-22</key>
+		<dict>
+			<key>9::(null)::113::⌃⌥⌘ H::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2018-4-23</key>
+		<dict/>
+		<key>2018-4-24</key>
+		<dict/>
+		<key>2018-4-25</key>
+		<dict/>
+		<key>2018-4-26</key>
+		<dict/>
+		<key>2018-4-27</key>
+		<dict/>
+		<key>2018-4-28</key>
+		<dict/>
+		<key>2018-4-3</key>
+		<dict/>
+		<key>2018-4-30</key>
+		<dict>
+			<key>0::0</key>
+			<integer>3</integer>
+		</dict>
+		<key>2018-4-5</key>
+		<dict>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>9::(null)::19::⌃⌥⌘ J::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2018-4-6</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>2</integer>
+			<key>0::4</key>
+			<integer>1</integer>
+			<key>9::(null)::114::⌃⌥⌘ L::</key>
+			<integer>1</integer>
+			<key>9::(null)::19::⌃⌥⌘ J::</key>
+			<integer>2</integer>
+			<key>9::(null)::20::⌃⌥⌘ K::</key>
+			<integer>1</integer>
+			<key>9::(null)::21::⌃⌥⌘ '::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2018-4-7</key>
+		<dict/>
+		<key>2018-4-8</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>0::4</key>
+			<integer>3</integer>
+			<key>1::129::20::::</key>
+			<integer>2</integer>
+			<key>1::131::21::::</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌃⌥⌘ C::</key>
+			<integer>7</integer>
+			<key>9::(null)::19::⌃⌥⌘ J::</key>
+			<integer>1</integer>
+			<key>9::(null)::20::⌃⌥⌘ K::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2018-4-9</key>
+		<dict>
+			<key>0::0</key>
+			<integer>2</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>1::128::19::::</key>
+			<integer>1</integer>
+			<key>1::131::21::::</key>
+			<integer>2</integer>
+		</dict>
+		<key>2018-5-1</key>
+		<dict/>
+		<key>2018-5-12</key>
+		<dict/>
+		<key>2018-5-2</key>
+		<dict>
+			<key>9::(null)::152::⌃⌥⇧⌘ L::</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌃⌥⌘ C::</key>
+			<integer>2</integer>
+		</dict>
+		<key>2018-5-3</key>
+		<dict>
+			<key>0::0</key>
+			<integer>1</integer>
+			<key>0::2</key>
+			<integer>1</integer>
+			<key>9::(null)::114::⌃⌥⌘ L::</key>
+			<integer>1</integer>
+			<key>9::(null)::19::⌃⌥⌘ J::</key>
+			<integer>1</integer>
+			<key>9::(null)::21::⌃⌥⌘ '::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2018-5-4</key>
+		<dict>
+			<key>9::(null)::114::⌃⌥⌘ L::</key>
+			<integer>1</integer>
+		</dict>
+		<key>2018-5-5</key>
+		<dict>
+			<key>0::0</key>
+			<integer>5</integer>
+			<key>0::2</key>
+			<integer>6</integer>
+			<key>0::4</key>
+			<integer>7</integer>
+			<key>1::131::21::::</key>
+			<integer>2</integer>
+			<key>9::(null)::123::⌃⌥⌘ ⌫::</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌃⌥⌘ C::</key>
+			<integer>26</integer>
+			<key>9::(null)::19::⌃⌥⌘ J::</key>
+			<integer>6</integer>
+			<key>9::(null)::20::⌃⌥⌘ K::</key>
+			<integer>7</integer>
+			<key>9::(null)::21::⌃⌥⌘ '::</key>
+			<integer>3</integer>
+		</dict>
+		<key>2018-5-6</key>
+		<dict>
+			<key>9::(null)::113::⌃⌥⌘ H::</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌃⌥⌘ C::</key>
+			<integer>3</integer>
+		</dict>
+		<key>2018-5-7</key>
+		<dict>
+			<key>0::4</key>
+			<integer>1</integer>
+			<key>9::(null)::123::⌃⌥⌘ ⌫::</key>
+			<integer>1</integer>
+			<key>9::(null)::177::⌃⌥⌘ C::</key>
+			<integer>8</integer>
+			<key>9::(null)::20::⌃⌥⌘ K::</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>BTTWasDisabledBeforeSleep</key>
+	<false/>
+	<key>BTTWasRestartedDueToEventTapFault</key>
 	<false/>
 	<key>NSColorPanelMode</key>
 	<string>6</string>
@@ -4096,6 +4510,24 @@
 	ALAAtwDAAMkAygDPANoA4wDwAPMA/AEDAQcBCQELAQ0BEQETARUBFwEZASABKQEwATQB
 	NgE4AToBPgFAAUIBRAFGAU4BVwFeAWIBZAFmAWgBbAFuAXABcgF0AXwBhQGKAZkBnQGl
 	AbcBugHAAAAAAAAAAgEAAAAAAAAAVAAAAAAAAAAAAAAAAAAAAcI=
+	</data>
+	<key>NSTableView Columns v2 keyboardtable_new3</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGXV5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoK8QFwcIEh0eHyAhIiMpMzQ1P0BBS0xNV1hZVSRudWxs0gkKCxFaTlMub2JqZWN0
+	c1YkY2xhc3OlDA0ODxCAAoAKgA2AEIATgBbTEwkKFBgcV05TLmtleXOjFRYXgAOABIAF
+	oxkaG4AGgAeACIAJWklkZW50aWZpZXJVV2lkdGhWSGlkZGVuWFNob3J0Y3V0I0Bm4AAA
+	AAAACNIkJSYnWiRjbGFzc25hbWVYJGNsYXNzZXNcTlNEaWN0aW9uYXJ5oiYoWE5TT2Jq
+	ZWN00xMJCiouHKMVFheAA4AEgAWjLzAbgAuADIAIgAldb25Eb3duVHJpZ2dlciNAUAAA
+	AAAAANMTCQo2OhyjFRYXgAOABIAFozs8G4AOgA+ACIAJVmFjdGlvbiNAdUAAAAAAANMT
+	CQpCRhyjFRYXgAOABIAFo0dIG4ARgBKACIAJV2VuYWJsZWQjQEqAAAAAAADTEwkKTlIc
+	oxUWF4ADgASABaNTVBuAFIAVgAiACV1ub3Rlc0tleWJvYXJkI0Bj4AAAAAAA0iQlWlte
+	TlNNdXRhYmxlQXJyYXmjWlwoV05TQXJyYXlfEA9OU0tleWVkQXJjaGl2ZXLRX2BVQXJy
+	YXmAAQAIABEAGgAjAC0AMgA3AFEAVwBcAGcAbgB0AHYAeAB6AHwAfgCAAIcAjwCTAJUA
+	lwCZAJ0AnwChAKMApQCwALYAvQDGAM8A0ADVAOAA6QD2APkBAgEJAQ0BDwERARMBFwEZ
+	ARsBHQEfAS0BNgE9AUEBQwFFAUcBSwFNAU8BUQFTAVoBYwFqAW4BcAFyAXQBeAF6AXwB
+	fgGAAYgBkQGYAZwBngGgAaIBpgGoAaoBrAGuAbwBxQHKAdkB3QHlAfcB+gIAAAAAAAAA
+	AgEAAAAAAAAAYQAAAAAAAAAAAAAAAAAAAgI=
 	</data>
 	<key>NSTableView Columns v2 leaptable</key>
 	<data>
@@ -4231,6 +4663,14 @@
 	EA9OU0tleWVkQXJjaGl2ZXLRFhdVQXJyYXmAAQgRGiMtMjc7QUZRWFlbYGt0g4ePmKqt
 	swAAAAAAAAEBAAAAAAAAABgAAAAAAAAAAAAAAAAAAAC1
 	</data>
+	<key>NSTableView Sort Ordering v2 keyboardtable_new3</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGFBVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKMHCA1VJG51bGzSCQoLDFpOUy5vYmplY3RzViRjbGFzc6CAAtIODxARWiRjbGFz
+	c25hbWVYJGNsYXNzZXNeTlNNdXRhYmxlQXJyYXmjEBITV05TQXJyYXlYTlNPYmplY3Rf
+	EA9OU0tleWVkQXJjaGl2ZXLRFhdVQXJyYXmAAQgRGiMtMjc7QUZRWFlbYGt0g4ePmKqt
+	swAAAAAAAAEBAAAAAAAAABgAAAAAAAAAAAAAAAAAAAC1
+	</data>
 	<key>NSTableView Sort Ordering v2 leaptable</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFBVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -4291,6 +4731,8 @@
 	<true/>
 	<key>NSTableView Supports v2 keyboardtable_new1</key>
 	<true/>
+	<key>NSTableView Supports v2 keyboardtable_new3</key>
+	<true/>
 	<key>NSTableView Supports v2 leaptable</key>
 	<true/>
 	<key>NSTableView Supports v2 leaptable3</key>
@@ -4312,8 +4754,10 @@
 	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>46 78 224 280 0 0 2560 1417 </string>
+	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
+	<string>972 932 616 174 0 0 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>972 768 620 392 0 0 2560 1417 </string>
+	<string>970 768 620 392 0 0 2560 1417 </string>
 	<key>SUAutomaticallyUpdate</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
@@ -4323,13 +4767,15 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-03-04T01:14:13Z</date>
+	<date>2018-05-12T12:21:14Z</date>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>alreadyAskedForInitialWindowSnappingSettings</key>
 	<true/>
 	<key>bringMovingWindowToFront</key>
 	<true/>
+	<key>checkForCrashreports</key>
+	<false/>
 	<key>checkedLoginItemsOnce</key>
 	<true/>
 	<key>convertedModifierKeys</key>
@@ -4471,18 +4917,11 @@
 	</array>
 	<key>savedWindowInformation</key>
 	<data>
-	YnBsaXN0MDDUAQIDBAUGMjNYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKkHCA4kJSYnKC5VJG51bGzSCQoLDVpOUy5vYmplY3RzViRjbGFzc6EMgAKACNsP
-	ChAREhMUFRYXGBkaGxwbHh8gGyIjV29sZFNpemVfEBFzbmFwcGVkQnlUaXRsZWJhcltv
-	bGRQb3NpdGlvbl8QE3NuYXBwZWRWaWFTeW50aERyYWdfEBBsYXN0U25hcFBvc2l0aW9u
-	XxAPcmVzaXplZFBvc2l0aW9uXxAUc25hcHBlZFZpYU5vcm1hbERyYWdbZHJhZ1NuYXBw
-	ZWRXbmV3U2l6ZVx3aW5kb3dOdW1iZXKAA4AHCIAGCBACgAUJCIAEEClcezEyODAsIDE0
-	MTd9XHsxMjgwLCAxNDE3fVh7LTAsIDIzfVd7MCwgMjN90ikqKyxaJGNsYXNzbmFtZVgk
-	Y2xhc3Nlc1lBUElXaW5kb3eiKy1YTlNPYmplY3TSKSovMF5OU011dGFibGVBcnJheaMv
-	MS1XTlNBcnJheV8QD05TS2V5ZWRBcmNoaXZlctE0NVRyb290gAEACAARABoAIwAtADIA
-	NwBBAEcATABXAF4AYABiAGQAewCDAJcAowC5AMwA3gD1AQEBCQEWARgBGgEbAR0BHgEg
-	ASIBIwEkASYBKAE1AUIBSwFTAVgBYwFsAXYBeQGCAYcBlgGaAaIBtAG3AbwAAAAAAAAC
-	AQAAAAAAAAA2AAAAAAAAAAAAAAAAAAABvg==
+	YnBsaXN0MDDUAQIDBAUGFBVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKMHCA1VJG51bGzSCQoLDFpOUy5vYmplY3RzViRjbGFzc6CAAtIODxARWiRjbGFz
+	c25hbWVYJGNsYXNzZXNeTlNNdXRhYmxlQXJyYXmjEBITV05TQXJyYXlYTlNPYmplY3Rf
+	EA9OU0tleWVkQXJjaGl2ZXLRFhdUcm9vdIABCBEaIy0yNztBRlFYWVtga3SDh4+Yqq2y
+	AAAAAAAAAQEAAAAAAAAAGAAAAAAAAAAAAAAAAAAAALQ=
 	</data>
 	<key>showPrefsAtNextLaunch</key>
 	<false/>
@@ -4505,7 +4944,7 @@
 	<key>v054DefaultsChanged</key>
 	<true/>
 	<key>version</key>
-	<string>2.332</string>
+	<string>2.426</string>
 	<key>w7DragResize</key>
 	<true/>
 	<key>warningString</key>
