@@ -143,6 +143,7 @@ if [[ $PLATFORM == 'Darwin' ]]; then
     link_default "Library/Preferences/com.hegenberg.BetterTouchTool.plist"
     webstorm_target=`find $HOME/Library/Preferences -name 'WebStorm*' | tail -1`
     if [[ !  -z  $webstorm_target  ]]; then
+      link "$CONFIGS/Library/Preferences/WebStorm/colors" "$webstorm_target/colors"
       link "$CONFIGS/Library/Preferences/WebStorm/keymaps" "$webstorm_target/keymaps"
     else
       echo "No webstorm found!"
