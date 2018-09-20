@@ -154,6 +154,13 @@ if [[ $PLATFORM == 'Darwin' ]]; then
     else
       echo "No AndroidStudio found!"
     fi
+    intellij_target=`find $HOME/Library/Preferences -name 'IdeaIC*' | tail -1`
+    if [[ !  -z  $intellij_target  ]]; then
+      link "$CONFIGS/AndroidStudio/config/colors" "$intellij_target/colors"
+      link "$CONFIGS/AndroidStudio/config/keymaps" "$intellij_target/keymaps"
+    else
+      echo "No AndroidStudio found!"
+    fi
     finish "Preferences"
 
     link_default "Library/texmf"
