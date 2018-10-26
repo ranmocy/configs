@@ -15,7 +15,6 @@ webstorm \
 dropbox \
 google-backup-and-sync \
 transmission \
-1password \
 appcleaner \
 spotify \
 calibre \
@@ -34,6 +33,10 @@ open '/usr/local/Caskroom/adobe-creative-cloud/latest/Creative Cloud Installer.a
 
 brew cask install sogouinput
 open '/usr/local/Caskroom/sogouinput/48a,1535352534/sogou_mac_48a.app'
+
+# https://app-updates.agilebits.com/
+curl -O https://c.1password.com/dist/1P/mac4/1Password-6.8.9.pkg
+open 1Password-6.8.9.pkg
 
 # Sketch.app
 # Mathematica.app
