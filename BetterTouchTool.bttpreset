@@ -26,7 +26,7 @@
     "BSTTopMissionControlTreshold" : 34,
     "singleFingerTapRight" : 0.05000000074505806,
     "magicTrackpadPrefs" : {
-      "TrackpadFourFingerHorizSwipeGesture" : 2,
+      "Dragging" : false,
       "TrackpadPinch" : 1,
       "USBMouseStopsTrackpad" : 0,
       "TrackpadFourFingerVertSwipeGesture" : 2,
@@ -46,10 +46,10 @@
       "TrackpadThreeFingersRightClick" : false,
       "TrackpadThreeFingerVertSwipeGesture" : 0,
       "TrackpadTwoFingerFromRightEdgeSwipeGesture" : 3,
-      "TrackpadHandResting" : true,
-      "Dragging" : false,
       "TrackpadCornerSecondaryClick" : 0,
       "TrackpadRightClick" : true,
+      "TrackpadHandResting" : true,
+      "TrackpadFourFingerHorizSwipeGesture" : 2,
       "TrackpadThreeFingerDrag" : true
     },
     "BTTDrawingsHighlightStartPoint" : true,
@@ -142,7 +142,7 @@
     "BSTCornerRoundness" : 40,
     "BTTDismissIfNothingToShow" : true,
     "BSTPreventTopMissionControl" : true,
-    "BTTNumberOfStarts" : 2113,
+    "BTTNumberOfStarts" : 2120,
     "BTTHTTPServerEncrypted" : false,
     "showKeyboardTab" : true,
     "BTTConvertedDevices" : true,
@@ -160,8 +160,15 @@
     "BTTTouchBarUseMonoSpacedFont" : true,
     "nextMonitorMoveWarningShowed" : true
   },
-  "BTTPresetUUID" : "3329FEE2-59FD-4C30-BC52-54BD7059B555",
+  "BTTPresetUUID" : "F39348CE-ACEE-499F-A7E1-00F612E7054F",
   "BTTPresetContent" : [
+    {
+      "BTTAppBundleIdentifier" : "com.apple.finder",
+      "BTTAppName" : "Finder",
+      "BTTTriggers" : [
+
+      ]
+    },
     {
       "BTTAppBundleIdentifier" : "BT.G",
       "BTTAppName" : "Global",
@@ -169,6 +176,30 @@
 
       },
       "BTTTriggers" : [
+        {
+          "BTTTriggerType" : 130,
+          "BTTTriggerTypeDescription" : "5 Finger Swipe Down",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : 84,
+          "BTTPredefinedActionName" : "Restore Old Window Size",
+          "BTTEnabled2" : 1,
+          "BTTUUID" : "97CE46B8-1E73-4DAA-B853-737FF11C037E",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 1
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 84,
+          "BTTPredefinedActionName" : "Restore Old Window Size",
+          "BTTAdditionalConfiguration" : "1835049",
+          "BTTEnabled2" : 1,
+          "BTTUUID" : "1E80D601-04A0-4D9F-A4A8-4BFF15D26904",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 39,
+          "BTTShortcutModifierKeys" : 1835008,
+          "BTTOrder" : 5
+        },
         {
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
           "BTTPredefinedActionType" : 19,
@@ -183,6 +214,17 @@
           "BTTOrder" : 0
         },
         {
+          "BTTTriggerType" : 128,
+          "BTTTriggerTypeDescription" : "5 Finger Swipe Left",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : 19,
+          "BTTPredefinedActionName" : "Maximize Window Left",
+          "BTTEnabled2" : 1,
+          "BTTUUID" : "59651BB9-B105-4443-B9AD-233335C766FB",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 2
+        },
+        {
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
           "BTTPredefinedActionType" : 20,
           "BTTPredefinedActionName" : "Maximize Window Right",
@@ -194,6 +236,17 @@
           "BTTShortcutKeyCode" : 40,
           "BTTShortcutModifierKeys" : 1835008,
           "BTTOrder" : 1
+        },
+        {
+          "BTTTriggerType" : 129,
+          "BTTTriggerTypeDescription" : "5 Finger Swipe Right",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : 20,
+          "BTTPredefinedActionName" : "Maximize Window Right",
+          "BTTEnabled2" : 1,
+          "BTTUUID" : "F667AB72-9803-4991-B383-6E36A2D25D98",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 3
         },
         {
           "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
@@ -220,14 +273,31 @@
           "BTTShortcutKeyCode" : 37,
           "BTTShortcutModifierKeys" : 1835008,
           "BTTOrder" : 3
+        },
+        {
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTPredefinedActionType" : 21,
+          "BTTPredefinedActionName" : "Maximize Window",
+          "BTTAdditionalConfiguration" : "1835049",
+          "BTTEnabled2" : 1,
+          "BTTUUID" : "CAD93027-6FDB-46DD-848E-D9BBB8101DA9",
+          "BTTTriggerOnDown" : 1,
+          "BTTEnabled" : 1,
+          "BTTShortcutKeyCode" : 41,
+          "BTTShortcutModifierKeys" : 1835008,
+          "BTTOrder" : 4
+        },
+        {
+          "BTTTriggerType" : 131,
+          "BTTTriggerTypeDescription" : "5 Finger Swipe Up",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTPredefinedActionType" : 21,
+          "BTTPredefinedActionName" : "Maximize Window",
+          "BTTEnabled2" : 1,
+          "BTTUUID" : "0CF722A8-F346-482B-A5CB-09CF3BD66AED",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 0
         }
-      ]
-    },
-    {
-      "BTTAppBundleIdentifier" : "com.apple.finder",
-      "BTTAppName" : "Finder",
-      "BTTTriggers" : [
-
       ]
     }
   ],
