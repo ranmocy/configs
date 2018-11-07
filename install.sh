@@ -139,8 +139,6 @@ if [[ $PLATFORM == 'Darwin' ]]; then
     link_default "Library/KeyBindings/DefaultKeyBinding.dict"
     finish "DefaultKeyBinding"
 
-    link_default "Library/Preferences/com.googlecode.iterm2.plist"
-    link_default "Library/Preferences/com.hegenberg.BetterTouchTool.plist"
     webstorm_target=`find $HOME/Library/Preferences -name 'WebStorm*' | tail -1`
     if [[ !  -z  $webstorm_target  ]]; then
       link "$CONFIGS/Library/Preferences/WebStorm/colors" "$webstorm_target/colors"
@@ -166,15 +164,4 @@ if [[ $PLATFORM == 'Darwin' ]]; then
 
     link_default "Library/texmf"
     finish "texmf"
-fi
-
-if [[ $PLATFORM == 'Darwin' ]]; then
-  # Ignore local changes
-  # This is an binary file and it's updated frequently. But I never change the config.
-  # So ignore local changes.
-  git update-index --assume-unchanged Library/Preferences/com.googlecode.iterm2.plist
-
-  # Convert from binary to plain text
-  plutil -convert xml1 Library/Preferences/com.googlecode.iterm2.plist
-  plutil -convert xml1 Library/Preferences/com.hegenberg.BetterTouchTool.plist
 fi
