@@ -1,71 +1,73 @@
 [user]
-	name = Ranmocy Sheng
-	email = ranmocy@gmail.com
-	signingkey = FC6B5559
+  name = Ranmocy Sheng
+  email = ranmocy@gmail.com
+  signingkey = FC6B5559
 [core]
-	excludesfile = ~/.gitexclude
-	quotePath = false
+  excludesfile = ~/.gitexclude
+  quotePath = false
 [diff]
-	renames = copies
-	mnemonicprefix = true
-	compactionHeuristic = true
+  renames = copies
+  mnemonicprefix = true
+  compactionHeuristic = true
 [color]
-	ui = true
+  ui = true
 [alias]
-	test = !git diff origin/master --name-only | grep _spec.rb | xargs zeus rspec
-	a = add
-	aa = add --all
-	b = branch
-	bl = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/heads/wsheng*"
-	br = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/remotes/origin/wsheng*"
-	bb = !echo "===heads===" && git bl && echo "===remotes===" && git br
-	d = diff
-	ds = diff --staged
-	dh = diff HEAD
-	dm = diff master
-	f = fetch -p
-	i = commit
-	im = commit -m
-	iam = commit -am
-	# l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
-	l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --graph --topo-order
-	lp = log -p
-	lme = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --author='Wanzhang Sheng'
-	o = checkout
-	r = remote
-	s = status -sb
-	u = !git checkout master && git pull && git fetch -p
-	amend = !sh -c 'git commit --amend -C HEAD --date \"`date`\"'
-	undo = reset --soft HEAD^
-	unstage = reset HEAD --
-	yesterday = log --since '1 day ago' --graph --topo-order --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
-	st = stash
-	stp = stash pop
-	stl = stash list
-	st0 = stash pop stash@{0}
-	st1 = stash pop stash@{1}
-	st2 = stash pop stash@{2}
-	st3 = stash pop stash@{3}
-	st4 = stash pop stash@{4}
-	st5 = stash pop stash@{5}
-	v = !stree
-	latest = for-each-ref --sort=-committerdate --format=\"%(committername)@%(refname:short)\t[%(committerdate:short)]\t%(contents)\"
+  test = !git diff origin/master --name-only | grep _spec.rb | xargs zeus rspec
+  a = add
+  aa = add --all
+  b = branch
+  bl = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/heads/wsheng*"
+  br = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/remotes/origin/wsheng*"
+  bb = !echo "===heads===" && git bl && echo "===remotes===" && git br
+  d = diff
+  ds = diff --staged
+  dh = diff HEAD
+  dm = diff master
+  f = fetch -p
+  i = commit
+  im = commit -m
+  iam = commit -am
+  # l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
+  l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --graph --topo-order
+  lp = log -p
+  lme = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --author='Wanzhang Sheng'
+  o = checkout
+  r = remote
+  s = status -sb
+  u = !git checkout master && git pull && git fetch -p
+  amend = !sh -c 'git commit --amend -C HEAD --date \"`date`\"'
+  undo = reset --soft HEAD^
+  unstage = reset HEAD --
+  yesterday = log --since '1 day ago' --graph --topo-order --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
+  st = stash
+  stp = stash pop
+  stl = stash list
+  st0 = stash pop stash@{0}
+  st1 = stash pop stash@{1}
+  st2 = stash pop stash@{2}
+  st3 = stash pop stash@{3}
+  st4 = stash pop stash@{4}
+  st5 = stash pop stash@{5}
+  v = !stree
+  latest = for-each-ref --sort=-committerdate --format=\"%(committername)@%(refname:short)\t[%(committerdate:short)]\t%(contents)\"
 [http]
-	postBuffer = 524288000
+  postBuffer = 524288000
 [push]
-	default = current
+  default = current
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
 [credential]
-	helper = osxkeychain
-	helper = store
+  helper = osxkeychain
+  helper = store
 [help]
-	autocorrect = 1
+  autocorrect = 1
 [rerere]
-	enabled = true
+  enabled = true
 [merge]
-	stat = true
+  stat = true
 [interactive]
-	diffFilter = diff-highlight
+  diffFilter = diff-highlight
 [pull]
-	rebase = true
+  rebase = true
+[includeIf "gitdir:~/Android/"]
+  path = ~/bin_corp/gitconfig

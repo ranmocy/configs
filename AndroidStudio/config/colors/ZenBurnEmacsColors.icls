@@ -1,4 +1,5 @@
 <scheme name="ZenBurnEmacsColors" version="142" parent_scheme="Default">
+  <option name="FONT_SCALE" value="2.0" />
   <option name="LINE_SPACING" value="1.2" />
   <option name="EDITOR_FONT_SIZE" value="18" />
   <option name="CONSOLE_LINE_SPACING" value="1.0" />
@@ -103,6 +104,12 @@
       <value>
         <option name="EFFECT_COLOR" value="526da5" />
         <option name="ERROR_STRIPE_COLOR" value="273955" />
+      </value>
+    </option>
+    <option name="BUILD.BUILTIN_NAME" baseAttributes="DEFAULT_PREDEFINED_SYMBOL" />
+    <option name="BUILD.FN.DEFINITION">
+      <value>
+        <option name="FOREGROUND" value="93e0e3" />
       </value>
     </option>
     <option name="CLASS_NAME_ATTRIBUTES">

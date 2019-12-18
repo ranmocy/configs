@@ -36,3 +36,7 @@
 -Dawt.useSystemAAFontSettings=on
 -Dswing.aatext=true
 -Dsun.java2d.xrender=true
+
+-Dide.index.image.max.size=0
+-Djdk.util.zip.ensureTrailingSlash=false
+-Dnele.mock.data=false
