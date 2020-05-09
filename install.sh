@@ -103,12 +103,37 @@ finish "Tmux"
 link "$CONFIGS/vimrc" "$HOME/.vimrc"
 finish "VIM"
 
+sublime_root="$([[ $PLATFORM == 'Linux' ]] && echo "$XDG_CONFIG_HOME/sublime-text-3" || echo "$HOME/Library/Application Support/Sublime Text 3")"
+link "$CONFIGS/sublime_text_3_config" "$sublime_root/Packages/User"
+finish "Sublime Text"
+
+jetbrain_root="$([[ $PLATFORM == 'Linux' ]] && echo "$XDG_CONFIG_HOME/JetBrains" || echo "$HOME/Library/Preferences")"
+webstorm_target=`find $jetbrain_root -name 'WebStorm*' | tail -1`
+if [[ !  -z  $webstorm_target  ]]; then
+  link "$CONFIGS/Library/Preferences/WebStorm/colors" "$webstorm_target/colors"
+  link "$CONFIGS/Library/Preferences/WebStorm/keymaps" "$webstorm_target/keymaps"
+else
+  echo "No WebStorm found!"
+fi
+studio_target=`find $jetbrain_root -name 'AndroidStudio*' | tail -1`
+if [[ !  -z  $studio_target  ]]; then
+  link "$CONFIGS/AndroidStudio/config/colors" "$studio_target/colors"
+  link "$CONFIGS/AndroidStudio/config/keymaps" "$studio_target/keymaps"
+else
+  echo "No AndroidStudio found!"
+fi
+intellij_target=`find $jetbrain_root -name 'IdeaIC*' | tail -1`
+if [[ !  -z  $intellij_target  ]]; then
+  link "$CONFIGS/AndroidStudio/config/colors" "$intellij_target/colors"
+  link "$CONFIGS/AndroidStudio/config/keymaps" "$intellij_target/keymaps"
+else
+  echo "No IdeaIC found!"
+fi
+finish "Preferences"
+
 # Linux
 if [[ $PLATFORM == 'Linux' ]]; then
-    link "$CONFIGS/sublime_text_3_config" "$HOME/.config/sublime-text-3/Packages/User"
-    finish "Sublime Text"
-
-    link "$CONFIGS/awesome_config" "$HOME/.config/awesome"
+    link "$CONFIGS/awesome_config" "$XDG_CONFIG_HOME/awesome"
     finish "Awesome 3"
 
     link "$CONFIGS/Xdefaults" "$HOME/.Xdefaults"
@@ -120,9 +145,6 @@ fi
 
 # Mac
 if [[ $PLATFORM == 'Darwin' ]]; then
-    link "$CONFIGS/sublime_text_3_config" "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
-    finish "Sublime Text"
-
     link_default "Library/Application Support/BetterTouchTool/bttdata2"
     finish "BetterTouchTool"
 
@@ -138,29 +160,6 @@ if [[ $PLATFORM == 'Darwin' ]]; then
 
     link_default "Library/KeyBindings/DefaultKeyBinding.dict"
     finish "DefaultKeyBinding"
-
-    webstorm_target=`find $HOME/Library/Preferences -name 'WebStorm*' | tail -1`
-    if [[ !  -z  $webstorm_target  ]]; then
-      link "$CONFIGS/Library/Preferences/WebStorm/colors" "$webstorm_target/colors"
-      link "$CONFIGS/Library/Preferences/WebStorm/keymaps" "$webstorm_target/keymaps"
-    else
-      echo "No webstorm found!"
-    fi
-    studio_target=`find $HOME/Library/Preferences -name 'AndroidStudio*' | tail -1`
-    if [[ !  -z  $studio_target  ]]; then
-      link "$CONFIGS/AndroidStudio/config/colors" "$studio_target/colors"
-      link "$CONFIGS/AndroidStudio/config/keymaps" "$studio_target/keymaps"
-    else
-      echo "No AndroidStudio found!"
-    fi
-    intellij_target=`find $HOME/Library/Preferences -name 'IdeaIC*' | tail -1`
-    if [[ !  -z  $intellij_target  ]]; then
-      link "$CONFIGS/AndroidStudio/config/colors" "$intellij_target/colors"
-      link "$CONFIGS/AndroidStudio/config/keymaps" "$intellij_target/keymaps"
-    else
-      echo "No AndroidStudio found!"
-    fi
-    finish "Preferences"
 
     link_default "Library/texmf"
     finish "texmf"
