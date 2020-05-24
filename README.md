@@ -5,13 +5,13 @@ Bundle of all useful configs
 ## Usage
 
 ```bash
-git clone https://github.com/ranmocy/configs.git ~/.configs && cd ~/.configs && bash install.sh
+git clone https://github.com/ranmocy/configs.git ~/.oh-my-configs && bash ~/.oh-my-configs/install.sh
 ```
 
 To upgrade all packages:
 
 ```bash
-bash upgrade.sh
+bash ~/.oh-my-configs/upgrade.sh
 ```
 
 ## Config List

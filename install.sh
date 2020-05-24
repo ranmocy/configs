@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -e;
 
 # Colors
 black=`tput setaf 0`
@@ -177,3 +177,6 @@ if [[ $PLATFORM == 'Darwin' ]]; then
     link_default "Library/texmf"
     finish "texmf"
 fi
+
+source $CONFIGS/install_packages.sh
+finish "Packages"
