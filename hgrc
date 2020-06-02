@@ -1,1 +1,5 @@
+[alias]
 reverthead = revert -r p4head
+e = evolve --any
+s = sync --all
+u = upload --all --will-update-only
