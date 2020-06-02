@@ -66,8 +66,6 @@
   enabled = true
 [merge]
   stat = true
-[interactive]
-  diffFilter = diff-highlight
 [pull]
   rebase = true
 [includeIf "gitdir:~/Android/"]
