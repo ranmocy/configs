@@ -121,24 +121,24 @@ echo "Detected Jetbrain root:$jetbrain_root"
 webstorm_target=`find $jetbrain_root -name 'WebStorm*' | tail -1`
 echo "Detected WebStorm target:$webstorm_target"
 if [[ !  -z  $webstorm_target  ]]; then
-  link "$CONFIGS/Library/Preferences/WebStorm/colors" "$webstorm_target/colors"
-  link "$CONFIGS/Library/Preferences/WebStorm/keymaps" "$webstorm_target/keymaps"
+  link "$CONFIGS/Intellij/config/colors" "$webstorm_target/colors"
+  link "$CONFIGS/Intellij/config/keymaps" "$webstorm_target/keymaps"
 else
   echo "No WebStorm found!"
 fi
 studio_target=`find $jetbrain_root -name 'AndroidStudio*' | tail -1`
 echo "Detected AndroidStudio target:$studio_target"
 if [[ !  -z  $studio_target  ]]; then
-  link "$CONFIGS/AndroidStudio/config/colors" "$studio_target/colors"
-  link "$CONFIGS/AndroidStudio/config/keymaps" "$studio_target/keymaps"
+  link "$CONFIGS/Intellij/config/colors" "$studio_target/colors"
+  link "$CONFIGS/Intellij/config/keymaps" "$studio_target/keymaps"
 else
   echo "No AndroidStudio found!"
 fi
 intellij_target=`find $jetbrain_root -name 'IdeaIC*' | tail -1`
 echo "Detected IdeaIC target:$intellij_target"
 if [[ !  -z  $intellij_target  ]]; then
-  link "$CONFIGS/AndroidStudio/config/colors" "$intellij_target/colors"
-  link "$CONFIGS/AndroidStudio/config/keymaps" "$intellij_target/keymaps"
+  link "$CONFIGS/Intellij/config/colors" "$intellij_target/colors"
+  link "$CONFIGS/Intellij/config/keymaps" "$intellij_target/keymaps"
 else
   echo "No IdeaIC found!"
 fi

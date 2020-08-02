@@ -26,6 +26,9 @@
   <action id="ReopenClosedTab">
     <keyboard-shortcut first-keystroke="alt w" />
   </action>
+  <action id="Run">
+    <keyboard-shortcut first-keystroke="f10" />
+  </action>
   <action id="SendEOF" />
   <action id="ShelvedChanges.Diff" />
   <action id="SwitchApply">
