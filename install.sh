@@ -119,24 +119,30 @@ finish "Sublime Text"
 jetbrain_root="$([[ $PLATFORM == 'Linux' ]] && echo "$XDG_CONFIG_HOME/JetBrains" || echo "$HOME/Library/Preferences")"
 echo "Detected Jetbrain root:$jetbrain_root"
 webstorm_target=`find $jetbrain_root -name 'WebStorm*' | tail -1`
-echo "Detected WebStorm target:$webstorm_target"
 if [[ !  -z  $webstorm_target  ]]; then
+  if [[ -d "$webstorm_target/jba_config" ]]; then
+    webstorm_target="$webstorm_target/jba_config"
+  fi
+  echo "Detected WebStorm target:$webstorm_target"
   link "$CONFIGS/Intellij/config/colors" "$webstorm_target/colors"
   link "$CONFIGS/Intellij/config/keymaps" "$webstorm_target/keymaps"
 else
   echo "No WebStorm found!"
 fi
 studio_target=`find $jetbrain_root -name 'AndroidStudio*' | tail -1`
-echo "Detected AndroidStudio target:$studio_target"
 if [[ !  -z  $studio_target  ]]; then
+  echo "Detected AndroidStudio target:$studio_target"
   link "$CONFIGS/Intellij/config/colors" "$studio_target/colors"
   link "$CONFIGS/Intellij/config/keymaps" "$studio_target/keymaps"
 else
   echo "No AndroidStudio found!"
 fi
 intellij_target=`find $jetbrain_root -name 'IdeaIC*' | tail -1`
-echo "Detected IdeaIC target:$intellij_target"
 if [[ !  -z  $intellij_target  ]]; then
+  if [[ -d "$intellij_target/jba_config" ]]; then
+    intellij_target="$intellij_target/jba_config"
+  fi
+  echo "Detected IdeaIC target:$intellij_target"
   link "$CONFIGS/Intellij/config/colors" "$intellij_target/colors"
   link "$CONFIGS/Intellij/config/keymaps" "$intellij_target/keymaps"
 else
@@ -178,5 +184,5 @@ if [[ $PLATFORM == 'Darwin' ]]; then
     finish "texmf"
 fi
 
-source $CONFIGS/install_packages.sh
+source $CONFIGS/packages_install.sh
 finish "Packages"
