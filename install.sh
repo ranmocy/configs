@@ -125,7 +125,11 @@ if [[ !  -z  $webstorm_target  ]]; then
   fi
   echo "Detected WebStorm target:$webstorm_target"
   link "$CONFIGS/Intellij/config/colors" "$webstorm_target/colors"
-  link "$CONFIGS/Intellij/config/keymaps" "$webstorm_target/keymaps"
+  if [[ $PLATFORM == 'Linux' ]]; then
+    link "$CONFIGS/Intellij/config/keymaps" "$webstorm_target/linux.keymaps"
+  else
+    link "$CONFIGS/Intellij/config/keymaps" "$webstorm_target/keymaps"
+  fi
 else
   echo "No WebStorm found!"
 fi
