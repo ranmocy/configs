@@ -36,7 +36,8 @@
   s = status -sb
   u = !git checkout master && git pull && git fetch -p
   amend = !sh -c 'git commit --amend -C HEAD --date \"`date`\"'
-  undo = reset --soft HEAD^
+  unamend = reset --soft HEAD@{1}
+  uncommit = reset --soft HEAD^
   unstage = reset HEAD --
   yesterday = log --since '1 day ago' --graph --topo-order --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
   st = stash
