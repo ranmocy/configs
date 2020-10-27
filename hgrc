@@ -1,5 +1,8 @@
 [alias]
 reverthead = revert -r p4head
+a = amend -A
+ae = !$HG a && $HG e
+aeu = !$HG a && $HG e && $HG u
 e = evolve
 ea = evolve --any
 ec = evolve --continue
