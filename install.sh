@@ -133,7 +133,8 @@ if [[ !  -z  $webstorm_target  ]]; then
 else
   echo "No WebStorm found!"
 fi
-studio_target=`find $jetbrain_root -name 'AndroidStudio*' | tail -1`
+studio_root="$([[ $PLATFORM == 'Linux' ]] && echo "$XDG_CONFIG_HOME/Google" || echo "$HOME/Library/Preferences")"
+studio_target=`find $studio_root -name 'AndroidStudio*' | tail -1`
 if [[ !  -z  $studio_target  ]]; then
   echo "Detected AndroidStudio target:$studio_target"
   link "$CONFIGS/Intellij/config/colors" "$studio_target/colors"
