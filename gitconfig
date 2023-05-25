@@ -73,7 +73,6 @@
   autosetuprebase = always
 [credential]
   helper = osxkeychain
-  helper = store
 [help]
   autocorrect = 1
 [rerere]
@@ -91,3 +90,9 @@
 	required = true
 [init]
 	defaultBranch = main
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
