@@ -117,6 +117,14 @@ echo "Detected Sublime Text root:$sublime_root"
 link "$CONFIGS/sublime_text_3_config" "$sublime_root/Packages/User"
 finish "Sublime Text"
 
+code_root="$([[ $PLATFORM == 'Linux' ]] && echo "$XDG_CONFIG_HOME/code" || echo "$HOME/Library/Application Support/Code")"
+echo "Detected VS Code root:$code_root"
+link "$CONFIGS/Code/keybindings.json" "$code_root/User/keybindings.json"
+link "$CONFIGS/Code/settings.json" "$code_root/User/settings.json"
+link "$CONFIGS/Code/tasks.json" "$code_root/User/tasks.json"
+link "$CONFIGS/Code/snippets" "$code_root/User/snippets"
+finish "Code"
+
 jetbrain_root="$([[ $PLATFORM == 'Linux' ]] && echo "$XDG_CONFIG_HOME/JetBrains" || echo "$HOME/Library/Application Support/JetBrains")"
 echo "Detected Jetbrain root:$jetbrain_root"
 webstorm_target=`find "$jetbrain_root" -name 'WebStorm*' | tail -1`
