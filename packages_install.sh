@@ -41,17 +41,53 @@ fi
 if confirm "essentials"; then
   # May need grant Full Disk Access to iterm2
   # Sign in to google-chrome
-  brew install --cask \
-  iterm2 \
-  visual-studio-code \
-  google-chrome \
-  alfred \
-  bettertouchtool \
-  dropbox \
-  google-drive \
-  appcleaner \
-  the-unarchiver \
-  ;
+
+  essentials=(
+    # System
+    karabiner-elments
+    # alfred
+    raycast
+    bettertouchtool
+
+    # Background
+    appcleaner
+    dropbox
+    google-drive
+    the-unarchiver
+
+    # Tools
+    '1passpord'
+    google-chrome
+    calibre
+    transmission
+    # chrome-remote-desktop-host
+    telegram
+    # todoist
+    # openemu
+    # utm
+    # skim
+    # ScummVM
+    # ngrok
+
+    # Dev
+    iterm2
+    visual-studio-code
+    # sublime-text
+    # android-studio
+    webstorm
+    docker
+    # postman
+    # figma
+    # slack
+    # gather
+
+    # Media
+    # vlc
+    spotify
+    iina
+  )
+
+  brew install --cask "${essentials[@]}";
 fi
 
 if confirm "sougou"; then
@@ -59,38 +95,10 @@ if confirm "sougou"; then
   open '/usr/local/Caskroom/sogouinput/48a,1535352534/sogou_mac_48a.app'
 fi
 
-if confirm "media"; then
-  brew install --cask \
-  # vlc \
-  # spotify \
-  iina \
-  ;
-fi
-
 # if confirm "Adobe CC"; then
 #  brew install --cask adobe-creative-cloud ;
 #  open '/usr/local/Caskroom/adobe-creative-cloud/latest/Creative Cloud Installer.app'
 # fi
-
-if confirm "dev"; then
-  brew install --cask \
-  karabiner-elements \
-  # android-studio \
-  webstorm \
-  ;
-fi
-
-if confirm "optional"; then
-  brew install --cask \
-  calibre \
-  transmission \
-  # chrome-remote-desktop-host \
-  telegram \
-  # openemu \
-  # skim \
-  # ScummVM \
-  ;
-fi
 
 # if [[ confirm "1Password" ]]; then
 #   # https://app-updates.agilebits.com/

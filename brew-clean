@@ -5,10 +5,13 @@ WHITELIST = [
   'awscli',
   # 'curl',
   'coreutils',
+  'fish',
+  'gh',
   # 'git-extras',
   # 'htop-osx',
   'heroku',
-  'openjdk',
+  'jq',
+  # 'openjdk',
   # 'libyaml', # deps for rvm/ruby
   # 'mongodb-community',
   # 'node',
@@ -18,6 +21,9 @@ WHITELIST = [
   # 'terminal-notifier',
   # 'tmux',
   'wget',
+  # cross compile
+  'aarch64-unknown-linux-gnu',
+  'x86_64-unknown-linux-gnu',
 ]
 
 loop {
