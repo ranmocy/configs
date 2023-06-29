@@ -216,6 +216,11 @@ if [[ $PLATFORM == 'Darwin' ]]; then
 
     link_default "Library/texmf"
     finish "texmf"
+
+    # Disable ReportCrash
+    launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
+    sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
+
 fi
 
 # Github codespaces
