@@ -12,7 +12,7 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "aws.profile": "profile:default",
   "aws.sam.enableCodeLenses": false,
@@ -52,7 +52,7 @@
   "terminal.integrated.tabs.location": "left",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.zoomLevel": 1,
-  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.colorTheme": "Solarized Dark",
   "workbench.editor.enablePreview": false,
   "workbench.startupEditor": "none",
   "solidity.formatter": "forge",

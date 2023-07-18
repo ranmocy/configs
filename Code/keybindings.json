@@ -15,20 +15,6 @@
         "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
     },
     {
-        "command": "editor.action.clipboardCopyAction",
-        "key": "cmd+c"
-    },
-    {
-        "command": "editor.action.clipboardCutAction",
-        "key": "cmd+x",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "command": "editor.action.clipboardCutAction",
-        "key": "shift+[Delete]",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
         "command": "editor.action.clipboardPasteAction",
         "key": "cmd+v"
     },
@@ -149,16 +135,6 @@
         "key": "cmd+f9"
     },
     {
-        "command": "copyFilePath",
-        "key": "shift+cmd+c",
-        "when": "!editorFocus"
-    },
-    {
-        "command": "workbench.action.debug.run",
-        "key": "ctrl+d",
-        "when": "debuggersAvailable"
-    },
-    {
         "command": "merge-conflict.accept.current",
         "key": "shift+ctrl+[ArrowRight]",
         "when": "isInDiffEditor"
@@ -181,11 +157,6 @@
         "command": "editor.action.goToDeclaration",
         "key": "f4",
         "when": "editorTextFocus"
-    },
-    {
-        "command": "workbench.action.files.showOpenedFileInNewWindow",
-        "key": "shift+f4",
-        "when": "emptyWorkspaceSupport"
     },
     {
         "command": "acceptSelectedSuggestion",
@@ -211,11 +182,6 @@
         "command": "acceptSelectedSuggestion",
         "key": "shift+cmd+[Enter]",
         "when": "acceptSuggestionOnEnter && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
-    },
-    {
-        "command": "editor.action.deleteLines",
-        "key": "cmd+[Backspace]",
-        "when": "textInputFocus && !editorReadonly"
     },
     {
         "command": "deleteWordRight",
@@ -397,11 +363,6 @@
         "when": "editorTextFocus"
     },
     {
-        "command": "editor.debug.action.selectionToRepl",
-        "key": "alt+f8",
-        "when": "debuggersAvailable && editorHasSelection"
-    },
-    {
         "command": "editor.unfoldAll",
         "key": "shift+cmd+[NumpadAdd]",
         "when": "editorTextFocus && foldingEnabled"
@@ -472,14 +433,6 @@
     {
         "command": "workbench.action.navigateForward",
         "key": "cmd+alt+[ArrowRight]"
-    },
-    {
-        "command": "workbench.action.files.newUntitledFile",
-        "key": "cmd+n"
-    },
-    {
-        "command": "workbench.action.files.newUntitledFile",
-        "key": "ctrl+[Enter]"
     },
     {
         "command": "git.pushTo",
@@ -555,15 +508,6 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "command": "workbench.action.files.newUntitledFile",
-        "key": "shift+cmd+n"
-    },
-    {
-        "command": "workbench.action.compareEditor.nextChange",
-        "key": "f7",
-        "when": "textCompareEditorVisible"
-    },
-    {
         "command": "workbench.action.focusNextGroup",
         "key": "alt+[Tab]",
         "when": "editorFocus"
@@ -590,11 +534,6 @@
         "command": "workbench.action.focusPreviousGroup",
         "key": "shift+alt+[Tab]",
         "when": "editorFocus"
-    },
-    {
-        "command": "workbench.action.compareEditor.previousChange",
-        "key": "shift+f7",
-        "when": "textCompareEditorVisible"
     },
     {
         "command": "workbench.action.previousEditor",
@@ -646,23 +585,8 @@
         "key": "shift+cmd+r"
     },
     {
-        "command": "workbench.action.debug.continue",
-        "key": "cmd+alt+r",
-        "when": "inDebugMode"
-    },
-    {
-        "command": "workbench.action.debug.continue",
-        "key": "f9",
-        "when": "inDebugMode"
-    },
-    {
         "command": "workbench.action.tasks.reRunTask",
         "key": "ctrl+r"
-    },
-    {
-        "command": "editor.debug.action.runToCursor",
-        "key": "alt+f9",
-        "when": "debugState == 'stopped'"
     },
     {
         "command": "workbench.action.files.saveAll",
@@ -681,11 +605,6 @@
         "command": "editor.action.addSelectionToNextFindMatch",
         "key": "cmd+d",
         "when": "editorFocus"
-    },
-    {
-        "command": "workbench.action.showErrorsWarnings",
-        "key": "cmd+f1",
-        "when": "editorTextFocus"
     },
     {
         "command": "editor.action.quickFix",
@@ -716,28 +635,8 @@
         "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor"
     },
     {
-        "command": "workbench.action.debug.stepInto",
-        "key": "f7",
-        "when": "debugState != 'inactive'"
-    },
-    {
-        "command": "workbench.action.debug.stepOut",
-        "key": "shift+f8",
-        "when": "debugState == 'stopped'"
-    },
-    {
-        "command": "workbench.action.debug.stepOver",
-        "key": "f8",
-        "when": "debugState == 'stopped'"
-    },
-    {
         "command": "workbench.action.toggleFullScreen",
         "key": "ctrl+cmd+f"
-    },
-    {
-        "command": "editor.debug.action.toggleBreakpoint",
-        "key": "cmd+f8",
-        "when": "debuggersAvailable && editorTextFocus"
     },
     {
         "command": "java.action.showTypeHierarchy",
@@ -745,18 +644,9 @@
         "when": "editorLangId == java && editorTextFocus"
     },
     {
-        "command": "cursorUndo",
-        "key": "shift+ctrl+g",
-        "when": "textInputFocus"
-    },
-    {
         "command": "git.revertSelectedRanges",
         "key": "cmd+alt+z",
         "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "command": "git.sync",
-        "key": "cmd+t"
     },
     {
         "command": "editor.action.dirtydiff.next",
@@ -845,10 +735,6 @@
         "key": ""
     },
     {
-        "command": "-workbench.action.files.showOpenedFileInNewWindow",
-        "key": "cmd+k o"
-    },
-    {
         "command": "-acceptSelectedSuggestion",
         "key": "tab"
     },
@@ -863,10 +749,6 @@
     {
         "command": "-acceptAlternativeSelectedSuggestion",
         "key": "shift+enter"
-    },
-    {
-        "command": "-editor.action.deleteLines",
-        "key": "shift+cmd+k"
     },
     {
         "command": "-deleteWordRight",
@@ -1073,10 +955,6 @@
         "key": "alt+up"
     },
     {
-        "command": "-workbench.action.compareEditor.nextChange",
-        "key": "alt+f5"
-    },
-    {
         "command": "-workbench.action.focusNextGroup",
         "key": ""
     },
@@ -1099,10 +977,6 @@
     {
         "command": "-workbench.action.focusPreviousGroup",
         "key": ""
-    },
-    {
-        "command": "-workbench.action.compareEditor.previousChange",
-        "key": "shift+alt+f5"
     },
     {
         "command": "-workbench.action.previousEditor",
@@ -1213,10 +1087,6 @@
         "key": ""
     },
     {
-        "command": "-cursorUndo",
-        "key": "cmd+u"
-    },
-    {
         "command": "-git.revertSelectedRanges",
         "key": "cmd+k cmd+r"
     },
@@ -1258,16 +1128,6 @@
     {
         "key": "cmd+l",
         "command": "-workbench.action.gotoLine"
-    },
-    {
-        "key": "shift+cmd+p",
-        "command": "workbench.action.quickOpenNavigateNextInFilePicker",
-        "when": "inFilesPicker && inQuickOpen"
-    },
-    {
-        "key": "cmd+p",
-        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
-        "when": "inFilesPicker && inQuickOpen"
     },
     {
         "key": "cmd+p",
@@ -1356,5 +1216,9 @@
     {
         "key": "f1",
         "command": "workbench.files.action.showActiveFileInExplorer"
+    },
+    {
+        "command": "-editor.action.deleteLines",
+        "key": "shift+cmd+k"
     }
 ]
