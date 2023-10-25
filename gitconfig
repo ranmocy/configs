@@ -21,6 +21,7 @@
   test = !git diff origin/master --name-only | grep _spec.rb | xargs zeus rspec
   a = add
   aa = add --all
+  aam = !git add --all && git commit --amend --no-edit
   b = branch
   bl = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/heads/*"
   br = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/remotes/origin/*"
@@ -92,7 +93,9 @@
 	defaultBranch = main
 [credential "https://github.com"]
 	helper =
-	helper = !/opt/homebrew/bin/gh auth git-credential
+    helper = !/opt/homebrew/bin/gh auth git-credential
+    #helper = !/usr/local/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper =
-	helper = !/opt/homebrew/bin/gh auth git-credential
+    helper = !/opt/homebrew/bin/gh auth git-credential
+    #helper = !/usr/local/bin/gh auth git-credential

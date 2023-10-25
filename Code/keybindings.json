@@ -199,21 +199,6 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "command": "cursorLineEnd",
-    "key": "[End]",
-    "when": "textInputFocus"
-  },
-  {
-    "command": "cursorLineEnd",
-    "key": "cmd+[ArrowRight]",
-    "when": "textInputFocus"
-  },
-  {
-    "command": "cursorLineEnd",
-    "key": "ctrl+e",
-    "when": "textInputFocus"
-  },
-  {
     "command": "cursorLineEndSelect",
     "key": "shift+[End]",
     "when": "textInputFocus"
@@ -221,21 +206,6 @@
   {
     "command": "cursorLineEndSelect",
     "key": "shift+cmd+[ArrowRight]",
-    "when": "textInputFocus"
-  },
-  {
-    "command": "cursorLineStart",
-    "key": "[Home]",
-    "when": "textInputFocus"
-  },
-  {
-    "command": "cursorLineStart",
-    "key": "cmd+[ArrowLeft]",
-    "when": "textInputFocus"
-  },
-  {
-    "command": "cursorLineStart",
-    "key": "ctrl+a",
     "when": "textInputFocus"
   },
   {
@@ -440,10 +410,6 @@
     "when": "!inDebugMode && !terminalFocus"
   },
   {
-    "command": "workbench.action.showCommands",
-    "key": "shift+cmd+a"
-  },
-  {
     "command": "workbench.action.showAllSymbols",
     "key": "cmd+o"
   },
@@ -527,7 +493,7 @@
   },
   {
     "command": "editor.action.triggerParameterHints",
-    "key": "shift+cmd+p",
+    "key": "ctrl+shift+p",
     "when": "editorHasSignatureHelpProvider && editorTextFocus"
   },
   {
@@ -591,10 +557,6 @@
   {
     "command": "workbench.action.files.saveAll",
     "key": "cmd+s"
-  },
-  {
-    "command": "workbench.action.showCommands",
-    "key": "shift shift"
   },
   {
     "command": "editor.action.selectHighlights",
@@ -893,14 +855,6 @@
   {
     "command": "-git.pushTo",
     "key": ""
-  },
-  {
-    "command": "-workbench.action.showCommands",
-    "key": "f1"
-  },
-  {
-    "command": "-workbench.action.showCommands",
-    "key": "shift+cmd+p"
   },
   {
     "command": "-workbench.action.showAllSymbols",
@@ -1210,5 +1164,64 @@
   {
     "command": "-editor.action.deleteLines",
     "key": "shift+cmd+k"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "editor.action.insertCursorAtEndOfEachLineSelected",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "cursorHome",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-cursorLineEnd",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "cursorEnd",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "-cursorLineStart",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "f1",
+    "command": "-workbench.action.showCommands"
+  },
+  {
+    "key": "cmd+b",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "f12",
+    "command": "-editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "cmd+b",
+    "command": "editor.gotoNextSymbolFromResult",
+    "when": "hasSymbols"
+  },
+  {
+    "key": "f12",
+    "command": "-editor.gotoNextSymbolFromResult",
+    "when": "hasSymbols"
+  },
+  {
+    "key": "cmd+b",
+    "command": "goToNextReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
+    "key": "f12",
+    "command": "-goToNextReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
   }
 ]

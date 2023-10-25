@@ -3,7 +3,7 @@
     "editor.defaultFormatter": "vscode.css-language-features"
   },
   "[html]": {
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -12,6 +12,15 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.formatOnType": true,
+    "editor.indentSize": 4,
+    "editor.wordBasedSuggestions": false
+  },
+  "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "aws.profile": "profile:default",
@@ -23,7 +32,6 @@
   "editor.accessibilitySupport": "off",
   "editor.formatOnPaste": true,
   "editor.minimap.enabled": false,
-  "editor.multiCursorModifier": "ctrlCmd",
   "editor.renderWhitespace": "all",
   "editor.suggest.preview": true,
   "editor.suggest.showMethods": true,
@@ -57,21 +65,12 @@
   "workbench.startupEditor": "none",
   "solidity.formatter": "forge",
   "editor.largeFileOptimizations": false,
-  "[python]": {
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.formatOnType": true,
-    "editor.wordBasedSuggestions": false
-  },
   "editor.inlineSuggest.enabled": true,
   "files.autoSave": "afterDelay",
   "editor.fontFamily": "'Source Code Pro', Menlo, Monaco, 'Courier New', monospace",
   "editor.stickyScroll.enabled": true,
   "editor.smoothScrolling": true,
   "editor.scrollBeyondLastLine": false,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "evenBetterToml.formatter.allowedBlankLines": 2,
   "editor.codeActionsOnSave": {
     // "source.organizeImports": true,
@@ -82,4 +81,11 @@
   "notebook.formatOnSave.enabled": true,
   "scm.alwaysShowActions": true,
   "files.autoSaveDelay": 5000,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": false,
+    "scminput": false
+  },
+  "editor.multiCursorModifier": "ctrlCmd"
 }
