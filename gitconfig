@@ -5,7 +5,7 @@
 [core]
   excludesfile = ~/.gitexclude
   quotePath = false
-  editor = s --wait
+  editor = vim
   mergeoptions = --no-edit
 [diff]
   renames = copies
@@ -14,7 +14,7 @@
   tool = default-difftool
   noprefix = true
 [difftool "default-difftool"]
-  cmd = s --wait --diff $LOCAL $REMOTE
+  cmd = vim --diff $LOCAL $REMOTE
 [color]
   ui = true
 [alias]
