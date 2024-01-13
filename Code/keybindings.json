@@ -6,11 +6,6 @@
   },
   {
     "command": "editor.action.formatDocument",
-    "key": "cmd+alt+l",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
-  },
-  {
-    "command": "editor.action.formatDocument",
     "key": "ctrl+cmd+l",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
   },
@@ -36,11 +31,7 @@
   },
   {
     "command": "workbench.action.navigateBack",
-    "key": "cmd+BracketLeft"
-  },
-  {
-    "command": "workbench.action.navigateBack",
-    "key": "cmd+alt+[ArrowLeft]"
+    "key": "cmd+["
   },
   {
     "command": "references-view.showCallHierarchy",
@@ -398,11 +389,7 @@
   },
   {
     "command": "workbench.action.navigateForward",
-    "key": "cmd+[BracketRight]"
-  },
-  {
-    "command": "workbench.action.navigateForward",
-    "key": "cmd+alt+[ArrowRight]"
+    "key": "cmd+]"
   },
   {
     "command": "git.pushTo",
@@ -458,10 +445,6 @@
   {
     "command": "workbench.action.maximizeEditor",
     "key": "shift+cmd+f12"
-  },
-  {
-    "command": "workbench.action.navigateToLastEditLocation",
-    "key": "shift+cmd+[Backspace]"
   },
   {
     "command": "editor.action.moveLinesDownAction",
@@ -538,7 +521,7 @@
   },
   {
     "command": "editor.action.rename",
-    "key": "shift+f6",
+    "key": "ctrl+cmd+r",
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   },
   {
@@ -595,10 +578,6 @@
     "command": "editor.action.referenceSearch.trigger",
     "key": "cmd+alt+f7",
     "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor"
-  },
-  {
-    "command": "workbench.action.toggleFullScreen",
-    "key": "ctrl+cmd+f"
   },
   {
     "command": "java.action.showTypeHierarchy",
@@ -891,10 +870,6 @@
   {
     "command": "-workbench.action.maximizeEditor",
     "key": ""
-  },
-  {
-    "command": "-workbench.action.navigateToLastEditLocation",
-    "key": "cmd+k cmd+q"
   },
   {
     "command": "-editor.action.moveLinesDownAction",
@@ -1223,5 +1198,20 @@
     "key": "f12",
     "command": "-goToNextReference",
     "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
+    "key": "ctrl+cmd+f",
+    "command": "-workbench.action.toggleFullScreen",
+    "when": "!isIOS"
+  },
+  {
+    "key": "cmd+[",
+    "command": "-editor.action.outdentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+]",
+    "command": "-editor.action.indentLines",
+    "when": "editorTextFocus && !editorReadonly"
   }
 ]
