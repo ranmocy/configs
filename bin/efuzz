@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ethy fuzz --local --root . --report-limit 1 -t $@

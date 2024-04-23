@@ -18,7 +18,6 @@
 [color]
   ui = true
 [alias]
-  test = !git diff origin/master --name-only | grep _spec.rb | xargs zeus rspec
   a = add
   aa = add --all
   aam = !git add --all && git commit --amend --no-edit
@@ -63,11 +62,10 @@
   st3 = stash pop stash@{3}
   st4 = stash pop stash@{4}
   st5 = stash pop stash@{5}
-  v = !stree
   latest = for-each-ref --sort=-committerdate --format=\"%(committername)@%(refname:short)\t[%(committerdate:short)]\t%(contents)\"
 [http]
   postBuffer = 524288000
-  cookiefile = /usr/local/google/home/mocy/.gitcookies
+  cookiefile = ~/.gitcookies
 [push]
   default = current
   followTags = true

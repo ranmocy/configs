@@ -74,56 +74,56 @@ link "$CONFIGS/gitconfig" "$HOME/.gitconfig"
 link "$CONFIGS/gitexclude" "$HOME/.gitexclude"
 finish "Git"
 
-link "$CONFIGS/hgrc" "$HOME/.hgrc"
-finish "Mercurial"
+#link "$CONFIGS/hgrc" "$HOME/.hgrc"
+#finish "Mercurial"
 
-link "$CONFIGS/bashrc" "$HOME/.bashrc"
-finish "Bash"
+#link "$CONFIGS/bashrc" "$HOME/.bashrc"
+#finish "Bash"
 
-link "$CONFIGS/zshrc.d" "$HOME/.zshrc.d"
-link "$HOME/.zshrc.d/zshrc.zsh" "$HOME/.zshrc"
-finish "zsh"
+#link "$CONFIGS/zshrc.d" "$HOME/.zshrc.d"
+#link "$HOME/.zshrc.d/zshrc.zsh" "$HOME/.zshrc"
+#finish "zsh"
 
 link "$CONFIGS/fish_config" "$HOME/.config/fish"
 finish "fish"
 
-link "$CONFIGS/emacs_config" "$HOME/.emacs.d"
-finish "Emacs"
+#link "$CONFIGS/emacs_config" "$HOME/.emacs.d"
+#finish "Emacs"
 
-link "$CONFIGS/gemrc" "$HOME/.gemrc"
-link "$CONFIGS/irbrc" "$HOME/.irbrc"
-finish "Ruby"
+#link "$CONFIGS/gemrc" "$HOME/.gemrc"
+#link "$CONFIGS/irbrc" "$HOME/.irbrc"
+#finish "Ruby"
 
-link "$CONFIGS/pythonstartup" "$HOME/.pythonstartup"
-finish "Python"
+#link "$CONFIGS/pythonstartup" "$HOME/.pythonstartup"
+#finish "Python"
 
-link "$CONFIGS/ackrc" "$HOME/.ackrc"
-finish "Ack"
+#link "$CONFIGS/ackrc" "$HOME/.ackrc"
+#finish "Ack"
 
-link "$CONFIGS/htoprc" "$HOME/.htoprc"
-finish "htop"
+#link "$CONFIGS/htoprc" "$HOME/.htoprc"
+#finish "htop"
 
-link "$CONFIGS/screenrc" "$HOME/.screenrc"
-finish "Screen"
+#link "$CONFIGS/screenrc" "$HOME/.screenrc"
+#finish "Screen"
 
-link "$CONFIGS/tmux.conf" "$HOME/.tmux.conf"
-finish "Tmux"
+#link "$CONFIGS/tmux.conf" "$HOME/.tmux.conf"
+#finish "Tmux"
 
 link "$CONFIGS/vimrc" "$HOME/.vimrc"
 finish "VIM"
 
-sublime_root="$([[ $PLATFORM == 'Linux' ]] && echo "$XDG_CONFIG_HOME/sublime-text-3" || echo "$HOME/Library/Application Support/Sublime Text 3")"
-echo "Detected Sublime Text root:$sublime_root"
-link "$CONFIGS/sublime_text_3_config" "$sublime_root/Packages/User"
-finish "Sublime Text"
+#sublime_root="$([[ $PLATFORM == 'Linux' ]] && echo "$XDG_CONFIG_HOME/sublime-text-3" || echo "$HOME/Library/Application Support/Sublime Text 3")"
+#echo "Detected Sublime Text root:$sublime_root"
+#link "$CONFIGS/sublime_text_3_config" "$sublime_root/Packages/User"
+#finish "Sublime Text"
 
-code_root="$([[ $PLATFORM == 'Linux' ]] && echo "$XDG_CONFIG_HOME/code" || echo "$HOME/Library/Application Support/Code")"
-echo "Detected VS Code root:$code_root"
-link "$CONFIGS/Code/keybindings.json" "$code_root/User/keybindings.json"
-link "$CONFIGS/Code/settings.json" "$code_root/User/settings.json"
-link "$CONFIGS/Code/tasks.json" "$code_root/User/tasks.json"
-link "$CONFIGS/Code/snippets" "$code_root/User/snippets"
-finish "Code"
+#code_root="$([[ $PLATFORM == 'Linux' ]] && echo "$XDG_CONFIG_HOME/code" || echo "$HOME/Library/Application Support/Code")"
+#echo "Detected VS Code root:$code_root"
+#link "$CONFIGS/Code/keybindings.json" "$code_root/User/keybindings.json"
+#link "$CONFIGS/Code/settings.json" "$code_root/User/settings.json"
+#link "$CONFIGS/Code/tasks.json" "$code_root/User/tasks.json"
+#link "$CONFIGS/Code/snippets" "$code_root/User/snippets"
+#finish "Code"
 
 jetbrain_root="$([[ $PLATFORM == 'Linux' ]] && echo "$XDG_CONFIG_HOME/JetBrains" || echo "$HOME/Library/Application Support/JetBrains")"
 echo "Detected Jetbrain root:$jetbrain_root"
@@ -198,33 +198,33 @@ fi
 
 # Mac
 if [[ $PLATFORM == 'Darwin' ]]; then
-    link_default "Library/Application Support/BetterTouchTool/bttdata2"
-    finish "BetterTouchTool"
+    #link_default "Library/Application Support/BetterTouchTool/bttdata2"
+    #finish "BetterTouchTool"
 
     link "$CONFIGS/karabiner" "$HOME/.config/karabiner"
     finish "Karabiner-Element"
 
-    link "$CONFIGS/hammerspoon" "$HOME/.hammerspoon"
-    finish "Hammerspoon"
+    #link "$CONFIGS/hammerspoon" "$HOME/.hammerspoon"
+    #finish "Hammerspoon"
 
-    link_default "Library/Developer/Xcode/UserData/FontAndColorThemes"
-    link_default "Library/Developer/Xcode/UserData/KeyBindings"
-    finish "Xcode"
+    #link_default "Library/Developer/Xcode/UserData/FontAndColorThemes"
+    #link_default "Library/Developer/Xcode/UserData/KeyBindings"
+    #finish "Xcode"
 
-    link_default "Library/KeyBindings/DefaultKeyBinding.dict"
-    finish "DefaultKeyBinding"
+    #link_default "Library/KeyBindings/DefaultKeyBinding.dict"
+    #finish "DefaultKeyBinding"
 
-    link_default "Library/texmf"
-    finish "texmf"
+    #link_default "Library/texmf"
+    #finish "texmf"
 
     # Disable ReportCrash
-    launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
-    sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
+    #launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
+    #sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
 
 fi
 
 # Github codespaces
-sudo rm /.codespaces/bin/gitcredential_github.sh || true
+#sudo rm /.codespaces/bin/gitcredential_github.sh || true
 
-source $CONFIGS/packages_install.sh
-finish "Packages"
+#source $CONFIGS/packages_install.sh
+#finish "Packages"
