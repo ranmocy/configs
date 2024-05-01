@@ -198,6 +198,10 @@ fi
 
 # Mac
 if [[ $PLATFORM == 'Darwin' ]]; then
+    # App shortcuts
+    defaults write com.apple.Safari NSUserKeyEquivalents -dict-add 'Close Tab' '<string>@w</string></dict>'
+    defaults write com.apple.universalaccess com.apple.custommenu.apps -array-add '<string>com.apple.Safari</string>'
+
     #link_default "Library/Application Support/BetterTouchTool/bttdata2"
     #finish "BetterTouchTool"
 

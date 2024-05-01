@@ -81,8 +81,6 @@
   stat = true
 [pull]
   rebase = true
-[includeIf "gitdir:~/Android/"]
-  path = ~/bin_corp/gitconfig
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -91,10 +89,10 @@
 [init]
 	defaultBranch = main
 [credential "https://github.com"]
-	helper =
-    helper = !/opt/homebrew/bin/gh auth git-credential
-    #helper = !/usr/local/bin/gh auth git-credential
+  helper = !/opt/homebrew/bin/gh auth git-credential
+  #helper = !/usr/local/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper =
-    helper = !/opt/homebrew/bin/gh auth git-credential
-    #helper = !/usr/local/bin/gh auth git-credential
+  helper = !/opt/homebrew/bin/gh auth git-credential
+  #helper = !/usr/local/bin/gh auth git-credential
+[includeIf "gitdir:~/Code/"]
+  path = ~/bin_corp/gitconfig
