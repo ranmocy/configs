@@ -13,6 +13,8 @@
   compactionHeuristic = true
   tool = default-difftool
   noprefix = true
+[column]
+	ui = auto
 [difftool "default-difftool"]
   cmd = vim --diff $LOCAL $REMOTE
 [color]
@@ -71,6 +73,7 @@
   followTags = true
 [branch]
   autosetuprebase = always
+  sort = -committerdate
 [credential]
   helper = osxkeychain
 [help]
@@ -94,5 +97,7 @@
 [credential "https://gist.github.com"]
   helper = !/opt/homebrew/bin/gh auth git-credential
   #helper = !/usr/local/bin/gh auth git-credential
-[includeIf "gitdir:~/Code/"]
+[includeIf "gitdir:~/code/"]
   path = ~/bin_corp/gitconfig
+[fetch]
+	writeCommitGraph = true
