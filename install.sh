@@ -211,9 +211,9 @@ if [[ $PLATFORM == 'Darwin' ]]; then
     #link "$CONFIGS/hammerspoon" "$HOME/.hammerspoon"
     #finish "Hammerspoon"
 
-    #link_default "Library/Developer/Xcode/UserData/FontAndColorThemes"
-    #link_default "Library/Developer/Xcode/UserData/KeyBindings"
-    #finish "Xcode"
+    link_default "Library/Developer/Xcode/UserData/FontAndColorThemes"
+    link_default "Library/Developer/Xcode/UserData/KeyBindings"
+    finish "Xcode"
 
     #link_default "Library/KeyBindings/DefaultKeyBinding.dict"
     #finish "DefaultKeyBinding"
