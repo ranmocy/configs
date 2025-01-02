@@ -67,8 +67,6 @@ function link_default() {
 
 git submodule update --init --recursive
 
-link_default "bin"
-finish "bin"
 
 link "$CONFIGS/gitconfig" "$HOME/.gitconfig"
 link "$CONFIGS/gitexclude" "$HOME/.gitexclude"
