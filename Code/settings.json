@@ -40,8 +40,6 @@
   // "editor.fontFamily": "'Source Code Pro', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontFamily": "'Monaspace Neon', monospace",
   "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03'",
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.inlineSuggest.enabled": true,
   "editor.largeFileOptimizations": false,
