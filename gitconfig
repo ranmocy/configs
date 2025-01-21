@@ -1,24 +1,12 @@
 [user]
   name = Ranmocy
   email = ranmocy@gmail.com
-  signingkey = FC6B5559
+  # signingkey = FC6B5559
 [core]
   excludesfile = ~/.gitexclude
   quotePath = false
   editor = vim
   mergeoptions = --no-edit
-[diff]
-  renames = copies
-  mnemonicprefix = true
-  compactionHeuristic = true
-  tool = default-difftool
-  noprefix = true
-[column]
-	ui = auto
-[difftool "default-difftool"]
-  cmd = vim --diff $LOCAL $REMOTE
-[color]
-  ui = true
 [alias]
   a = add
   aa = add --all
@@ -65,39 +53,55 @@
   st4 = stash pop stash@{4}
   st5 = stash pop stash@{5}
   latest = for-each-ref --sort=-committerdate --format=\"%(committername)@%(refname:short)\t[%(committerdate:short)]\t%(contents)\"
-[http]
-  postBuffer = 524288000
-  cookiefile = ~/.gitcookies
-[push]
-  default = current
-  followTags = true
 [branch]
   autosetuprebase = always
   sort = -committerdate
-[credential]
-  helper = osxkeychain
+[column]
+	ui = auto
+[color]
+  ui = true
+[diff]
+  renames = copies
+  mnemonicprefix = true
+  compactionHeuristic = true
+  tool = default-difftool
+  noprefix = true
+[difftool "default-difftool"]
+  cmd = vim --diff $LOCAL $REMOTE
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [help]
   autocorrect = 1
 [rerere]
   enabled = true
 [merge]
   stat = true
+
+# Network
+[http]
+  postBuffer = 524288000
+  cookiefile = ~/.gitcookies
+[fetch]
+	writeCommitGraph = true
+[push]
+  default = current
+  followTags = true
 [pull]
   rebase = true
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[init]
-	defaultBranch = main
+[credential]
+  helper = osxkeychain
 [credential "https://github.com"]
   helper = !/opt/homebrew/bin/gh auth git-credential
   #helper = !/usr/local/bin/gh auth git-credential
 [credential "https://gist.github.com"]
   helper = !/opt/homebrew/bin/gh auth git-credential
   #helper = !/usr/local/bin/gh auth git-credential
-[includeIf "gitdir:~/code/"]
-  path = ~/bin_corp/gitconfig
-[fetch]
-	writeCommitGraph = true
+
+# Envs
+[includeIf "gitdir:~/work/"]
+  path = ~/work/bin/gitconfig

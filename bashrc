@@ -18,8 +18,8 @@ alias g='git'
 alias t='tmux'
 alias ta='tmux attach'
 
-if [ -x "$HOME/bin_corp/kmap" ]; then
-    $HOME/bin_corp/kmap
+if [ -x "$HOME/work/bin/kmap" ]; then
+    $HOME/work/bin/kmap
 fi
 
 if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
