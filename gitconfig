@@ -1,7 +1,7 @@
 [user]
   name = Ranmocy
   email = ranmocy@gmail.com
-  # signingkey = FC6B5559
+  signingkey = FC6B5559
 [core]
   excludesfile = ~/.gitexclude
   quotePath = false
@@ -35,6 +35,7 @@
   stat-summary = !git-stat-sum \"$@\"
   o = checkout
   r = remote
+  rabort = rebase --abort
   rc = rebase --continue
   s = status -sb
   u = !git checkout master && git pull && git fetch -p
