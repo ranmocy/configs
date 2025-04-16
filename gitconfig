@@ -31,6 +31,7 @@
   # l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
   l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --graph --topo-order
   lp = log -p
+  ls = log --stat
   lme = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --author='Ranmocy'
   stat-summary = !git-stat-sum \"$@\"
   o = checkout
@@ -45,6 +46,8 @@
   unstage = reset HEAD --
   yesterday = log --since '1 day ago' --graph --topo-order --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
   st = stash
+  ststaged = stash -S
+  stother = stash -uk
   stp = stash pop
   stl = stash list
   st0 = stash pop stash@{0}

@@ -106,7 +106,6 @@
         <option name="ERROR_STRIPE_COLOR" value="273955" />
       </value>
     </option>
-    <option name="BUILD.BUILTIN_NAME" baseAttributes="DEFAULT_PREDEFINED_SYMBOL" />
     <option name="BUILD.FN.DEFINITION">
       <value>
         <option name="FOREGROUND" value="93e0e3" />

@@ -56,12 +56,8 @@
                     "to": [{ "key_code": "launchpad" }]
                 },
                 {
-                    "from": { "key_code": "f5" },
-                    "to": [{ "key_code": "illumination_decrement" }]
-                },
-                {
                     "from": { "key_code": "f6" },
-                    "to": [{ "key_code": "illumination_increment" }]
+                    "to": [{ "apple_vendor_keyboard_key_code": "spotlight" }]
                 },
                 {
                     "from": { "key_code": "f7" },
