@@ -5,7 +5,7 @@
 [core]
   excludesfile = ~/.gitexclude
   quotePath = false
-  editor = vim
+  editor = code --wait
   mergeoptions = --no-edit
 [alias]
   a = add
@@ -109,3 +109,5 @@
 # Envs
 [includeIf "gitdir:~/work/"]
   path = ~/work/bin/gitconfig
+[maintenance]
+	repo = /Users/mocy/.oh-my-configs
