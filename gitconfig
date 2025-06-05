@@ -23,7 +23,7 @@
   d = diff
   ds = diff --staged
   dh = diff HEAD
-  dm = diff master
+  df = diff --name-status # per-file summary
   f = fetch -p
   i = commit
   im = commit -m
