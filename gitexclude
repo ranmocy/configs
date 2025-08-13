@@ -29,3 +29,5 @@
 
 .bundle
 .sass-cache
+
+.roo/
