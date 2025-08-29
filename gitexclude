@@ -31,3 +31,4 @@
 .sass-cache
 
 .roo/
+.aider*

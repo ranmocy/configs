@@ -28,8 +28,8 @@
   i = commit
   im = commit -m
   iam = commit -am
-  # l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
-  l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --graph --topo-order
+  # l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --graph --topo-order
+  l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%cd)' --graph --topo-order
   lp = log -p
   ls = log --stat
   lme = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --author='Ranmocy'
@@ -100,11 +100,11 @@
 [credential]
   helper = osxkeychain
 [credential "https://github.com"]
+  helper =
   helper = !/opt/homebrew/bin/gh auth git-credential
-  #helper = !/usr/local/bin/gh auth git-credential
 [credential "https://gist.github.com"]
+  helper =
   helper = !/opt/homebrew/bin/gh auth git-credential
-  #helper = !/usr/local/bin/gh auth git-credential
 
 # Envs
 [includeIf "gitdir:~/work/"]
