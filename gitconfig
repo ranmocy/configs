@@ -44,6 +44,7 @@
   unamend = reset --soft HEAD@{1}
   uncommit = reset --soft HEAD^
   unstage = reset HEAD --
+  fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
   yesterday = log --since '1 day ago' --graph --topo-order --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
   st = stash
   ststaged = stash -S
@@ -61,7 +62,7 @@
   autosetuprebase = always
   sort = -committerdate
 [column]
-	ui = auto
+  ui = auto
 [color]
   ui = true
 [diff]
@@ -72,31 +73,33 @@
   noprefix = true
 [difftool "default-difftool"]
   cmd = vim --diff $LOCAL $REMOTE
-[init]
-	defaultBranch = main
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [help]
   autocorrect = 1
-[rerere]
-  enabled = true
+[init]
+  defaultBranch = main
 [merge]
   stat = true
+[pull]
+  rebase = true
+[push]
+  default = current
+  followTags = true
+[rebase]
+  autosquash = true
+[rerere]
+  enabled = true
 
 # Network
 [http]
   postBuffer = 524288000
   cookiefile = ~/.gitcookies
 [fetch]
-	writeCommitGraph = true
-[push]
-  default = current
-  followTags = true
-[pull]
-  rebase = true
+  writeCommitGraph = true
 [credential]
   helper = osxkeychain
 [credential "https://github.com"]
@@ -110,4 +113,5 @@
 [includeIf "gitdir:~/work/"]
   path = ~/work/bin/gitconfig
 [maintenance]
-	repo = /Users/mocy/.oh-my-configs
+  repo = /Users/mocy/.oh-my-configs
+

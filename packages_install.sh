@@ -56,7 +56,7 @@ if confirm "essentials"; then
     the-unarchiver
 
     # Tools
-    '1passpord'
+    '1password'
     google-chrome
     calibre
     transmission
@@ -74,12 +74,15 @@ if confirm "essentials"; then
     visual-studio-code
     # sublime-text
     # android-studio
-    webstorm
-    docker
+    # webstorm
+    # docker
     # postman
     # figma
     # slack
     # gather
+
+    # CMD tools
+    fzf
 
     # Media
     # vlc
@@ -90,16 +93,6 @@ if confirm "essentials"; then
   brew install --cask "${essentials[@]}";
 fi
 
-if confirm "sougou"; then
-  brew install --cask sogouinput
-  open '/usr/local/Caskroom/sogouinput/48a,1535352534/sogou_mac_48a.app'
-fi
-
-# if confirm "Adobe CC"; then
-#  brew install --cask adobe-creative-cloud ;
-#  open '/usr/local/Caskroom/adobe-creative-cloud/latest/Creative Cloud Installer.app'
-# fi
-
 # if [[ confirm "1Password" ]]; then
 #   # https://app-updates.agilebits.com/
 #   curl -O https://c.1password.com/dist/1P/mac4/1Password-6.8.9.pkg
@@ -107,6 +100,3 @@ fi
 #   rm 1Password-6.8.9.pkg
 # fi
 
-# Sketch.app
-# Mathematica.app
-# Parallels Desktop.app

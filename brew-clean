@@ -31,6 +31,26 @@ WHITELIST = [
   # cross compile
   # 'aarch64-unknown-linux-gnu',
   # 'x86_64-unknown-linux-gnu',
+] + [
+  'kcli',
+  'kcs',
+  'apple-liv',
+  'trust-apple-corp-root-cas',
+  'apple-devicecompute',
+  'vesseld',
+  'awscli',
+  'curl',
+  'docker',
+  'docker-buildx',
+  'docker-compose',
+  'jq',
+  'livekit-cli',
+  'pipx',
+  'postgresql@15',
+  'swift-format',
+  'watch',
+  'wget',
+  'yamllint',
 ]
 
 loop {
