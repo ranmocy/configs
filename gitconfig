@@ -2,11 +2,14 @@
   name = Ranmocy
   email = ranmocy@gmail.com
   signingkey = FC6B5559
+
 [core]
   excludesfile = ~/.gitexclude
   quotePath = false
   editor = code --wait
   mergeoptions = --no-edit
+  pager = delta
+
 [alias]
   a = add
   aa = add --all
@@ -58,32 +61,49 @@
   st4 = stash pop stash@{4}
   st5 = stash pop stash@{5}
   latest = for-each-ref --sort=-committerdate --format=\"%(committername)@%(refname:short)\t[%(committerdate:short)]\t%(contents)\"
+
 [branch]
   autosetuprebase = always
   sort = -committerdate
+
 [column]
   ui = auto
+
 [color]
   ui = true
-[diff]
-  renames = copies
-  mnemonicprefix = true
-  compactionHeuristic = true
-  tool = default-difftool
-  noprefix = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+
+# [diff]
+  # renames = copies
+  # mnemonicprefix = true
+  # compactionHeuristic = true
+  # tool = default-difftool
+  # noprefix = true
+
 [difftool "default-difftool"]
   cmd = vim --diff $LOCAL $REMOTE
+
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+
 [help]
   autocorrect = 1
+
 [init]
   defaultBranch = main
+
 [merge]
   stat = true
+  conflictStyle = zdiff3
 [pull]
   rebase = true
 [push]
