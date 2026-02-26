@@ -18,10 +18,9 @@
   bl = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/heads/*"
   br = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/remotes/origin/*"
   bb = !echo "===heads===" && git bl && echo "===remotes===" && git br
-  bclean = !(git checkout staging || git checkout develop || git checkout main || git checkout master) && (git branch --merged | egrep -v '(\\*|master|main|develop|staging)' | xargs git branch -d) && git checkout -
-  bsyncbranches1 = !(git checkout main && git pull && git checkout - || true) && (git checkout staging && git pull && git checkout - || true)
-  bsyncbranches2 = !(git checkout master && git pull && git checkout - || true) && (git checkout develop && git pull && git checkout - || true)
-  bsync = !git f && git bsyncbranches1 && git bsyncbranches2 && git bclean
+  bclean = !git checkout main && (git branch --merged | egrep -v '(\\*|master|main|develop|staging)' | xargs git branch -d) && git checkout -
+  bsyncmain = !git checkout main && git pull && git checkout - || true
+  bsync = !git f && git bsyncmain && git bclean
   bs = bsync
   d = diff
   ds = diff --staged

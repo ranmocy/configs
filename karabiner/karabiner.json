@@ -18,9 +18,9 @@
                         ]
                     },
                     {
+                        "description": "Change left_control to command+control+option.",
                         "manipulators": [
                             {
-                                "description": "Change left_control to command+control+option.",
                                 "from": {
                                     "key_code": "left_control",
                                     "modifiers": { "optional": ["any"] }
