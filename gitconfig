@@ -13,12 +13,11 @@
 [alias]
   a = add
   aa = add --all
-  aam = !git add --all && git commit --amend --no-edit
   b = branch
   bl = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/heads/*"
   br = for-each-ref --sort=-committerdate --format='%(refname:short)' "refs/remotes/origin/*"
   bb = !echo "===heads===" && git bl && echo "===remotes===" && git br
-  bclean = !git checkout main && (git branch --merged | egrep -v '(\\*|master|main|develop|staging)' | xargs git branch -d) && git checkout -
+  bclean = !git checkout main && (git branch --merged | egrep -v '(\\*|main|develop|staging)' | xargs git branch -d) && git checkout -
   bsyncmain = !git checkout main && git pull && git checkout - || true
   bsync = !git f && git bsyncmain && git bclean
   bs = bsync
@@ -30,6 +29,7 @@
   i = commit
   im = commit -m
   iam = commit -am
+  iall = !git add --all && git commit
   # l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --graph --topo-order
   l = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%cd)' --graph --topo-order
   lp = log -p
@@ -41,8 +41,9 @@
   rabort = rebase --abort
   rc = rebase --continue
   s = status -sb
-  u = !git checkout master && git pull && git fetch -p
+  u = !git checkout main && git pull && git fetch -p
   amend = !sh -c 'git commit --amend -C HEAD --date \"`date`\"'
+  amendall = !git add --all && git commit --amend --no-edit
   unamend = reset --soft HEAD@{1}
   uncommit = reset --soft HEAD^
   unstage = reset HEAD --
@@ -115,7 +116,7 @@
 
 # Network
 [http]
-  postBuffer = 524288000
+  postBuffer = 157286400
   cookiefile = ~/.gitcookies
 [fetch]
   writeCommitGraph = true
@@ -130,7 +131,7 @@
 
 # Envs
 [includeIf "gitdir:~/work/"]
-  path = ~/work/bin/gitconfig
+  path = ~/work/.configs/gitconfig
 [maintenance]
   repo = /Users/mocy/.oh-my-configs
 

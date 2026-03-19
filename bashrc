@@ -18,10 +18,6 @@ alias g='git'
 alias t='tmux'
 alias ta='tmux attach'
 
-if [ -x "$HOME/work/bin/kmap" ]; then
-    $HOME/work/bin/kmap
-fi
-
 if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
     tmux attach || tmux || zsh
 fi
