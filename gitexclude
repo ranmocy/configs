@@ -33,6 +33,6 @@
 .roo/
 .aider*
 .claude/settings.local.json
-
+.claude/worktrees/
 .gstack/
 

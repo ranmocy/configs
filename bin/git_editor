@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if command -v code > /dev/null 2>&1; then
+    exec code --wait "$@"
+fi
+
+# Fallback to Vim if VS Code command fails or is not found
+exec vim "$@"
+
