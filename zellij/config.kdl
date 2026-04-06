@@ -156,13 +156,6 @@ keybinds clear-defaults=true {
         }
     }
     shared_among "normal" "locked" {
-        bind "Alt +" { Resize "Increase"; }
-        bind "Alt -" { Resize "Decrease"; }
-        bind "Alt =" { Resize "Increase"; }
-        bind "Alt [" { PreviousSwapLayout; }
-        bind "Alt ]" { NextSwapLayout; }
-        bind "Alt f" { ToggleFloatingPanes; }
-
         bind "Alt i" { MoveFocus "up"; }
         bind "Alt k" { MoveFocus "down"; }
         bind "Alt j" { MoveFocus "left"; }
@@ -171,8 +164,9 @@ keybinds clear-defaults=true {
         bind "Alt Shift k" { MovePane "down"; }
         bind "Alt Shift j" { MovePane "left"; }
         bind "Alt Shift l" { MovePane "right"; }
-        bind "Alt u" { MoveFocusOrTab "left"; }
-        bind "Alt o" { MoveFocusOrTab "right"; }
+        bind "Alt [" { MoveFocusOrTab "left"; }
+        bind "Alt ]" { MoveFocusOrTab "right"; }
+        bind "Alt `" { GoToNextTab; }
         // bind "Alt u" { GoToNextTab; }
         // bind "Alt o" { GoToPreviousTab; }
         bind "Alt Shift u" { MoveTab "left"; }
@@ -182,6 +176,11 @@ keybinds clear-defaults=true {
         bind "Alt Shift n" { NewPane "down"; }
         // bind "Alt p" { TogglePaneInGroup; }
         // bind "Alt Shift p" { ToggleGroupMarking; }
+
+        bind "Alt +" { Resize "Increase"; }
+        bind "Alt -" { Resize "Decrease"; }
+        bind "Alt =" { Resize "Increase"; }
+        // bind "Alt `" { ToggleFloatingPanes; }
 
         bind "Alt s" {
             LaunchOrFocusPlugin "session-manager" {
@@ -478,7 +477,10 @@ default_shell "fish"
 // - false
 // Default: false
 // 
-// web_server false
+web_server true
+web_server_ip "127.0.0.1"
+web_server_port 9999
+
 // Whether to allow sessions started in the terminal to be shared through a local web server, assuming one is
 // running (see the `web_server` option for more details).
 // (Requires restart)
