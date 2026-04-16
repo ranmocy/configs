@@ -173,7 +173,7 @@ keybinds clear-defaults=true {
         bind "Alt Shift o" { MoveTab "right"; }
 
         bind "Alt n" { NewPane "stacked"; }
-        bind "Alt Shift n" { NewPane "down"; }
+        bind "Alt Shift n" { NewPane "right"; }
         // bind "Alt p" { TogglePaneInGroup; }
         // bind "Alt Shift p" { ToggleGroupMarking; }
 
@@ -274,6 +274,12 @@ plugins {
 // eg. "https://example.com/my-plugin.wasm"
 load_plugins {
     zellij:link
+    "file:~/.config/zellij/plugins/zellij-attention.wasm" {
+        // All options are optional — defaults shown
+        enabled "true"
+        waiting_icon "⏳"
+        completed_icon "✅"
+    }
 }
 web_client {
     font "monospace"
@@ -477,7 +483,7 @@ default_shell "fish"
 // - false
 // Default: false
 // 
-web_server true
+// web_server true
 web_server_ip "127.0.0.1"
 web_server_port 9999
 
