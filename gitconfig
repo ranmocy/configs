@@ -35,6 +35,8 @@
   lp = log -p
   ls = log --stat
   lme = log --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)' --author='Ranmocy'
+  lyesterday = log --since '1 day ago' --graph --topo-order --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
+  latest = for-each-ref --sort=-committerdate --format=\"%(committername)@%(refname:short)\t[%(committerdate:short)]\t%(contents)\"
   stat-summary = !git-stat-sum \"$@\"
   o = checkout
   r = remote
@@ -44,23 +46,21 @@
   u = !git checkout main && git pull && git fetch -p
   amend = !sh -c 'git commit --amend -C HEAD --date \"`date`\"'
   amendall = !git add --all && git commit --amend --no-edit
+  reset1 = reset HEAD~1
   unamend = reset --soft HEAD@{1}
   uncommit = reset --soft HEAD^
-  unstage = reset HEAD --
   fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
-  yesterday = log --since '1 day ago' --graph --topo-order --pretty=format:'%C(bold green)%d %C(bold yellow)%h %C(bold red)%an: %Creset%s %C(bold blue)(%ar)'
   st = stash
   ststaged = stash -S
   stother = stash -uk
   stp = stash pop
   stl = stash list
-  st0 = stash pop stash@{0}
-  st1 = stash pop stash@{1}
-  st2 = stash pop stash@{2}
-  st3 = stash pop stash@{3}
-  st4 = stash pop stash@{4}
-  st5 = stash pop stash@{5}
-  latest = for-each-ref --sort=-committerdate --format=\"%(committername)@%(refname:short)\t[%(committerdate:short)]\t%(contents)\"
+  stp0 = stash pop stash@{0}
+  stp1 = stash pop stash@{1}
+  stp2 = stash pop stash@{2}
+  stp3 = stash pop stash@{3}
+  stp4 = stash pop stash@{4}
+  stp5 = stash pop stash@{5}
 
 [branch]
   autosetuprebase = always
