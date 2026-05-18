@@ -121,8 +121,8 @@
 [fetch]
   writeCommitGraph = true
 [credential]
-  helper = osxkeychain
-[credential "https://github.com"]
+#  helper = osxkeychain
+#[credential "https://github.com"]
   helper = !gh auth git-credential
 
 # Envs
