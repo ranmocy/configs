@@ -72,7 +72,9 @@ link "$CONFIGS/gitconfig" "$HOME/.gitconfig"
 link "$CONFIGS/gitexclude" "$HOME/.gitexclude"
 finish "Git"
 
+
 link "$CONFIGS/bashrc" "$HOME/.bashrc"
+link "$CONFIGS/bash_profile" "$HOME/.bash_profile"
 finish "Bash"
 
 link "$CONFIGS/zshrc.d" "$HOME/.zshrc.d"
